@@ -9,12 +9,12 @@
 <script>
 'use strict'
 
-import { registerRoute } from '..'
+//import { registerRoute } from '..'
 
 export default {
 	install() {
 		// Register a route via Files -> Filaments
-		registerRoute(this, {
+		/*registerRoute(this, {
 			Files: {
 				Filaments: {
 					icon: 'mdi-radiobox-marked',
@@ -22,7 +22,7 @@ export default {
 					path: '/Files/Filaments'
 				}
 			}
-		});
+		});*/
 	}
 }
 </script>
