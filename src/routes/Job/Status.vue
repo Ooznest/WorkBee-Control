@@ -81,12 +81,12 @@
 <script>
 'use strict'
 
-import { registerRoute } from '..'
+//import { registerRoute } from '..'
 
 export default {
 	install() {
 		// Register a route via Job -> Status
-		registerRoute(this, {
+		/*registerRoute(this, {
 			Job: {
 				Status: {
 					icon: 'mdi-information',
@@ -94,7 +94,7 @@ export default {
 					path: '/Job/Status'
 				}
 			}
-		});
+		});*/
 	}
 }
 </script>
