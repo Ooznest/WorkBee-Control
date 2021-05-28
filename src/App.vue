@@ -23,6 +23,12 @@
 #global-container .v-card.theme--dark {
 	background-color: #515151 !important;
 }
+.v-card.theme--dark {
+	background-color: #404040!important;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+}
 
 input[type='number'] {
     -moz-appearance: textfield;
@@ -103,13 +109,13 @@ textarea {
 
 		<v-main id="content">
 			<v-scroll-y-transition>
-				<v-container v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp" id="global-container" fluid class="py-0">
+				<v-container v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp" id="global-container" fluid class="pt-1 pb-5">
 						<fff-container-panel v-if="isFFForUnset()"></fff-container-panel>
 						<cnc-container-panel v-else></cnc-container-panel>
 				</v-container>
 			</v-scroll-y-transition>
 
-			<v-divider v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp"></v-divider>
+			<v-divider v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp" class="mb-5"></v-divider>
 
 			<v-container fluid class="pt-0">
 				<keep-alive>

@@ -78,7 +78,7 @@
 					</v-menu>
 				</v-col>
 				<v-col cols="12" order="3" md="2" order-md="3">
-					<v-btn @click="setWorkspaceZero" block class="move-btn">Set Work XYZ</v-btn >
+					<v-btn @click="setWorkspaceZero" block class="move-btn" color="primary" >Set Work XYZ</v-btn >
 				</v-col>
 			</v-row>
 
@@ -121,7 +121,7 @@
 				<v-col cols="2" order="2" offset="8"  sm="4" offset-sm="4" md="1" order-md="4" offset-md="0">
 					<v-row dense>
 						<v-col>
-							<code-btn color="warning" tile block :code="`G10 L20 P${currentWorkspace} ${axis.letter}0`" class="move-btn">Set {{ axis.letter }}</code-btn>
+							<code-btn color="primary" tile block :code="`G10 L20 P${currentWorkspace} ${axis.letter}0`" class="move-btn">Set {{ axis.letter }}</code-btn>
 						</v-col>
 					</v-row>
 				</v-col>
@@ -129,7 +129,7 @@
 
 			<v-row dense>
 				<v-col>
-					<v-btn color="warning" @click="gotoWorkspaceZero" tile block class="move-btn">GOTO Work XYZ Zero</v-btn>
+					<v-btn color="primary" @click="gotoWorkspaceZero" tile block class="move-btn">GOTO Work XYZ Zero</v-btn>
 				</v-col>
 			</v-row>
 		</v-card-text>

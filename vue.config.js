@@ -53,7 +53,7 @@ module.exports = {
 	},
 	pwa: {
 		name: 'Duet Web Control',
-		themeColor: '#2196f3',
+		themeColor: '#ff751a',
 		appleMobileWebAppCapable: 'yes',
 		appleMobileWebAppStatusBarStyle: 'black'
 	},

@@ -15,7 +15,7 @@ export default {
 	state: {
 		language: 'en',
 		lastHostname: location.host,
-		darkTheme: false,
+		darkTheme: true,
 		useBinaryPrefix: true,
 		disableAutoComplete: false,
 		settingsStorageLocal: false,

@@ -25,6 +25,31 @@ export default new Vue({
 		icons: {
 			iconfont: 'mdiSvg',
 		},
-		lang: { t: (key, ...params) => i18n.t(key, params) }
+		lang: { t: (key, ...params) => i18n.t(key, params) },
+		theme: {
+			dark: true,
+			themes: {
+				light: {
+					primary: '#ff751a',
+					secondary: '#ff751a',
+					accent: '#ff751a',
+					error: '#ff1a1a',
+					info: '#ff751a',
+					success: '#ff751a',
+					warning: '#ff1a1a',
+					green: '#008000'
+				},
+				dark: {
+					primary: '#ff751a',
+					secondary: '#ff751a',
+					accent: '#ff751a',
+					error: '#ff1a1a',
+					info: '#ff751a',
+					success: '#ff751a',
+					warning: '#ff1a1a',
+					green: '#008000'
+				},
+			},
+		},
 	})
 })

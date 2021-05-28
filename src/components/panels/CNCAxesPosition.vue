@@ -3,7 +3,7 @@
         <v-card-title class="py-2">
             <strong>{{ machinePosition ? $t('panel.status.machinePosition') : $t('panel.status.toolPosition') }} </strong>
         </v-card-title>
-        <v-card-text>
+        <v-card-text class="pb-6">
             <v-row align-content="center" no-gutters :class="{'large-font' : !machinePosition}">
                 <v-col v-for="(axis, index) in visibleAxes" :key="index" class="d-flex flex-column align-center">
                     <div :class="{'large-font-height' : !machinePosition}">
