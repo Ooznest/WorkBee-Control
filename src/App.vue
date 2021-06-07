@@ -117,7 +117,7 @@ textarea {
 
 			<v-divider v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp" class="mb-5"></v-divider>
 
-			<v-container fluid class="pt-0">
+			<v-container fluid>
 				<keep-alive>
 					<router-view></router-view>
 				</keep-alive>

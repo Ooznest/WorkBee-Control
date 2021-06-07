@@ -355,10 +355,12 @@ export class DeltaTower {
 
 export class HangprinterKinematics extends Kinematics {
 	constructor(initData) { super(initData); }
-	anchorA = [0, -2000, -100]
-	anchorB = [2000, 1000, -100]
-	anchorC = [-2000, 1000, -100]
-	anchorDz = 3000
+	anchors = [
+		[0, -2000, -100],
+		[2000, 1000, -100],
+		[-2000, 1000, -100],
+		[0, 0, 3000]
+	]
 	printRadius = 1500
 }
 
