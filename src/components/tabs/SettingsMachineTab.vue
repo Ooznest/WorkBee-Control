@@ -15,7 +15,14 @@
 		</v-col>
 
 		<v-col cols="12" md="8">
-			<settings-list-items-panel></settings-list-items-panel>
+			<v-row>
+				<v-col cols="12" md="12">
+					<settings-list-items-panel></settings-list-items-panel>
+				</v-col>
+				<v-col cols="12" md="12">
+					<settings-sensors-panel></settings-sensors-panel>
+				</v-col>
+			</v-row>
 		</v-col>
 	</v-row>
 </template>
