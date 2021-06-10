@@ -644,6 +644,11 @@ export default {
 			axesNotHomed: 'Die folgende Achse ist nicht referenziert:|Die folgenden Achsen sind nicht referenziert:',
 			noAxes: 'Keine Achsen'
 		},
+		sensors: {
+			endstopTriggered: 'Ausgelöst',
+			endstopNotTriggered: 'Nicht Ausgelöst',
+			endstopStatus: 'Endstopp Status'
+		},
 		settingsAbout: {
 			caption: 'Über',
 			developedBy: 'Weboberfläche entwickelt von',
@@ -741,7 +746,7 @@ export default {
 			v12: 'V12',
 			minMax: 'Minimum: {0}, Maximum {1}',
 			fanRPM: 'Lüfter-RPM',
-			probe: 'Z-Sonde|Z-Sonden',
+			probe: 'Sonde|Sonden',
 			noStatus: 'Kein Status'
 		},
 		tools: {

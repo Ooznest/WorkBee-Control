@@ -572,6 +572,11 @@
 			axesNotHomed: 'Оси не в нулевом положении:',
 			noAxes: 'Нет осей'
 		},
+		sensors: {
+			endstopTriggered: 'Срабатывает',
+			endstopNotTriggered: 'Не срабатывает',
+			endstopStatus: 'Конечный статус'
+		},
 		settingsAbout: {
 			caption: 'О системе',
 			developedBy: 'Веб интерфейс разработан',
@@ -668,7 +673,7 @@
 			vIn: 'Vin',
 			v12: 'V12',
 			fanRPM: 'Скорость вентилятора',
-			probe: 'Z-датчик',
+			probe: 'датчик',
 			noStatus: 'Нет статуса'
 		},
 		tools: {

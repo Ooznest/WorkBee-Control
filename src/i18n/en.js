@@ -644,6 +644,11 @@ export default {
 			axesNotHomed: 'The following axis is not homed:|The following axes are not homed:',
 			noAxes: 'No Axes'
 		},
+		sensors: {
+			endstopTriggered: 'Triggered',
+			endstopNotTriggered: 'Not Triggered',
+			endstopStatus: 'Endstop Status'
+		},
 		settingsAbout: {
 			caption: 'About',
 			developedBy: 'Web Interface developed by',
@@ -741,7 +746,7 @@ export default {
 			vIn: 'Vin',
 			v12: 'V12',
 			fanRPM: 'Fan RPM',
-			probe: 'Z-Probe|Z-Probes',
+			probe: 'Probe|Probes',
 			noStatus: 'No Status'
 		},
 		tools: {

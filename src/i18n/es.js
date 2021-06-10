@@ -574,6 +574,11 @@ export default {
 			axesNotHomed: 'El siguiente eje no está ajustado: | Los siguientes ejes no están ajustados:',
 			noAxes: 'No hay ejes'
 		},
+		sensors: {
+			endstopTriggered: 'Motivado',
+			endstopNotTriggered: 'No Activado',
+			endstopStatus: 'Estado del final de carrera'
+		},
 		settingsAbout: {
 			caption: 'Acerca de',
 			developedBy: 'Interface Web creada por',
@@ -671,7 +676,7 @@ export default {
 			vIn: 'Vin',
 			v12: 'V12',
 			fanRPM: 'Ventilador RPM',
-			probe: 'Z-Sensor|Z-Sensores',
+			probe: 'Sensor|Sensores',
 			noStatus: 'Sin Estado'
 		},
 		tools: {

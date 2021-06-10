@@ -572,6 +572,11 @@ export default {
 			axesNotHomed: 'Aşağıdaki eksen referansta değil: | Aşağıdaki eksenler referansta değil:',
 			noAxes: 'Eksen Yok'
 		},
+		sensors: {
+			endstopTriggered: 'Tetiklenmiş',
+			endstopNotTriggered: 'Tetiklenmemiş',
+			endstopStatus: 'Son Durdurma Durumu'
+		},
 		settingsAbout: {
 			caption: 'Hakkında',
 			developedBy: 'Web arayüzünü geliştiren',
@@ -668,7 +673,7 @@ export default {
 			vIn: 'Voltaj',
 			v12: 'V12',
 			fanRPM: 'Fan RPM',
-			probe: 'Z-Probu|Z-Probları',
+			probe: 'Probu|Probları',
 			noStatus: 'Durum yok'
 		},
 		tools: {

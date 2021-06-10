@@ -593,6 +593,11 @@ export default {
 			axesNotHomed: 'O eixo a seguir não está na posição inicial:|Os eixos a seguir não estão na posição inicial:',
 			noAxes: 'No Axes'
 		},
+		sensors: {
+			endstopTriggered: 'Provocado',
+			endstopNotTriggered: 'Não acionado',
+			endstopStatus: 'Status de parada final'
+		},
 		settingsAbout: {
 			caption: 'Sobre',
 			developedBy: 'Interface da Web desenvolvida por',
@@ -690,7 +695,7 @@ export default {
 			vIn: 'Vin',
 			v12: 'V12',
 			fanRPM: 'RPM do Cooler',
-			probe: 'Z-Probe|Z-Probes',
+			probe: 'Probe|Probes',
 			noStatus: 'Sem Status'
 		},
 		tools: {

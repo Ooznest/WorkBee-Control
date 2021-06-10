@@ -646,6 +646,11 @@ export default {
 			axesNotHomed: '以下轴未归位：|以下轴未归位：',
 			noAxes: '没有轴'
 		},
+		sensors: {
+			endstopTriggered: '已触发',
+			endstopNotTriggered: '未触发',
+			endstopStatus: '终点站状态'
+		},
 		settingsAbout: {
 			caption: '关于',
 			developedBy: 'Web界面开发：',
@@ -743,7 +748,7 @@ export default {
 			vIn: '输入电压',
 			v12: 'V12',
 			fanRPM: '风扇转速',
-			probe: 'Z轴探针|Z轴探针',
+			probe: '轴探针|轴探针',
 			noStatus: '没有状态'
 		},
 		tools: {// 注释：3.3b2dev更新部分内容

@@ -1,3 +1,13 @@
+<style scoped>
+	.probe-span {
+		border-radius: 5px;
+	}
+	.probe-span:not(:last-child) {
+		margin-right: 8px;
+	}
+</style>
+
+
 <template>
 	<v-card outlined>
 		<v-card-title class="pb-0">
@@ -56,6 +66,20 @@
 							</div>
 						</v-col>
 					</v-row>
+					<v-divider class="mx-5 my-4"></v-divider>
+					<v-row align-content="center" no-gutters :class="{'large-font' : !machinePosition}">
+						<v-col class="d-flex flex-column align-left">
+							<strong>{{ $tc('panel.sensors.endstopStatus') }}</strong>
+						</v-col>
+						<v-col v-for="(axis, index) in visibleAxes" :key="index" class="d-flex flex-column align-center">
+							<div :class="{'large-font-height' : !machinePosition}">
+								{{ axis.letter }}
+								</div>
+							<div>
+								{{ displayEndstopStatus(index) }}
+								</div>
+						</v-col>
+					</v-row>
 				</v-col>
 			</v-row>
 		</v-card-text>
@@ -104,6 +128,9 @@ export default {
 				this.probesPresent
 			);
 		},
+		visibleAxes() {
+			return this.move.axes.filter(axis => axis.visible);
+		},
 	},
 	methods: {
 		formatProbeValue(values) {
@@ -120,13 +147,17 @@ export default {
 			if (!isPrinting(this.stats) && probe.value !== null) {
 				if (probe.value >= probe.threshold) {
 					result.push('red');
-					result.push(this.darkTheme ? 'darken-3' : 'lighten-4');
+					result.push(this.darkTheme ? 'darken-4' : 'lighten-1');
 				} else if (probe.value > probe.threshold * 0.9) {
 					result.push('orange');
-					result.push(this.darkTheme ? 'darken-2' : 'lighten-4');
+					result.push(this.darkTheme ? 'darken-2' : 'lighten-2');
 				}
 			}
 			return result;
+		},
+		displayEndstopStatus(index) {
+			return (this.sensors.endstops[index].triggered)? this.$t('panel.sensors.endstopTriggered') : this.$t('panel.sensors.endstopNotTriggered');
+
 		}
 	}
 }

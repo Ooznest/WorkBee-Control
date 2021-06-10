@@ -572,6 +572,11 @@ export default {
 			axesNotHomed: 'L\'axe suivant  n\'a pas été à son origine:|Les axes suivants n\'ont pas été à leur origine:',
 			noAxes: 'Pas d\'axes'
 		},
+		sensors: {
+			endstopTriggered: 'Déclenché',
+			endstopNotTriggered: 'Pas Déclenché',
+			endstopStatus: 'Statut de fin de course'
+		},
 		settingsAbout: {
 			caption: 'À propos',
 			developedBy: 'Interface web dévelopée par',
@@ -668,7 +673,7 @@ export default {
 			vIn: 'Vin',
 			v12: 'V12',
 			fanRPM: 'TPM Ventilateur',
-			probe: 'Sonde-Z|Sondes-Z',
+			probe: 'Sonde|Sondes',
 			noStatus: 'Pas de Statut'
 		},
 		tools: {
