@@ -9,7 +9,7 @@
                 <v-divider v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp" class="mb-5"></v-divider>
             </v-col>
             
-            <v-col cols="12" class="pt-0 pb-0 mt3">
+            <v-col cols="12" class="pt-0 pb-1 mt3">
                 <v-card>
                     <v-card-text>
                         <job-progress></job-progress>
