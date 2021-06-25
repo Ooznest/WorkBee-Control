@@ -729,6 +729,17 @@ export default {
 			flipY: '翻转Y',
 			flipBoth: '翻转两者'
 		},
+		spindleSpeed:{
+			tool: '工具 {0}',
+			spindleName: '主轴名称',
+			spindleActive: '活动',
+			setRPM: '设置 RPM',
+			noSpindleDefined: '没有定义主轴工具。用 ',
+			toDefineASpindle: ' 定义一个主轴和 ',
+			toAssignTool: ' 将该主轴分配给刀具。',
+			turnOn: '开启',
+			turnOff: '关闭'
+		},
 		speedFactor: {
 			caption: '速度系数'
 		},

@@ -654,6 +654,17 @@
 			flipY: 'Переворот по Y',
 			flipBoth: 'Перевернуть по обоим'
 		},
+		spindleSpeed:{
+			tool: 'Инструмент {0}',
+			spindleName: 'Имя шпинделя',
+			spindleActive: 'Активный',
+			setRPM: 'Установить число оборотов в минуту',
+			noSpindleDefined: 'Инструменты шпинделя не определены. Использовать ',
+			toDefineASpindle: ' для определения шпинделя и ',
+			toAssignTool: ' назначить этот шпиндель инструменту.',
+			turnOn: 'Включить',
+			turnOff: 'Выключить'
+		},
 		speedFactor: {
 			caption: 'Контроль скорости'
 		},

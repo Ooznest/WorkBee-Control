@@ -654,6 +654,17 @@ export default {
 			flipY: 'Çevir Y',
 			flipBoth: 'İkisini de çevir'
 		},
+		spindleSpeed:{
+			tool: 'Araç {0}',
+			spindleName: 'İş Mili Adı',
+			spindleActive: 'Etkin',
+			setRPM: 'RPM yi ayarla',
+			noSpindleDefined: 'Tanımlanan İş Mili Aracı Yok. kullan ',
+			toDefineASpindle: ' bir iş mili tanımlamak için ve ',
+			toAssignTool: ' bu iş milini bir takıma atamak için.',
+			turnOn: 'Aç',
+			turnOff: 'Kapat'
+		},
 		speedFactor: {
 			caption: 'Hız Faktörü'
 		},

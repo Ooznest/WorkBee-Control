@@ -727,6 +727,17 @@ export default {
 			flipY: 'Flip Y',
 			flipBoth: 'Flip both'
 		},
+		spindleSpeed:{
+			tool: 'Tool {0}',
+			spindleName: 'Spindle Name',
+			spindleActive: 'Active',
+			setRPM: 'Set RPM',
+			noSpindleDefined: 'No Spindle Tools Defined. Use ',
+			toDefineASpindle: ' to define a spindle and ',
+			toAssignTool: ' to assign that spindle to a tool.',
+			turnOn: 'Turn On',
+			turnOff: 'Turn Off'
+		},
 		speedFactor: {
 			caption: 'Speed Factor'
 		},

@@ -676,6 +676,17 @@ export default {
 			flipY: 'Espelhar em Y',
 			flipBoth: 'Espelhar em ambos'
 		},
+		spindleSpeed:{
+			tool: 'Ferramenta {0}',
+			spindleName: 'Nome do fuso',
+			spindleActive: 'Ativo',
+			setRPM: 'Definir RPM',
+			noSpindleDefined: 'Nenhuma ferramenta de eixo definida. Usar ',
+			toDefineASpindle: ' para definir um fuso e ',
+			toAssignTool: ' para atribuir aquele fuso a uma ferramenta.',
+			turnOn: 'Ligar',
+			turnOff: 'desligar'
+		},
 		speedFactor: {
 			caption: 'Fator de velocidade'
 		},

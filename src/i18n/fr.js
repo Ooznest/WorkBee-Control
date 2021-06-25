@@ -654,6 +654,17 @@ export default {
 			flipY: 'Retourner Y',
 			flipBoth: 'Retourner les deux'
 		},
+		spindleSpeed:{
+			tool: 'Outil {0}',
+			spindleName: 'Nom de la broche',
+			spindleActive: 'Actif',
+			setRPM: 'Définir les RPM',
+			noSpindleDefined: 'Aucun outil de broche défini. Utiliser ',
+			toDefineASpindle: ' pour définir une broche et ',
+			toAssignTool: ' pour affecter cette broche à un outil.',
+			turnOn: 'Activer',
+			turnOff: 'Désactiver'
+		},
 		speedFactor: {
 			caption: 'Facteur de Vitesse'
 		},

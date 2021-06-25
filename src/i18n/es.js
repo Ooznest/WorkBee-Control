@@ -657,6 +657,17 @@ export default {
 			flipY: 'Voltear Y',
 			flipBoth: 'Voltear ambos'
 		},
+		spindleSpeed:{
+			tool: 'Herramienta {0}',
+			spindleName: 'Nombre del eje',
+			spindleActive: 'Activo',
+			setRPM: 'Establecer RPM',
+			noSpindleDefined: 'No se han definido herramientas de husillo. Usar ',
+			toDefineASpindle: ' para definir un cabezal y ',
+			toAssignTool: ' para asignar ese husillo a una herramienta.',
+			turnOn: 'Activar',
+			turnOff: 'Apagar'
+		},
 		speedFactor: {
 			caption: 'Factor Velocidad'
 		},

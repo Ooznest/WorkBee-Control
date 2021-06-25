@@ -727,6 +727,17 @@ export default {
 			flipY: 'Y spiegeln',
 			flipBoth: 'Beide spiegeln'
 		},
+		spindleSpeed:{
+			tool: 'Werkzeug {0}',
+			spindleName: 'Spindelname',
+			spindleActive: 'Aktiv',
+			setRPM: 'Drehzahl Einstellen',
+			noSpindleDefined: 'Keine Spindelwerkzeuge definiert. Benutzen ',
+			toDefineASpindle: ' eine Spindel definieren und',
+			toAssignTool: ' diese Spindel einem Werkzeug zuordnen.',
+			turnOn: 'Einschalten',
+			turnOff: 'Ausschalten'
+		},
 		speedFactor: {
 			caption: 'Geschwindigkeitsfaktor'
 		},

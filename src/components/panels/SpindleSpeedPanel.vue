@@ -4,23 +4,23 @@
         <v-card-text>
             <v-simple-table>
                 <thead>
-                    <th>Spindle Name</th>
-                    <th>Active</th>
-					<th>Set RPM</th>
+                    <th>{{ $t('panel.spindleSpeed.spindleName') }}</th>
+                    <th>{{ $t('panel.spindleSpeed.spindleActive') }}</th>
+					<th>{{ $t('panel.spindleSpeed.setRPM') }}</th>
                 </thead>
                 <tbody>
-                    <tr v-for="(tool, index) in visibleTools" :key="index" :class="{'spindle-active' : tool.current > 0 }">
+                    <tr v-for="(tool, index) in visibleTools" :key="index" :class="{'spindle-active' : getSpindle(tool).current > 0 }">
 						<template v-if="checkSpindle(tool)">
                         <td>
 							<a href="javascript:void(0)" @click="toolClick(tool)">
-								{{ tool.name || $t('panel.tools.tool', [tool.number]) }}
+								{{ tool.name || $t('panel.spindleSpeed.tool', [tool.number]) }}
 							</a>
 						<br>
 							<span class="font-weight-regular caption">T{{ tool.number }}</span>
 						</td>
                         <td>
-								<v-btn v-if="getSpindle(tool).current <= 0"  :value="1"  block @click="spindleOn(getSpindle(tool), tool.spindle)">Turn On</v-btn>
-								<v-btn v-else :value="0" color="primary" block @click="spindleOff(tool.spindle)">Turn Off</v-btn>
+								<v-btn v-if="getSpindle(tool).current <= 0"  :value="1"  block @click="spindleOn(getSpindle(tool), tool.spindle)">{{ $t('panel.spindleSpeed.turnOn') }}</v-btn>
+								<v-btn v-else :value="0" color="primary" block @click="spindleOff(tool.spindle)">{{ $t('panel.spindleSpeed.turnOff') }}</v-btn>
 						</td>
 						<td>
 							<v-combobox :items="rpmInRange(getSpindle(tool))" :value="getSpindle(tool).active" @input="setActiveRPM($event, tool.spindle)">
@@ -28,6 +28,11 @@
 							</td>
 						</template>
                     </tr>
+					<template v-if="!checkSpindleDefined()">
+						<tr>
+							<td colspan="3">{{ $t('panel.spindleSpeed.noSpindleDefined') }}<a target="_blank" href="https://duet3d.dozuki.com/Wiki/Gcode#Section_M950_Create_heater_fan_spindle_or_GPIO_servo_pin">M950</a>{{ $t('panel.spindleSpeed.toDefineASpindle') }}<a target="_blank" href="https://duet3d.dozuki.com/Wiki/Gcode#Section_M563_Define_or_remove_a_tool">M563</a>{{ $t('panel.spindleSpeed.toAssignTool') }}</td>
+						</tr>
+					</template>
                 </tbody>
             </v-simple-table>
         </v-card-text>
@@ -41,7 +46,7 @@ td {
 }
 
 .spindle-active { 
-	background-color : #00BB00;
+	background-color : #556B2F;
 }
 
 .spindle-on {
@@ -54,6 +59,11 @@ td {
 
 .hide {
 	visibility: hidden;
+}
+
+.noSpindles {
+	text-align: center;
+	width:100%;
 }
 
 
@@ -115,9 +125,6 @@ export default {
 		},
 			rpmInRange(spindle){
 				let rpms =  this.spindleRPMs.filter(rpm => rpm >= spindle.min && rpm <= spindle.max).reverse();
-				if(!rpms.includes(0)){
-					rpms.unshift(0);
-				}
 			return rpms;
 		},
 		checkSpindle(tool) {
@@ -143,7 +150,16 @@ export default {
 			}
 			this.waitingForCode = false;
 		},
-
+		checkSpindleDefined(){
+			let spindleDefined = false;
+			let tools = this.visibleTools;
+			for(let i = 0; i < tools.length; i++){
+				if (this.checkSpindle(tools[i])){
+					spindleDefined = true;
+				}
+			}
+			return spindleDefined;
+		}
 	},
 };
 </script>
