@@ -570,7 +570,8 @@ export default {
 			runMesh: 'Lancer Mesh Compensation (G29)',
 			loadMesh: 'Charger la Carte de Hauteur Sauvegardée (G29 S1)',
 			axesNotHomed: 'L\'axe suivant  n\'a pas été à son origine:|Les axes suivants n\'ont pas été à leur origine:',
-			noAxes: 'Pas d\'axes'
+			noAxes: 'Pas d\'axes',
+			workzero: 'Aller au travail zéro'
 		},
 		sensors: {
 			endstopTriggered: 'Déclenché',

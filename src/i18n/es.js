@@ -572,7 +572,8 @@ export default {
 			runMesh: 'Ejecutar compensación de Malla (G29)',
 			loadMesh: 'Cargar Mapa de compensación de altura guardado en tarjeta SD (G29 S1)',
 			axesNotHomed: 'El siguiente eje no está ajustado: | Los siguientes ejes no están ajustados:',
-			noAxes: 'No hay ejes'
+			noAxes: 'No hay ejes',
+			workzero: 'Ir a trabajar cero'
 		},
 		sensors: {
 			endstopTriggered: 'Motivado',

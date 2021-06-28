@@ -644,7 +644,8 @@ export default {
 			runMesh: '运行网格补偿(G29)',
 			loadMesh: '从SD卡加载已保存的高度图(G29 S1)',
 			axesNotHomed: '以下轴未归位：|以下轴未归位：',
-			noAxes: '没有轴'
+			noAxes: '没有轴',
+			workzero: '上班零'
 		},
 		sensors: {
 			endstopTriggered: '已触发',

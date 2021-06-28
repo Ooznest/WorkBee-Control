@@ -591,7 +591,8 @@ export default {
 			runMesh: 'Executar Compensação de Malha (G29)',
 			loadMesh: 'Carregar Mapa de Altura Salvo no Cartão SD (G29 S1)',
 			axesNotHomed: 'O eixo a seguir não está na posição inicial:|Os eixos a seguir não estão na posição inicial:',
-			noAxes: 'No Axes'
+			noAxes: 'No Axes',
+			workzero: 'Vá para o trabalho zero'
 		},
 		sensors: {
 			endstopTriggered: 'Provocado',

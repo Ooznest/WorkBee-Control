@@ -570,7 +570,8 @@
 			runMesh: 'Замерить сетку стола (G29)',
 			loadMesh: 'Загрузить карту высот с SD карты (G29 S1)',
 			axesNotHomed: 'Оси не в нулевом положении:',
-			noAxes: 'Нет осей'
+			noAxes: 'Нет осей',
+			workzero: 'Перейти к нулевой работе'
 		},
 		sensors: {
 			endstopTriggered: 'Срабатывает',

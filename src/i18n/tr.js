@@ -570,7 +570,8 @@ export default {
 			runMesh: 'Ağ Kompanzasyonunu Çalıştır (G29)',
 			loadMesh: 'SD Karttan Kaydedilen Yükseklik Haritasını Yükle (G29 S1)',
 			axesNotHomed: 'Aşağıdaki eksen referansta değil: | Aşağıdaki eksenler referansta değil:',
-			noAxes: 'Eksen Yok'
+			noAxes: 'Eksen Yok',
+			workzero: 'İşe Git Sıfır'
 		},
 		sensors: {
 			endstopTriggered: 'Tetiklenmiş',

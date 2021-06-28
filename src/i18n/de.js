@@ -642,7 +642,8 @@ export default {
 			runMesh: 'Gitterkompensation durchführen (G29)',
 			loadMesh: 'Gespeicherte Höhenkarte laden (G29 S1)',
 			axesNotHomed: 'Die folgende Achse ist nicht referenziert:|Die folgenden Achsen sind nicht referenziert:',
-			noAxes: 'Keine Achsen'
+			noAxes: 'Keine Achsen',
+			workzero: 'Gehen Sie zur Arbeit Null'
 		},
 		sensors: {
 			endstopTriggered: 'Ausgelöst',
