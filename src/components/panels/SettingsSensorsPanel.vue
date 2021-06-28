@@ -15,7 +15,7 @@
 		</v-card-title>
 
 		<v-card-text>
-            <v-row  align-content="top" class="flex-nowrap" no-gutters>
+           <v-row class="flex-nowrap" no-gutters>
 				<v-col>
 					<v-row align-content="center" justify="center" no-gutters>
 						<v-col class="d-flex flex-column align-center" v-if="boards.length && boards[0].vIn.current > 0">
@@ -120,13 +120,7 @@ export default {
 			return this.sensors.probes.filter((probe) => probe !== null && probe.type !== ProbeType.none);
 		},
 		sensorsPresent() {
-			return (
-				(this.boards.length && this.boards[0].vIn.current > 0) ||
-				(this.boards.length && this.boards[0].v12.current > 0) ||
-				(this.boards.length && this.boards[0].mcuTemp.current > -273) ||
-				this.fanRPM.length !== 0 ||
-				this.probesPresent
-			);
+			return (this.boards.length && this.boards[0].vIn.current > 0) || (this.boards.length && this.boards[0].v12.current > 0) || (this.boards.length && this.boards[0].mcuTemp.current > -273) || this.fanRPM.length !== 0 || this.probesPresent;
 		},
 		visibleAxes() {
 			return this.move.axes.filter(axis => axis.visible);
