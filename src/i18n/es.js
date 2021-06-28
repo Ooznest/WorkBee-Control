@@ -659,6 +659,7 @@ export default {
 			flipBoth: 'Voltear ambos'
 		},
 		spindleSpeed:{
+			caption: 'Husillos',
 			tool: 'Herramienta {0}',
 			spindleName: 'Nombre del eje',
 			spindleActive: 'Activo',

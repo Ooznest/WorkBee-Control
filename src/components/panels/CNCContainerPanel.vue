@@ -10,7 +10,8 @@
 			<v-col cols="3" lg="2" md="2" order="1" order-lg="1" sm="4">
 				<v-card class="justify-center fill-height">
 					<v-card-title>
-						<strong>Status</strong>
+						<v-icon small class="mr-1">mdi-information</v-icon>
+						{{ $t('panel.status.caption') }}
 					</v-card-title>
 					<v-card-text>
 						<status-label v-if="status"></status-label>
@@ -23,7 +24,8 @@
 			<v-col cols="5" lg="3" md="3" order="2" order-lg="3" sm="4">
 				<v-card class="fill-height">
 					<v-card-title>
-						<strong>Requested Speed</strong>
+						<v-icon small class="mr-1">mdi-speedometer-medium</v-icon>
+						{{ $t('panel.status.requestedSpeed') }}
 					</v-card-title>
 					<v-card-text>{{ $display(move.currentMove.requestedSpeed, 0, 'mm/s') }}</v-card-text>
 				</v-card>
@@ -31,7 +33,8 @@
 			<v-col cols="4" lg="3" md="3" order="2" order-lg="4" sm="4">
 				<v-card class="fill-height" order="5">
 					<v-card-title>
-						<strong>Top Speed</strong>
+						<v-icon small class="mr-1">mdi-speedometer</v-icon>
+						{{ $t('panel.status.topSpeed') }}
 					</v-card-title>
 					<v-card-text>{{ $display(move.currentMove.topSpeed, 0, 'mm/s') }}</v-card-text>
 				</v-card>

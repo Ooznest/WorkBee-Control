@@ -731,6 +731,7 @@ export default {
 			flipBoth: '翻转两者'
 		},
 		spindleSpeed:{
+			caption: '主轴',
 			tool: '工具 {0}',
 			spindleName: '主轴名称',
 			spindleActive: '活动',

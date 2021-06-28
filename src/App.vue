@@ -109,7 +109,7 @@ textarea {
 
 		<v-main id="content">
 			<v-scroll-y-transition>
-				<v-container v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp" id="global-container" fluid class="pt-1 pb-5">
+				<v-container v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp" id="global-container" fluid class="pt-2 pb-5">
 						<fff-container-panel v-if="isFFForUnset()"></fff-container-panel>
 						<cnc-container-panel v-else></cnc-container-panel>
 				</v-container>

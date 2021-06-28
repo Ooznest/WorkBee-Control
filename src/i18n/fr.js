@@ -656,6 +656,7 @@ export default {
 			flipBoth: 'Retourner les deux'
 		},
 		spindleSpeed:{
+			caption: 'Broches',
 			tool: 'Outil {0}',
 			spindleName: 'Nom de la broche',
 			spindleActive: 'Actif',

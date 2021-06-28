@@ -1,7 +1,8 @@
 <template>
     <v-card>
-        <v-card-title class="py-2">
-            <strong>{{ machinePosition ? $t('panel.status.machinePosition') : $t('panel.status.toolPosition') }} </strong>
+        <v-card-title class="py-4">
+            <v-icon small class="mr-1">mdi-axis-arrow</v-icon>
+			{{ machinePosition ? $t('panel.status.machinePosition') : $t('panel.status.toolPosition') }}
         </v-card-title>
         <v-card-text class="pb-6">
             <v-row align-content="center" no-gutters :class="{'large-font' : !machinePosition}">

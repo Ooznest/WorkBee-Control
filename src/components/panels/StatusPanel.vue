@@ -29,7 +29,7 @@ a:not(:hover) {
 <template>
 	<v-card>
 		<v-card-title class="py-2">
-			<v-icon small class="mr-1">mdi-information</v-icon> {{ $t('panel.status.caption') }}
+			<v-icon small class="mr-1">mdi-car-estate</v-icon> {{ $t('panel.status.caption') }}
 
 			<v-spacer></v-spacer>
 
@@ -93,7 +93,7 @@ a:not(:hover) {
 			</template>
 
 			<!-- Speeds -->
-			<template v-show="isNumber(move.currentMove.requestedSpeed) || isNumber(move.currentMove.topSpeed)">
+			<template v-if="isNumber(move.currentMove.requestedSpeed) || isNumber(move.currentMove.topSpeed)">
 				<v-divider v-show="move.axes.length + move.extruders.length" class="my-2"></v-divider>
 
 				<v-row align-content="center" no-gutters class="flex-nowrap">

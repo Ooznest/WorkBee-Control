@@ -656,6 +656,7 @@ export default {
 			flipBoth: 'İkisini de çevir'
 		},
 		spindleSpeed:{
+			caption: 'Iğler',
 			tool: 'Araç {0}',
 			spindleName: 'İş Mili Adı',
 			spindleActive: 'Etkin',

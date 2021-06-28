@@ -656,6 +656,7 @@
 			flipBoth: 'Перевернуть по обоим'
 		},
 		spindleSpeed:{
+			caption: 'Шпиндели',
 			tool: 'Инструмент {0}',
 			spindleName: 'Имя шпинделя',
 			spindleActive: 'Активный',

@@ -1,23 +1,14 @@
 <template>
 	<v-card outlined>
-		<v-tabs>
-			<!--<v-tab>{{ $t('panel.settingsListItems.toolTemperatures') }}</v-tab>-->
-			<!--<v-tab>{{ $t('panel.settingsListItems.bedTemperatures') }}</v-tab>-->
-			<!--<v-tab>{{ $t('panel.settingsListItems.chamberTemperatures') }}</v-tab>-->
-			<v-tab>{{ $t('panel.settingsListItems.spindleRPM') }}</v-tab>
-			<!--<v-tab-item class="pa-3">
-				<list-editor itemKey="tool" temperature></list-editor>
-			</v-tab-item>
-			<v-tab-item class="pa-3">
-				<list-editor itemKey="bed" temperature></list-editor>
-			</v-tab-item>
-			<v-tab-item class="pa-3">
-				<list-editor itemKey="chamber" temperature></list-editor>
-			</v-tab-item>-->
-			<v-tab-item class="pa-3">
-				<list-editor itemKey="spindleRPM"></list-editor>
-			</v-tab-item>
-		</v-tabs>
+		<v-card-title class="pb-0">
+			<v-icon small class="mr-1">mdi-axis-z-rotate-clockwise</v-icon>
+			{{ $t('panel.settingsListItems.spindleRPM') }}
+		</v-card-title>
+
+		<v-card-text>
+			<list-editor itemKey="spindleRPM"></list-editor>
+		</v-card-text>
+
 	</v-card>
 </template>
 

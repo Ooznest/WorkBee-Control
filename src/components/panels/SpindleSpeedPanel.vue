@@ -1,6 +1,9 @@
 <template>
     <v-card>
-        <v-card-title><v-icon>mdi-45hammer-screwdriver</v-icon> Spindles</v-card-title>
+        <v-card-title>
+			<v-icon small class="mr-1">mdi-axis-z-rotate-clockwise</v-icon>
+			{{ $t('panel.spindleSpeed.caption') }}
+		</v-card-title>
         <v-card-text>
             <v-simple-table>
                 <thead>

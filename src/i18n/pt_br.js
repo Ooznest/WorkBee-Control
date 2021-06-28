@@ -678,6 +678,7 @@ export default {
 			flipBoth: 'Espelhar em ambos'
 		},
 		spindleSpeed:{
+			caption: 'Fusos',
 			tool: 'Ferramenta {0}',
 			spindleName: 'Nome do fuso',
 			spindleActive: 'Ativo',

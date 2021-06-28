@@ -150,7 +150,7 @@
                             <v-checkbox v-model="spreadLines" :label="$t('plugins.gcodeViewer.spreadLines')"></v-checkbox>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
-                    <v-expansion-panel @click="scrollIntoView">
+                    <!-- <v-expansion-panel @click="scrollIntoView">
                         <v-expansion-panel-header :title="$t('plugins.gcodeViewer.extruders.title')">
                             <v-icon class="mr-2">mdi-printer-3d-nozzle</v-icon>
                             <strong>{{$t('plugins.gcodeViewer.extruders.caption')}}</strong>
@@ -167,7 +167,7 @@
                                 <v-btn block class="mt-4" @click="resetExtruderColors" color="warning">{{$tc('plugins.gcodeViewer.resetColor', extruderColors.length)}}</v-btn>
                             </v-card>
                         </v-expansion-panel-content>
-                    </v-expansion-panel>
+                    </v-expansion-panel> -->
                     <v-expansion-panel @click="scrollIntoView">
                         <v-expansion-panel-header :title="$t('plugins.gcodeViewer.renderMode.title')">
                             <v-icon class="mr-2">mdi-palette</v-icon>
@@ -297,23 +297,23 @@ export default {
 	data: () => ({
 		drawer: false,
 		extruderColors: ['#00FFFF', '#FF00FF', '#FFFF00', '#000000', '#FFFFFF'],
-		backgroundColor: '#000000FF',
-		progressColor: '#FFFFFFFF',
+		backgroundColor: '#E5E5E5FF',
+		progressColor: '#008000',
 		viewerHeight: '400px',
 		testValue: 'Test',
 		loading: false,
 		testData: '',
-		showCursor: false,
-		showTravelLines: false,
+		showCursor: true,
+		showTravelLines: true,
 		selectedFile: '',
 		nthRow: 1,
-		renderQuality: 1,
+		renderQuality: 2,
 		debugVisible: false,
 		maxHeight: 0,
 		sliderHeight: 0,
 		sliderBottomHeight: 0,
-		liveZTracking: false,
-		forceWireMode: false,
+		liveZTracking: true,
+		forceWireMode: true,
 		vertexAlpha: false,
 		spreadLines: false,
 		showObjectSelection: false,
@@ -327,7 +327,7 @@ export default {
 		showObjectLabels: true,
 		liveTrackingShowSolid: false,
 		fullscreen: false,
-		bedColor: '',
+		bedColor: '#000000',
 		colorMode: 0,
 		minColorRate: 20,
 		maxColorRate: 60,

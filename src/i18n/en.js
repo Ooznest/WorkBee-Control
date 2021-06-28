@@ -702,7 +702,7 @@ export default {
 			toolTemperatures: 'Tool Temperatures',
 			bedTemperatures: 'Bed Temperatures',
 			chamberTemperatures: 'Chamber Temperatures',
-			spindleRPM: 'Spindle RPM'
+			spindleRPM: 'Spindle RPM Presets'
 		},
 		settingsMachine: {
 			caption: 'Machine-Specific',
@@ -729,6 +729,7 @@ export default {
 			flipBoth: 'Flip both'
 		},
 		spindleSpeed:{
+			caption: 'Spindles',
 			tool: 'Tool {0}',
 			spindleName: 'Spindle Name',
 			spindleActive: 'Active',

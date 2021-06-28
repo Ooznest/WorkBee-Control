@@ -729,6 +729,7 @@ export default {
 			flipBoth: 'Beide spiegeln'
 		},
 		spindleSpeed:{
+			caption: 'Spindeln',
 			tool: 'Werkzeug {0}',
 			spindleName: 'Spindelname',
 			spindleActive: 'Aktiv',
