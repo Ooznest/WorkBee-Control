@@ -37,7 +37,7 @@ export default class {
     this.toolCursor;
     this.toolCursorMesh;
     this.toolCursorVisible = true;
-    this.travelVisible = false;
+    this.travelVisible = true;
     this.debug = false;
     this.zTopClipValue;
     this.zBottomClipValue;
@@ -281,7 +281,7 @@ export default class {
   getProgressColor() {
     let progressColor = localStorage.getItem('progressColor');
     if (progressColor === null) {
-      progressColor = '#FFFFFF';
+      progressColor = '#008000';
     }
     return progressColor;
   }
