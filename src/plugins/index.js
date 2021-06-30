@@ -96,6 +96,16 @@ export default [
 		)
 	}),
 	new DwcPlugin({
+		id: 'CNCGCodeViewer',
+		name: 'CNC G-Code Viewer',
+		author: 'Ooznest Ltd / Juan Rosario',
+		version,
+		loadDwcResources: () => import(
+			/* webpackChunkName: "GCodeViewer" */
+			'./CNCGCodeViewer/index.js'
+		)
+	}),
+	new DwcPlugin({
 		id: 'ObjectModelBrowser',
 		name: 'Object Model Browser',
 		author: 'Duet3D Ltd',

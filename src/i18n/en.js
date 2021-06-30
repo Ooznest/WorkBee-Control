@@ -854,6 +854,12 @@ export default {
 		autoUpdate: {
 			menuCaption: 'Update'
 		},
+		CNCGCodeViewer: {
+			background: 'Background Color',
+			bedRenderMode:  'Bed Grid Color',
+			viewwerSettings: 'Viewer Settings',
+			progressSettings: 'Progress Settings'
+		},
 		gcodeViewer: {
 			caption: 'G-Code Viewer',
 			view3D: 'View 3D',
@@ -921,8 +927,8 @@ export default {
 			progressColor: 'Progress Color',
 			liveZTracking: 'Live Z Tracking',
 			settings: 'Settings',
-			background: 'Background Color',
-			bedRenderMode:  'Bed Grid Color',
+			background: 'Background',
+			bedRenderMode:  'Bed Render Mode',
 			bed: 'Bed',
 			volume: 'Volume',
 			showAxes: 'Show Axes',

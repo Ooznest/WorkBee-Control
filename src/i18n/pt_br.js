@@ -746,6 +746,12 @@ export default {
 		autoUpdate: {
 			menuCaption: 'Atualização'
 		},
+		CNCGCodeViewer: {
+			background: 'Cor de fundo',
+			bedRenderMode:  'Cor da grade da cama',
+			viewwerSettings: 'Configurações do visualizador',
+			progressSettings: 'Configurações de progresso'
+		},
 		gcodeViewer: {
 			caption: 'Vizualizador de G-Code',
 			view3D: 'Ver 3D',
@@ -813,8 +819,8 @@ export default {
 			progressColor: 'Cor de Progresso',
 			liveZTracking: 'Acompanhamento ao vivo do eixo Z',
 			settings: 'Configurações',
-			background: 'Cor de fundo',
-			bedRenderMode:  'Cor da grade da cama',
+			background: 'Plano de Fundo',
+			bedRenderMode:  'Modo de Renderização da Mesa',
 			bed: 'Mesa',
 			volume: 'Volume',
 			showAxes: 'Mostrar Eixos',

@@ -58,6 +58,29 @@ textarea {
 .v-card__title {
 	font-size: 1rem;
 }
+
+.navFooter {
+	bottom: 0px;
+	text-align: center !important;
+}
+
+.workBeeControl {
+	color: #919191;
+	font-weight: lighter
+}
+
+.workBeeControlBy {
+	color: #c9c9c9;
+	font-weight: lighter;
+	font-size: 90%;
+	padding-top: 2px;
+}
+
+.ooznestLogo{
+	width: 50%;
+	text-align: center;
+}
+
 </style>
 
 <template>
@@ -82,6 +105,17 @@ textarea {
 					</v-list-item>
 				</v-list-group>
 			</v-list>
+
+			<v-footer class="navFooter py-4" absolute="true">
+				<v-layout grow justify-center>
+					<div class="d-flex flex-column">
+					<h3 class="workBeeControl">WorkBee Control</h3>
+					<span class="workBeeControlBy">By</span>
+					</div>
+					<!-- <v-img :src="require('./assets/Ooznest-Logo-Black-Background.png')"></v-img>-->
+				</v-layout>
+			</v-footer>
+
 		</v-navigation-drawer>
 
 		<v-app-bar ref="appToolbar" app clipped-left>

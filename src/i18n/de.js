@@ -854,6 +854,12 @@ export default {
 		autoUpdate: {
 			menuCaption: 'Aktualisierung'
 		},
+		CNCGCodeViewer: {
+			background: 'Hintergrundfarbe',
+			bedRenderMode:  'Bettgitterfarbe',
+			viewwerSettings: 'Viewer-Einstellungen',
+			progressSettings: 'Fortschrittseinstellungen'
+		},
 		gcodeViewer: {
 			caption: 'G-Code Betracher',
 			view3D: '3D ansehen',
@@ -921,8 +927,8 @@ export default {
 			progressColor: 'Farbe für Fortschritt',
 			liveZTracking: 'Z-Verfolgung in Echtzeit',
 			settings: 'Einstellungen',
-			background: 'Hintergrundfarbe',
-			bedRenderMode:  'Bettgitterfarbe',
+			background: 'Hintergrund',
+			bedRenderMode:  'Bettdarstellungsmodus',
 			bed: 'Bett',
 			volume: 'Volumen',
 			showAxes: 'Achsen anzeigen',

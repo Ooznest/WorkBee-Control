@@ -856,6 +856,12 @@ export default {
 		autoUpdate: {
 			menuCaption: '更新'
 		},
+		CNCGCodeViewer: {
+			background: '背景颜色',
+			bedRenderMode:  '床网格颜色',
+			viewwerSettings: '查看器设置',
+			progressSettings: '进度设置'
+		},
 		gcodeViewer: {
 			caption: 'G-Code查看器',
 			view3D: '查看3D模型',
@@ -923,8 +929,8 @@ export default {
 			progressColor: '进度颜色',
 			liveZTracking: '实时Z追踪',
 			settings: '设置',
-			background: '背景颜色',
-			bedRenderMode:  '床网格颜色',
+			background: '背景',
+			bedRenderMode:  '热床渲染模式',
 			bed: '热床',
 			volume: '体积',
 			showAxes: '显示轴',
