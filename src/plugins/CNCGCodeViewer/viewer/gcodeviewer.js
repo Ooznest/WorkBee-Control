@@ -53,7 +53,7 @@ export default class {
 
     this.renderQuality = Number(localStorage.getItem('renderQuality'));
     if (this.renderQuality === undefined || this.renderQuality === null) {
-      this.renderQuality = 2;
+      this.renderQuality = 1;
     }
 
     this.hasCacheSupport = false;

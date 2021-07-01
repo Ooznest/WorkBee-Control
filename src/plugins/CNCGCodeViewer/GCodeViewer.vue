@@ -322,7 +322,7 @@ export default {
 		showTravelLines: true,
 		selectedFile: '',
 		nthRow: 1,
-		renderQuality: 2,
+		renderQuality: 1,
 		debugVisible: false,
 		maxHeight: 0,
 		sliderHeight: 0,
