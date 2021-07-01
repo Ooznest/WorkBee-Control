@@ -55,7 +55,7 @@ export default class {
     */
 
     if (!this.getBedColor()) {
-      this.setBedColor('#0000FF');
+      this.setBedColor('#808080');
     }
 
     this.planeMaterial = this.buildGridMaterial();

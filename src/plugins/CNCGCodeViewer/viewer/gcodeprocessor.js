@@ -120,7 +120,7 @@ export default class {
     this.renderTravels = true;
     this.lineVertexAlpha = false;
 
-    this.forceWireMode = localStorage.getItem('forceWireMode') === "true";
+    this.forceWireMode = true;
 
     this.spreadLines = false;
     this.spreadLineAmount = 10;

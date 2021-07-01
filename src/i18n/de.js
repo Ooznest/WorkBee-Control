@@ -857,7 +857,7 @@ export default {
 		CNCGCodeViewer: {
 			background: 'Hintergrundfarbe',
 			bedRenderMode:  'Bettgitterfarbe',
-			viewwerSettings: 'Viewer-Einstellungen',
+			viewerSettings: 'Viewer-Einstellungen',
 			progressSettings: 'Fortschrittseinstellungen'
 		},
 		gcodeViewer: {

@@ -749,7 +749,7 @@ export default {
 		CNCGCodeViewer: {
 			background: 'Cor de fundo',
 			bedRenderMode:  'Cor da grade da cama',
-			viewwerSettings: 'Configurações do visualizador',
+			viewerSettings: 'Configurações do visualizador',
 			progressSettings: 'Configurações de progresso'
 		},
 		gcodeViewer: {

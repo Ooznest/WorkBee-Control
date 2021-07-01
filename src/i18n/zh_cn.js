@@ -859,7 +859,7 @@ export default {
 		CNCGCodeViewer: {
 			background: '背景颜色',
 			bedRenderMode:  '床网格颜色',
-			viewwerSettings: '查看器设置',
+			viewerSettings: '查看器设置',
 			progressSettings: '进度设置'
 		},
 		gcodeViewer: {

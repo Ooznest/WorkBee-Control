@@ -5,7 +5,6 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border-radius: 5px;
 }
 
 .btn-toggle {
@@ -16,8 +15,7 @@
 	position: relative;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0);
-	padding-top: 56.25%;
+	background-color: green;
 }
 
 .v-input--checkbox {
@@ -36,7 +34,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: yellow;
 }
 
 .full-screen {
@@ -67,7 +65,7 @@
 }
 
 .button-container-drawer {
-	left: 360px;
+	left: 355px;
 }
 .emergency-button-placement {
 	position: absolute;
@@ -82,17 +80,10 @@
 	top: 0px;
 	z-index: 50 !important;
 }
-.drawer{
-	margin-top: 5px;
-	margin-left: 5px;
-	margin-right: 5px;
-	border-radius: 5px;
-	padding: 10px;
-}
 </style>
 
 <template>
-    <div ref="primarycontainer" class="primary-container mt-2 mb-5" v-resize="resize">
+    <div ref="primarycontainer" class="primary-container mt-2" v-resize="resize">
         <div :class="{ 'full-screen': fullscreen }" class="viewer-box">
             <div class="emergency-button-placement" v-show="fullscreen">
                 <code-btn :code="'M112\nM999'" :log="false" color="red" :title="$t('button.emergencyStop.title')"><v-icon>mdi-flash</v-icon></code-btn>
@@ -111,8 +102,8 @@
                 <br />
                 <v-btn small class="toggle-menu-button-close" v-show="loading" @click="cancelLoad" :title="$t('plugins.gcodeViewer.cancelLoad')"><v-icon color="red">mdi-cancel</v-icon></v-btn>
             </div>
-            <v-navigation-drawer class="drawer" v-model="drawer" :permanent="drawer" absolute width="350px" height="96%">
-                <v-card class="mb-3 pa-2">
+            <v-navigation-drawer v-model="drawer" :permanent="drawer" absolute width="350px">
+                <v-card>
                     <v-btn @click="reset" block :title="$t('plugins.gcodeViewer.resetCamera.title')">
                         <v-icon class="mr-2">mdi-camera</v-icon>
                         {{ $t('plugins.gcodeViewer.resetCamera.caption') }}
@@ -125,22 +116,21 @@
                         <v-icon class="mr-2">mdi-printer-3d</v-icon>
                         {{ $t('plugins.gcodeViewer.loadCurrentJob.caption') }}
                     </v-btn>
-					<v-btn class="mt-2" @click="chooseFile" :disabled="loading" block :title="$t('plugins.gcodeViewer.loadLocalGCode.title')">
-                        <v-icon>mdi-file</v-icon>
-                        {{ $t('plugins.gcodeViewer.loadLocalGCode.caption') }}
-                    </v-btn>
                     <v-btn class="mt-2" @click="clearScene" :disabled="loading" block :title="$t('plugins.gcodeViewer.unloadGCode.title')">
                         <v-icon class="mr-2">mdi-video-3d-off</v-icon>
                         {{ $t('plugins.gcodeViewer.unloadGCode.caption') }}
+                    </v-btn>
+                    <v-btn class="mt-2" @click="chooseFile" :disabled="loading" block :title="$t('plugins.gcodeViewer.loadLocalGCode.title')">
+                        <v-icon>mdi-file</v-icon>
+                        {{ $t('plugins.gcodeViewer.loadLocalGCode.caption') }}
                     </v-btn>
                     <input ref="fileInput" type="file" :accept="'.g,.gcode,.gc,.gco,.nc,.ngc,.tap'" hidden @change="fileSelected" multiple />
                     <v-switch class="mt-4" v-model="showObjectSelection" :disabled="!canCancelObject" :label="jobSelectionLabel" :title="$t('plugins.gcodeViewer.showObjectSelection.title')"></v-switch>
                     <v-switch v-model="showCursor" :label="$t('plugins.gcodeViewer.showCursor')"></v-switch>
                     <v-switch v-model="showTravelLines" :label="$t('plugins.gcodeViewer.showTravels')"></v-switch>
-					<v-switch v-model="spreadLines" :label="$t('plugins.gcodeViewer.spreadLines')"></v-switch>
                 </v-card>
                 <v-expansion-panels>
-                   <!--  <v-expansion-panel @click="scrollIntoView">
+                    <v-expansion-panel @click="scrollIntoView">
                         <v-expansion-panel-header :title="$t('plugins.gcodeViewer.renderQuality.title')">
                             <v-icon class="mr-2">mdi-checkerboard</v-icon>
                             <strong>{{$t('plugins.gcodeViewer.renderQuality.caption')}}</strong>
@@ -159,8 +149,8 @@
                             <v-checkbox v-model="liveTrackingShowSolid" :disabled="!isJobRunning || loading || !visualizingCurrentJob" :label="$t('plugins.gcodeViewer.showSolid')"></v-checkbox>
                             <v-checkbox v-model="spreadLines" :label="$t('plugins.gcodeViewer.spreadLines')"></v-checkbox>
                         </v-expansion-panel-content>
-                    </v-expansion-panel> -->
-                    <!-- <v-expansion-panel @click="scrollIntoView">
+                    </v-expansion-panel>
+                    <v-expansion-panel @click="scrollIntoView">
                         <v-expansion-panel-header :title="$t('plugins.gcodeViewer.extruders.title')">
                             <v-icon class="mr-2">mdi-printer-3d-nozzle</v-icon>
                             <strong>{{$t('plugins.gcodeViewer.extruders.caption')}}</strong>
@@ -177,8 +167,8 @@
                                 <v-btn block class="mt-4" @click="resetExtruderColors" color="warning">{{$tc('plugins.gcodeViewer.resetColor', extruderColors.length)}}</v-btn>
                             </v-card>
                         </v-expansion-panel-content>
-                    </v-expansion-panel> -->
-                    <!-- <v-expansion-panel @click="scrollIntoView">
+                    </v-expansion-panel>
+                    <v-expansion-panel @click="scrollIntoView">
                         <v-expansion-panel-header :title="$t('plugins.gcodeViewer.renderMode.title')">
                             <v-icon class="mr-2">mdi-palette</v-icon>
                             <strong>{{$tc('plugins.gcodeViewer.renderMode.caption', 2)}}</strong>
@@ -214,21 +204,23 @@
 
                             <v-btn class="mb-2" @click="reloadviewer" :disabled="loading" block color="primary" :title="$t('plugins.gcodeViewer.reloadView.title')">{{$t('plugins.gcodeViewer.reloadView.caption')}}</v-btn>
                         </v-expansion-panel-content>
-                    </v-expansion-panel> -->
+                    </v-expansion-panel>
                     <v-expansion-panel @click="scrollIntoView">
                         <v-expansion-panel-header :title="$t('plugins.gcodeViewer.progress.title')">
                             <v-icon class="mr-2">mdi-progress-clock</v-icon>
                             <strong>{{$t('plugins.gcodeViewer.progress.caption')}}</strong>
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <v-card class="pa-2 mb-2">
+                            <v-card>
                                 <div>{{$t('plugins.gcodeViewer.topClipping')}}</div>
                                 <v-slider min="0.1" :max="maxHeight" v-model="sliderHeight" thumb-label thumb-size="24" step="0.1"></v-slider>
                                 <div>{{$t('plugins.gcodeViewer.bottomClipping')}}</div>
                                 <v-slider min="0.1" :max="maxHeight" v-model="sliderBottomHeight" thumb-label thumb-size="24" step="0.1"></v-slider>
-                                <v-checkbox class="ml-0 pl-0" v-model="liveZTracking" :label="$t('plugins.gcodeViewer.liveZTracking')"></v-checkbox>
-                                <div>{{$t('plugins.gcodeViewer.progressColor')}}</div>
-                                <v-card-text class="mt-2">
+                                <v-checkbox v-model="liveZTracking" :label="$t('plugins.gcodeViewer.liveZTracking')"></v-checkbox>
+                            </v-card>
+                            <v-card>
+                                <v-card-title>{{$t('plugins.gcodeViewer.progressColor')}}</v-card-title>
+                                <v-card-text>
                                     <gcodeviewer-color-picker :editcolor="progressColor" @updatecolor="value => updateProgressColor(value)"></gcodeviewer-color-picker>
                                 </v-card-text>
                             </v-card>
@@ -240,23 +232,29 @@
                             <strong>{{$t('plugins.gcodeViewer.settings')}}</strong>
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <v-card class="pa-2 mb-2">
-                                <div>{{$t('plugins.gcodeViewer.background')}}</div>
-                                <v-card-text class="my-2">
+                            <v-card>
+                                <v-card-title>{{$t('plugins.gcodeViewer.background')}}</v-card-title>
+                                <v-card-text>
                                     <gcodeviewer-color-picker :editcolor="backgroundColor" @updatecolor="value => updateBackground(value)"></gcodeviewer-color-picker>
                                 </v-card-text>
-                                <div>{{$t('plugins.gcodeViewer.bedRenderMode')}}</div>
-                                <v-card-text class="my-2">
-                                    <!-- <v-btn-toggle v-model="bedRenderMode" class="d-flex flex-column">
+                            </v-card>
+                            <v-card>
+                                <v-card-title>{{$t('plugins.gcodeViewer.bedRenderMode')}}</v-card-title>
+                                <v-card-text>
+                                    <v-btn-toggle v-model="bedRenderMode" class="d-flex flex-column">
                                         <v-btn block :value="0">{{$t('plugins.gcodeViewer.bed')}}</v-btn>
                                         <v-btn block :value="1">{{$t('plugins.gcodeViewer.volume')}}</v-btn>
                                     </v-btn-toggle>
-                                    <br /> -->
+                                    <br />
                                     <gcodeviewer-color-picker :editcolor="bedColor" @updatecolor="value => updateBedColor(value)"></gcodeviewer-color-picker>
                                 </v-card-text>
-                                <v-checkbox class="ml-0 pl-0" v-model="showAxes" :label="$t('plugins.gcodeViewer.showAxes')"></v-checkbox>
-                                <v-checkbox class="ml-0 pl-0" v-model="showObjectLabels" :label="$t('plugins.gcodeViewer.showObjectLabels')"></v-checkbox>
-                                <v-switch class="ml-0 pl-0" v-model="cameraInertia" :label="$t('plugins.gcodeViewer.cameraInertia')"></v-switch>
+                            </v-card>
+                            <v-card>
+                                <v-card-text>
+                                    <v-checkbox v-model="showAxes" :label="$t('plugins.gcodeViewer.showAxes')"></v-checkbox>
+                                    <v-checkbox v-model="showObjectLabels" :label="$t('plugins.gcodeViewer.showObjectLabels')"></v-checkbox>
+                                    <v-switch v-model="cameraInertia" :label="$t('plugins.gcodeViewer.cameraInertia')"></v-switch>
+                                </v-card-text>
                             </v-card>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
@@ -299,23 +297,23 @@ export default {
 	data: () => ({
 		drawer: false,
 		extruderColors: ['#00FFFF', '#FF00FF', '#FFFF00', '#000000', '#FFFFFF'],
-		backgroundColor: '#E5E5E5FF',
-		progressColor: '#008000',
+		backgroundColor: '#000000FF',
+		progressColor: '#FFFFFFFF',
 		viewerHeight: '400px',
 		testValue: 'Test',
 		loading: false,
 		testData: '',
-		showCursor: true,
-		showTravelLines: true,
+		showCursor: false,
+		showTravelLines: false,
 		selectedFile: '',
 		nthRow: 1,
-		renderQuality: 2,
+		renderQuality: 1,
 		debugVisible: false,
 		maxHeight: 0,
 		sliderHeight: 0,
 		sliderBottomHeight: 0,
-		liveZTracking: true,
-		forceWireMode: true,
+		liveZTracking: false,
+		forceWireMode: false,
 		vertexAlpha: false,
 		spreadLines: false,
 		showObjectSelection: false,
@@ -329,7 +327,7 @@ export default {
 		showObjectLabels: true,
 		liveTrackingShowSolid: false,
 		fullscreen: false,
-		bedColor: '#808080',
+		bedColor: '',
 		colorMode: 0,
 		minColorRate: 20,
 		maxColorRate: 60,
@@ -627,7 +625,7 @@ export default {
 			handler(newValue) {
 				var newPosition = newValue.axes.map(item => ({
 					axes: item.letter,
-					position: item.machinePosition,
+					position: item.userPosition,
 				}));
 				viewer.updateToolPosition(newPosition);
 				if (this.liveZTracking) {

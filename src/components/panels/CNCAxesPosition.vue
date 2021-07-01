@@ -25,20 +25,20 @@
 @media screen and (max-width:600px)
 {
 	.large-font-height {
-		height:35px;
+		height:25px;
 	}
 	.large-font {
-		font-size:30px;
+		font-size:20px;
 	}
 }
 
 @media screen and (min-width:601px)
 {
 	.large-font-height {
-		height: 55px;
+		height: 35px;
 	}
 	.large-font {
-		font-size: 50px;
+		font-size: 30px;
 	}
 }
 

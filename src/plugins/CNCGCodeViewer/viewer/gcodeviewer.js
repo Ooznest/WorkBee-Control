@@ -29,7 +29,7 @@ export default class {
     this.fileData;
     this.gcodeProcessor = new gcodeProcessor();
     this.maxHeight = 0;
-    this.sceneBackgroundColor = '#000000';
+    this.sceneBackgroundColor = '#E5E5E5FF';
     this.canvas = canvas;
     this.scene = {};
     this.loading = false;
@@ -43,7 +43,6 @@ export default class {
     this.zBottomClipValue;
     this.cancelHitTimer = 0;
     this.pause = false;
-
 
     this.cameraInertia = localStorage.getItem('cameraInertia') === 'true';
 

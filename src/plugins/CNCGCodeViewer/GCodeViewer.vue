@@ -17,7 +17,6 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0);
-	padding-top: 56.25%;
 }
 
 .v-input--checkbox {
