@@ -29,7 +29,7 @@ export default class {
     this.fileData;
     this.gcodeProcessor = new gcodeProcessor();
     this.maxHeight = 0;
-    this.sceneBackgroundColor = '#E5E5E5FF';
+    this.sceneBackgroundColor = '#E5E5E5';
     this.canvas = canvas;
     this.scene = {};
     this.loading = false;
@@ -53,7 +53,7 @@ export default class {
 
     this.renderQuality = Number(localStorage.getItem('renderQuality'));
     if (this.renderQuality === undefined || this.renderQuality === null) {
-      this.renderQuality = 1;
+      this.renderQuality = 2;
     }
 
     this.hasCacheSupport = false;
@@ -292,7 +292,7 @@ export default class {
   getBackgroundColor() {
     let color = localStorage.getItem('sceneBackgroundColor');
     if (color === null) {
-      color = '#000000';
+      color = '#E5E5E5';
     }
     return color;
   }

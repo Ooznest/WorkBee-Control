@@ -312,7 +312,7 @@ export default {
 	data: () => ({
 		drawer: false,
 		extruderColors: ['#00FFFF', '#FF00FF', '#FFFF00', '#000000', '#FFFFFF'],
-		backgroundColor: '#E5E5E5FF',
+		backgroundColor: '#E5E5E5',
 		progressColor: '#008000',
 		viewerHeight: '400px',
 		testValue: 'Test',
@@ -423,8 +423,8 @@ export default {
 		this.liveTrackingShowSolid = viewer.gcodeProcessor.liveTrackingShowSolid;
 
 		if (viewer.lastLoadFailed()) {
-			this.renderQuality = 1;
-			viewer.updateRenderQuality(1);
+			this.renderQuality = 2;
+			viewer.updateRenderQuality(2);
 			this.$makeNotification('warning', 'GCode Viewer', this.$t('plugins.gcodeViewer.renderFailed'), 5000);
 			viewer.clearLoadFlag();
 		}
@@ -509,7 +509,7 @@ export default {
 			let primaryContainer = getComputedStyle(this.$refs.primarycontainer);
 			let contentAreaHeight = parseInt(contentArea.height) + parseInt(contentArea.paddingTop) + parseInt(contentArea.paddingBottom);
 			let globalContainerHeight = parseInt(globalContainer.height) + parseInt(globalContainer.paddingTop) + parseInt(globalContainer.paddingBottom);
-			this.$refs.primarycontainer.style.height = window.innerHeight - contentAreaHeight - globalContainerHeight - parseInt(primaryContainer.marginTop) + 'px';
+			this.$refs.primarycontainer.style.height = window.innerHeight - contentAreaHeight - globalContainerHeight - parseInt(primaryContainer.marginTop) - 30 + 'px';
 			if (Object.keys(viewer).length !== 0) {
 				viewer.resize();
 			}

@@ -156,7 +156,7 @@ export default class {
 
   setRenderQualitySettings(numberOfLines, renderQuality) {
     if (renderQuality === undefined) {
-      renderQuality = 1;
+      renderQuality = 2;
     }
 
     let maxLines = 0;
@@ -274,7 +274,7 @@ export default class {
     this.initVariables();
 
     if (renderQuality === undefined || renderQuality === null) {
-      renderQuality = 4;
+      renderQuality = 2;
     }
 
     if (file === undefined || file === null || file.length === 0) {
