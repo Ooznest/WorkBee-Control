@@ -5,10 +5,13 @@ import Vue from 'vue';
 
 import { registerRoute } from '../../routes';
 import { registerPluginContextMenuItem, ContextMenuType } from '../index.js';
-import CNCGCodeViewer from './GCodeViewer.vue';
+import Gauge from './Gauge/gauge.vue'
 import ColorPicker from './ColorPicker.vue';
-
+import FSOverlay from './FSOverlay.vue'
+import CNCGCodeViewer from './GCodeViewer.vue';
+Vue.component('gcodeviewer-gauge', Gauge);
 Vue.component('gcodeviewer-color-picker', ColorPicker);
+Vue.component('fs-overlay', FSOverlay);
 
 registerRoute(CNCGCodeViewer, {
 	Control: {

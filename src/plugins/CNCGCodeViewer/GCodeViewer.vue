@@ -88,6 +88,19 @@
 	border-radius: 5px;
 	padding: 10px;
 }
+.loading-progress {
+	position: absolute;
+	width: 50%;
+	left: 0px;
+	margin-left: 25%;
+	top : 5px;
+	z-index: 19 !important;
+}
+
+/* Transitions lag when trying to show loading progress */
+.disable-transition {
+	transition: none !important;
+}
 </style>
 
 <template>
@@ -97,6 +110,12 @@
                 <code-btn :code="'M112\nM999'" :log="false" color="red" :title="$t('button.emergencyStop.title')"><v-icon>mdi-flash</v-icon></code-btn>
             </div>
             <canvas ref="viewerCanvas" class="babylon-canvas" :title="hoverLabel"></canvas>
+			<fs-overlay v-show="fullscreen && showOverlay"></fs-overlay>
+			<div class="loading-progress">
+				<v-progress-linear rounded v-show="loading"  height="15" :value="loadingProgress" class="disable-transition">
+					{{loadingProgress}}%
+				</v-progress-linear>
+			</div>
             <div class="button-container" :class="{ 'button-container-drawer': drawer }">
 				<v-btn small class="toggle-menu-button-close mr-2" @click="drawer = !drawer" :title="$t('plugins.gcodeViewer.showConfiguration')"><v-icon>mdi-menu-open</v-icon></v-btn>
                 <v-btn class="full-screen-icon mr-2" small @click="toggleFullScreen" :title="$t('plugins.gcodeViewer.fullscreen')">
@@ -253,6 +272,7 @@
                                     <br /> -->
                                     <gcodeviewer-color-picker :editcolor="bedColor" @updatecolor="value => updateBedColor(value)"></gcodeviewer-color-picker>
                                 </v-card-text>
+								<v-checkbox v-model="showOverlay" :label="$t('plugins.gcodeViewer.showFSOverlay')"></v-checkbox>
                                 <v-checkbox v-model="showAxes" :label="$t('plugins.gcodeViewer.showAxes')"></v-checkbox>
                                 <!-- <v-checkbox v-model="showObjectLabels" :label="$t('plugins.gcodeViewer.showObjectLabels')"></v-checkbox> -->
                                 <v-switch v-model="cameraInertia" :label="$t('plugins.gcodeViewer.cameraInertia')"></v-switch>
@@ -309,7 +329,8 @@ import { isPrinting } from '../../store/machine/modelEnums.js';
 let viewer = {};
 
 export default {
-	data: () => ({
+data: function () {
+		return {
 		drawer: false,
 		extruderColors: ['#0000FF', '#0000FF', '#0000FF', '#0000FF', '#0000FF'],
 		backgroundColor: '#E5E5E5',
@@ -325,6 +346,7 @@ export default {
 		renderQuality: 2,
 		debugVisible: false,
 		maxHeight: 0,
+		minHeight: 0,
 		sliderHeight: 0,
 		sliderBottomHeight: 0,
 		liveZTracking: true,
@@ -350,7 +372,10 @@ export default {
 		minFeedColor: '#0000FF',
 		maxFeedColor: '#0000FF',
 		cameraInertia: true,
-	}),
+		loadingProgress: 0,
+		showOverlay : true,
+		};
+	},
 	computed: {
 		...mapState('machine/model', ['job', 'move', 'state']),
 		isJobRunning: state => isPrinting(state.state.status),
@@ -421,6 +446,8 @@ export default {
 		this.maxColorRate = viewer.gcodeProcessor.maxColorRate / 60;
 		this.forceWireMode = viewer.gcodeProcessor.forceWireMode;
 		this.liveTrackingShowSolid = viewer.gcodeProcessor.liveTrackingShowSolid;
+		this.liveZTracking = localStorage.getItem('liveZTracking') === 'true';
+		this.showCursor = localStorage.getItem('showCursor') === 'true';
 
 		if (viewer.lastLoadFailed()) {
 			this.renderQuality = 2;
@@ -433,6 +460,9 @@ export default {
 		this.extruderColors = viewer.getExtruderColors();
 		this.backgroundColor = viewer.getBackgroundColor();
 		this.progressColor = viewer.getProgressColor();
+		viewer.gcodeProcessor.loadingProgressCallback = progress => {
+			this.loadingProgress = Math.ceil(progress * 100);
+		};
 		this.viewModelEvent = async path => {
 			this.selectedFile = path;
 
@@ -445,9 +475,7 @@ export default {
 
 				await viewer.processFile(blob);
 				viewer.gcodeProcessor.setLiveTracking(this.visualizingCurrentJob);
-				this.maxHeight = viewer.getMaxHeight();
-				this.sliderHeight = this.maxHeight;
-				this.maxFileFeedRate = viewer.gcodeProcessor.maxFeedRate;
+				this.setGCodeValues();
 			} finally {
 				this.loading = false;
 			}
@@ -509,7 +537,8 @@ export default {
 			let primaryContainer = getComputedStyle(this.$refs.primarycontainer);
 			let contentAreaHeight = parseInt(contentArea.height) + parseInt(contentArea.paddingTop) + parseInt(contentArea.paddingBottom);
 			let globalContainerHeight = parseInt(globalContainer.height) + parseInt(globalContainer.paddingTop) + parseInt(globalContainer.paddingBottom);
-			this.$refs.primarycontainer.style.height = window.innerHeight - contentAreaHeight - globalContainerHeight - parseInt(primaryContainer.marginTop) - 30 + 'px';
+			let viewerHeight = window.innerHeight - contentAreaHeight - globalContainerHeight - parseInt(primaryContainer.marginTop) - 30 + 'px';
+			this.$refs.primarycontainer.style.height =(viewerHeight >= 300 ? viewerHeight : 300 )  +  'px';
 			if (Object.keys(viewer).length !== 0) {
 				viewer.resize();
 			}
@@ -537,9 +566,7 @@ export default {
 				viewer.gcodeProcessor.setLiveTracking(true);
 				viewer.gcodeProcessor.updateForceWireMode(this.forceWireMode);
 				await viewer.processFile(blob);
-				this.maxHeight = viewer.getMaxHeight();
-				this.sliderHeight = this.maxHeight;
-				this.maxFileFeedRate = viewer.gcodeProcessor.maxFeedRate;
+				this.setGCodeValues();
 				viewer.buildObjects.loadObjectBoundaries(this.job.build.objects); //file is loaded lets load the final heights
 			} finally {
 				this.loading = false;
@@ -566,6 +593,7 @@ export default {
 				viewer.setCursorVisiblity(this.showCursor);
 				viewer.toggleTravels(this.showTravelLines);
 				this.maxHeight = viewer.getMaxHeight();
+				this.minHeight = viewer.getMinHeight();
 				this.sliderHeight = this.maxHeight;
 				this.sliderBottomHeight = 0;
 				this.maxFileFeedRate = viewer.gcodeProcessor.maxFeedRate;
@@ -595,16 +623,20 @@ export default {
 				this.$refs.fileInput.click();
 			}
 		},
+		setGCodeValues() {
+				this.maxHeight = viewer.getMaxHeight();
+				this.minHeight = viewer.getMinHeight();
+				this.sliderHeight = this.maxHeight;
+				this.loading = false;
+				this.maxFileFeedRate = viewer.gcodeProcessor.maxFeedRate;
+		},
 		async fileSelected(e) {
 			const reader = new FileReader();
 			reader.addEventListener('load', async event => {
 				const blob = event.target.result;
 				// Do something with result
 				await viewer.processFile(blob);
-				this.maxHeight = viewer.getMaxHeight();
-				this.sliderHeight = this.maxHeight;
-				this.loading = false;
-				this.maxFileFeedRate = viewer.gcodeProcessor.maxFeedRate;
+				this.setGCodeValues();
 			});
 			this.loading = true;
 			reader.readAsText(e.target.files[0]);
@@ -616,6 +648,7 @@ export default {
 				viewer.resize();
 			});
 		},
+
 		displayMaxFileFeedRate() {
 			if (this.maxFileFeedRate > 0) return `(${this.maxFileFeedRate / 60})`;
 		},
@@ -640,7 +673,7 @@ export default {
 			handler(newValue) {
 				var newPosition = newValue.axes.map(item => ({
 					axes: item.letter,
-					position: item.machinePosition,
+					position: item.userPosition,
 				}));
 				viewer.updateToolPosition(newPosition);
 				if (this.liveZTracking) {
@@ -651,6 +684,7 @@ export default {
 		},
 		showCursor: function (newValue) {
 			viewer.setCursorVisiblity(newValue);
+			localStorage.setItem('showCursor', newValue);
 		},
 		showTravelLines: newVal => {
 			viewer.toggleTravels(newVal);
@@ -720,6 +754,7 @@ export default {
 			if (!newValue) {
 				viewer.setZClipPlane(this.maxHeight, 0);
 			}
+			localStorage.setItem('liveZTracking', newValue);
 		},
 		selectedFile: function () {
 			this.showObjectSelection = false;
@@ -761,6 +796,11 @@ export default {
 		},
 		$route: function () {
 			this.resize();
+		},
+		loading: function (to) {
+			if (!to) {
+				this.loadingProgress = 0;
+			}
 		},
 	},
 };
