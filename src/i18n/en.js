@@ -743,6 +743,17 @@ export default {
 		speedFactor: {
 			caption: 'Speed Factor'
 		},
+		spindle: {
+			spindle : 'Spindle',
+			active : 'Active',
+			direction : 'Direction',
+			currentRPM : 'Current RPM',
+			setRPM : 'Set RPM',
+			on : 'On',
+			off : 'Off',
+			forward : 'forward',
+			reverse : 'reverse'
+		},
 		status: {
 			caption: 'Status',
 			mode: 'Mode: {0}',
@@ -939,6 +950,7 @@ export default {
 				title : 'Enabled if objects could be detected in the current print'
 			},
 			renderFailed: 'Previous render failed. Setting render quality to SBC',
+			showFSOverlay : 'Show Full Screen Overlay'
 		},
 		heightmap: {
 			menuCaption: 'Height Map',

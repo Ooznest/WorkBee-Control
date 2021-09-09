@@ -243,7 +243,7 @@ export default {
 			rrf: 'RepRapFirmware',
 			prerequisites: 'Voraussetzungen',
 			version: 'Version {0}',
-			noPluginSupport: 'Drittanbieterplugins sind nicht erlaubt',
+			noPluginSupport: 'Maschinenspezifische Plugins sind nicht erlaubt',
 			rootSupport: 'Unterstützung für Super-User-Plugins',
 			invalidManifest: 'Ungültiges Pluginmanifest',
 			permissions: 'Erforderliche Berechtigungen',
