@@ -487,6 +487,7 @@ export class RestorePoint {
 	constructor(initData) { quickPatch(this, initData); }
 	coords = []
 	extruderPos = 0
+	fanPwm = 0
 	feedRate = 50
 	ioBits = 0
 	laserPwm = null
