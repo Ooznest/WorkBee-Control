@@ -156,7 +156,7 @@ export default class {
 
   setRenderQualitySettings(numberOfLines, renderQuality) {
     if (renderQuality === undefined) {
-      renderQuality = 1;
+      renderQuality = 2;
     }
 
     let maxLines = 0;
@@ -190,7 +190,7 @@ export default class {
           this.refreshTime = 30000;
           maxLines = 500000;
           maxNRow = 10;
-          this.renderTravels = false;
+          this.renderTravels = true;
         }
         break;
       //Medium Quality
@@ -215,7 +215,7 @@ export default class {
         break;
       //Max
       default: {
-        this.renderVersion = RenderMode.Block;
+        this.renderVersion = RenderMode.Line;
         this.everyNthRow = 1;
         return;
       }
@@ -274,7 +274,7 @@ export default class {
     this.initVariables();
 
     if (renderQuality === undefined || renderQuality === null) {
-      renderQuality = 1;
+      renderQuality = 2;
     }
 
     if (file === undefined || file === null || file.length === 0) {

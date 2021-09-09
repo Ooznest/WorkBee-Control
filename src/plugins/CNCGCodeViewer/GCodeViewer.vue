@@ -130,8 +130,8 @@
                         {{ $t('plugins.gcodeViewer.unloadGCode.caption') }}
                     </v-btn>
                     <input ref="fileInput" type="file" :accept="'.g,.gcode,.gc,.gco,.nc,.ngc,.tap'" hidden @change="fileSelected" multiple />
-                    <v-switch class="mt-4" v-model="showObjectSelection" :disabled="!canCancelObject" :label="jobSelectionLabel" :title="$t('plugins.gcodeViewer.showObjectSelection.title')"></v-switch>
-                    <v-switch v-model="showCursor" :label="$t('plugins.gcodeViewer.showCursor')"></v-switch>
+                    <!-- <v-switch class="mt-4" v-model="showObjectSelection" :disabled="!canCancelObject" :label="jobSelectionLabel" :title="$t('plugins.gcodeViewer.showObjectSelection.title')"></v-switch> -->
+                    <v-switch class="mt-4" v-model="showCursor" :label="$t('plugins.gcodeViewer.showCursor')"></v-switch>
                     <v-switch v-model="showTravelLines" :label="$t('plugins.gcodeViewer.showTravels')"></v-switch>
 					<v-switch v-model="spreadLines" :label="$t('plugins.gcodeViewer.spreadLines')"></v-switch>
                 </v-card>
@@ -254,7 +254,7 @@
                                     <gcodeviewer-color-picker :editcolor="bedColor" @updatecolor="value => updateBedColor(value)"></gcodeviewer-color-picker>
                                 </v-card-text>
                                 <v-checkbox v-model="showAxes" :label="$t('plugins.gcodeViewer.showAxes')"></v-checkbox>
-                                <v-checkbox v-model="showObjectLabels" :label="$t('plugins.gcodeViewer.showObjectLabels')"></v-checkbox>
+                                <!-- <v-checkbox v-model="showObjectLabels" :label="$t('plugins.gcodeViewer.showObjectLabels')"></v-checkbox> -->
                                 <v-switch v-model="cameraInertia" :label="$t('plugins.gcodeViewer.cameraInertia')"></v-switch>
                             </v-card>
 							<v-card class="pa-2 mb-2">
@@ -311,7 +311,7 @@ let viewer = {};
 export default {
 	data: () => ({
 		drawer: false,
-		extruderColors: ['#00FFFF', '#FF00FF', '#FFFF00', '#000000', '#FFFFFF'],
+		extruderColors: ['#0000FF', '#0000FF', '#0000FF', '#0000FF', '#0000FF'],
 		backgroundColor: '#E5E5E5',
 		progressColor: '#008000',
 		viewerHeight: '400px',
@@ -322,7 +322,7 @@ export default {
 		showTravelLines: true,
 		selectedFile: '',
 		nthRow: 1,
-		renderQuality: 1,
+		renderQuality: 2,
 		debugVisible: false,
 		maxHeight: 0,
 		sliderHeight: 0,
@@ -348,7 +348,7 @@ export default {
 		maxColorRate: 60,
 		maxFileFeedRate: 0,
 		minFeedColor: '#0000FF',
-		maxFeedColor: '#FF0000',
+		maxFeedColor: '#0000FF',
 		cameraInertia: true,
 	}),
 	computed: {

@@ -44,7 +44,10 @@ export default class {
     this.cancelHitTimer = 0;
     this.pause = false;
 
-    this.cameraInertia = localStorage.getItem('cameraInertia') === 'true';
+    this.cameraInertia = localStorage.getItem('cameraInertia');
+    if (this.cameraInertia === undefined || this.cameraInertia === null) {
+      this.cameraInertia = true;
+    }
 
     //objects
     this.bed;
@@ -53,7 +56,7 @@ export default class {
 
     this.renderQuality = Number(localStorage.getItem('renderQuality'));
     if (this.renderQuality === undefined || this.renderQuality === null) {
-      this.renderQuality = 1;
+      this.renderQuality = 2;
     }
 
     this.hasCacheSupport = false;
@@ -263,7 +266,7 @@ export default class {
   getExtruderColors() {
     let colors = localStorage.getItem('extruderColors');
     if (colors === null) {
-      colors = ['#00FFFF', '#FF00FF', '#FFFF00', '#000000', '#FFFFFF'];
+      colors = ['#0000FF', '#0000FF', '#0000FF', '#0000FF', '#0000FF'];
       this.saveExtruderColors(colors);
     } else {
       colors = colors.split(',');
