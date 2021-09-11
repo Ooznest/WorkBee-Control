@@ -51,7 +51,7 @@ export default function(connector, pluginSettingFields) {
 			},
 			spindleRPM: [10000, 7500, 5000, 2500, 1000],
 
-			enabledPlugins: [],
+			enabledPlugins: ["CNCGCodeViewer"],
 			plugins: Object.assign({}, pluginSettingFields)		// Third-party values
 		},
 		getters: {

@@ -8,6 +8,17 @@
 .wcs-selection {
 	max-width: 200px;
 }
+
+@media screen and (max-width:440px)
+{
+
+.wcs-selection {
+	max-width: 440px;
+}
+
+}
+
+
 </style>
 
 <template>
@@ -20,12 +31,12 @@
 		</v-card-title>
 		<v-card-text v-show="visibleAxes.length">
 			<v-row dense>
-				<v-col cols="6" order="1" md="2" order-md="1">
+				<v-col cols="12" order="2" md="2" order-md="1">
 					<code-btn block v-show="visibleAxes.length" color="primary" code="G28" :title="$t('button.home.titleAll')" class="ml-0 move-btn">
 						{{ $t('button.home.captionAll') }}
 					</code-btn>
 				</v-col>
-				<v-col cols="6" order="2" md="8" order-md="2">
+				<v-col cols="12" order="1" md="8" order-md="2">
 					<v-menu offset-y left :disabled="uiFrozen">
 						<template #activator="{ on }">
 							<v-btn v-show="visibleAxes.length" color="primary" block class="mx-0 move-btn" :disabled="uiFrozen" v-on="on">
@@ -84,7 +95,7 @@
 
 			<v-row v-for="(axis, axisIndex) in visibleAxes" :key="axisIndex" dense >
 				<!-- Regular home buttons -->
-				<v-col cols="2" order="1" sm="4"  md="1" order-md="1">
+				<v-col cols="6" order="1" sm="6"  md="1" order-md="1">
 					<v-row dense>
 						<v-col>
 							<code-btn tile block :color="axis.homed ? 'primary' : 'warning'" :disabled="uiFrozen" :title="$t('button.home.title', [axis.letter])" :code="`G28 ${axis.letter}`" class="move-btn">
@@ -118,7 +129,7 @@
 					</v-row>
 				</v-col>
 				<!--  Set axis-->
-				<v-col cols="2" order="2" offset="8"  sm="4" offset-sm="4" md="1" order-md="4" offset-md="0">
+				<v-col cols="6" order="2" offset="0"  sm="6" offset-sm="0" md="1" order-md="4" offset-md="0">
 					<v-row dense>
 						<v-col>
 							<code-btn color="primary" tile block :code="`G10 L20 P${currentWorkspace} ${axis.letter}0`" class="move-btn">Set {{ axis.letter }}</code-btn>

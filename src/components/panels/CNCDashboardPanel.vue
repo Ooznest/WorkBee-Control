@@ -18,13 +18,13 @@
             </v-col>
             <v-col cols="12" md="9">
                 <v-row dense>
-                    <v-col cols="4" class="flex-grow-1">
-                        <job-control-panel></job-control-panel>
+                    <v-col cols="12" sm="6" md="4" class="flex-grow-1">
+                        <job-control-panel class="fill-height"></job-control-panel>
                     </v-col>
-                    <v-col cols="4" class="flex-grow-1">
+                   <v-col cols="12" sm="6" md="4" class="flex-grow-1">
                         <z-babystep-panel class="fill-height"></z-babystep-panel>
                     </v-col>
-                    <v-col cols="4" class="flex-grow-1">
+                    <v-col cols="12" md="4" class="flex-grow-1">
                         <speed-factor-panel class="fill-height"></speed-factor-panel>
                     </v-col>
                     <v-col cols="12">
