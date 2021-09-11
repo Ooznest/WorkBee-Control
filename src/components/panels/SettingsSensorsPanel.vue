@@ -156,10 +156,10 @@ export default {
 			if (!isPrinting(this.stats) && probe.value !== null) {
 				if (probe.value >= probe.threshold) {
 					result.push('red');
-					result.push(this.darkTheme ? 'darken-4' : 'lighten-1');
+					result.push(this.darkTheme ? 'darken-3' : 'lighten-4');
 				} else if (probe.value > probe.threshold * 0.9) {
 					result.push('orange');
-					result.push(this.darkTheme ? 'darken-2' : 'lighten-2');
+					result.push(this.darkTheme ? 'darken-2' : 'lighten-4');
 				}
 			}
 			return result;
