@@ -93,6 +93,7 @@
 	width: 50%;
 	left: 0px;
 	margin-left: 25%;
+	margin-top: 3%;
 	top : 5px;
 	z-index: 19 !important;
 }
@@ -111,11 +112,6 @@
             </div>
             <canvas ref="viewerCanvas" class="babylon-canvas" :title="hoverLabel"></canvas>
 			<fs-overlay v-show="fullscreen && showOverlay"></fs-overlay>
-			<div class="loading-progress">
-				<v-progress-linear rounded v-show="loading"  height="15" :value="loadingProgress" class="disable-transition">
-					{{loadingProgress}}%
-				</v-progress-linear>
-			</div>
             <div class="button-container" :class="{ 'button-container-drawer': drawer }">
 				<v-btn small class="toggle-menu-button-close mr-2" @click="drawer = !drawer" :title="$t('plugins.gcodeViewer.showConfiguration')"><v-icon>mdi-menu-open</v-icon></v-btn>
                 <v-btn class="full-screen-icon mr-2" small @click="toggleFullScreen" :title="$t('plugins.gcodeViewer.fullscreen')">
@@ -126,6 +122,11 @@
                 </v-btn>
                 <v-btn small class="toggle-menu-button-close" v-show="loading" @click="cancelLoad" :title="$t('plugins.gcodeViewer.cancelLoad')"><v-icon color="red">mdi-cancel</v-icon></v-btn>
             </div>
+			<div class="loading-progress">
+				<v-progress-linear rounded height="15"  v-show="loading" :value="loadingProgress" class="disable-transition">
+					{{loadingProgress}}%
+				</v-progress-linear>
+			</div>
             <v-navigation-drawer class="drawer" v-model="drawer" :permanent="drawer" absolute width="350px" height="96%">
                 <v-card class="mb-3 pa-2">
                     <v-btn @click="reset" block :title="$t('plugins.gcodeViewer.resetCamera.title')">
@@ -349,7 +350,7 @@ data: function () {
 		minHeight: 0,
 		sliderHeight: 0,
 		sliderBottomHeight: 0,
-		liveZTracking: true,
+		liveZTracking: false,
 		forceWireMode: true,
 		vertexAlpha: false,
 		spreadLines: false,
@@ -537,7 +538,7 @@ data: function () {
 			let primaryContainer = getComputedStyle(this.$refs.primarycontainer);
 			let contentAreaHeight = parseInt(contentArea.height) + parseInt(contentArea.paddingTop) + parseInt(contentArea.paddingBottom);
 			let globalContainerHeight = parseInt(globalContainer.height) + parseInt(globalContainer.paddingTop) + parseInt(globalContainer.paddingBottom);
-			let viewerHeight = window.innerHeight - contentAreaHeight - globalContainerHeight - parseInt(primaryContainer.marginTop) - 30 + 'px';
+			let viewerHeight = window.innerHeight - contentAreaHeight - globalContainerHeight - parseInt(primaryContainer.marginTop) - 30;
 			this.$refs.primarycontainer.style.height =(viewerHeight >= 300 ? viewerHeight : 300 )  +  'px';
 			if (Object.keys(viewer).length !== 0) {
 				viewer.resize();

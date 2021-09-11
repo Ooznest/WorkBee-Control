@@ -242,7 +242,7 @@ export function isPrinting(status) {
 }
 
 export const DashboardMode = {
-	default : 'Default',
-	fff : 'FFF',
-	cnc : 'CNC'
+	default: 'Default',
+	fff: 'FFF',
+	cnc: 'CNC'
 }
