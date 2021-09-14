@@ -22,6 +22,9 @@
 				<v-col cols="12" md="12">
 					<settings-sensors-panel></settings-sensors-panel>
 				</v-col>
+				<v-col cols="12" md="12">
+					<settings-touch-probe-panel></settings-touch-probe-panel>
+				</v-col>
 			</v-row>
 		</v-col>
 	</v-row>

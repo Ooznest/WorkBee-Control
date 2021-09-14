@@ -76,12 +76,12 @@
 
 					</v-row>
 					<v-divider class="mx-5 my-4"></v-divider>
-					<v-row align-content="center" no-gutters :class="{'large-font' : !machinePosition}">
+					<v-row align-content="center" no-gutters>
 						<v-col class="d-flex flex-column align-left">
 							<strong>{{ $tc('panel.sensors.endstopStatus') }}</strong>
 						</v-col>
 						<v-col v-for="(axis, index) in visibleAxes" :key="index" class="d-flex flex-column align-center">
-							<div :class="{'large-font-height' : !machinePosition}">
+							<div>
 								{{ axis.letter }}
 								</div>
 							<div>
@@ -156,16 +156,19 @@ export default {
 			if (!isPrinting(this.stats) && probe.value !== null) {
 				if (probe.value >= probe.threshold) {
 					result.push('red');
-					result.push(this.darkTheme ? 'darken-3' : 'lighten-4');
 				} else if (probe.value > probe.threshold * 0.9) {
 					result.push('orange');
-					result.push(this.darkTheme ? 'darken-2' : 'lighten-4');
 				}
 			}
 			return result;
 		},
 		displayEndstopStatus(index) {
+
+			if (this.sensors.endstops[index] != null){
 			return (this.sensors.endstops[index].triggered)? this.$t('panel.sensors.endstopTriggered') : this.$t('panel.sensors.endstopNotTriggered');
+			}else{
+			// add undefined status 
+			}
 
 		}
 	}

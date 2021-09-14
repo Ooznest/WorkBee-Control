@@ -156,6 +156,10 @@ export default {
 			title: 'Reset board?',
 			prompt: 'Would you like to restart your board to apply the updated configuration?'
 		},
+		confirmTouchProbeReset: {
+			title: 'Revert to defaults',
+			prompt: 'Are you sure you want to revert touch probe settings to the default values?'
+		},
 		connect: {
 			title: 'Connect to Machine',
 			prompt: 'Please enter the hostname and password of the machine that you would like to connect to:',
@@ -713,6 +717,25 @@ export default {
 			caption: 'Notifications',
 			notificationErrorsPersistent: 'Do not close error messages automatically',
 			notificationTimeout: 'Default notification timeout ({0})'
+		},
+		settingsTouchProbe: {
+			caption: 'Touch Probe Settings',
+			touchProbeEnableCaption: 'Enable Touch Probe',
+			touchProbeEndstopNumberCaption: 'Endstop Number',
+			touchProbeFeedRateCaption: 'Feedrate (mm/min)',
+			touchProbeXDimensionCaption: 'X Dimension (mm)',
+			touchProbeYDimensionCaption: 'Y Dimension (mm)',
+			touchProbeZDimensionCaption: 'Z Dimension (mm)',
+			touchProbeXOffsetCaption: 'X-Axis Offset (mm)',
+			touchProbeYOffsetCaption: 'Y-Axis Offset (mm)',
+			touchProbeZOffsetCaption: 'Z-Axis Offset (mm)',
+			touchProbeRevert: 'Revert to Defaults',
+			touchProbeTriggerCaption: 'Touch Probe Trigger Level',
+			touchProbeActiveHigh: 'Active High',
+			touchProbeActiveLow: 'Active Low',
+			touchProbeType: 'Touch Probe Type',
+			touchProbeXYZ: 'XYZ Touch Probe',
+			touchProbeZ: 'Z Touch Probe',
 		},
 		settingsWebcam: {
 			caption: 'Webcam',

@@ -52,13 +52,31 @@ export default function(connector, pluginSettingFields) {
 			spindleRPM: [10000, 7500, 5000, 2500, 1000],
 
 			enabledPlugins: ["CNCGCodeViewer"],
-			plugins: Object.assign({}, pluginSettingFields)		// Third-party values
+			plugins: Object.assign({}, pluginSettingFields),	// Third-party values
+
+			touchProbe: {
+				touchProbeEnable: false,
+				touchProbeEndstopDriveNumber: 'e0stop',
+				touchProbeFeedrate: 500,
+				touchProbeXDimension: 60,
+				touchProbeYDimension: 60,
+				touchProbeZDimension: 10,
+				touchProbeXOffset: 10,
+				touchProbeYOffset: 10,
+				touchProbeZOffset: 5,
+				touchProbeTriggerType: '!',
+				touchProbeEndmillDiameter: 6.35,
+				touchProbeLocation: 'FL',
+				touchProbeType: false,
+			},
+
 		},
 		getters: {
 			moveSteps: state => function(axis) {
 				return (state.moveSteps[axis] !== undefined) ? state.moveSteps[axis] : state.moveSteps.default;
 			},
-			numMoveSteps: state => state.moveSteps.default.length
+			numMoveSteps: state => state.moveSteps.default.length,
+			touchProbeType: state => state.touchProbe.touchProbeType
 		},
 		actions: {
 			async save({ state, rootState, dispatch }) {
@@ -278,6 +296,21 @@ export default function(connector, pluginSettingFields) {
 					state.plugins[plugin] = { key: value };
 				} else {
 					state.plugins[plugin][key] = value;
+				}
+			},
+			resetTouchProbe(state) {
+				state.touchProbe = {
+					...state.touchProbe, 
+					touchProbeEndstopDriveNumber: 'e0stop', 
+					touchProbeFeedrate: 500,
+					touchProbeXDimension: 60,
+					touchProbeYDimension: 60,
+					touchProbeZDimension: 10,
+					touchProbeXOffset: 10,
+					touchProbeYOffset: 10,
+					touchProbeZOffset: 5,
+					touchProbeTriggerType: '!',
+					touchProbeType: false,
 				}
 			}
 		}
