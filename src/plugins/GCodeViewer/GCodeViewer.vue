@@ -231,10 +231,10 @@
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <v-card>
-                                <div>{{$t('plugins.gcodeViewer.topClipping')}}</div>
+                                <!-- <div>{{$t('plugins.gcodeViewer.topClipping')}}</div>
                                 <v-slider :min="minHeight" :max="maxHeight" v-model="sliderHeight" thumb-label thumb-size="24" step="0.1"></v-slider>
                                 <div>{{$t('plugins.gcodeViewer.bottomClipping')}}</div>
-                                <v-slider :min="minHeight" :max="maxHeight" v-model="sliderBottomHeight" thumb-label thumb-size="24" step="0.1"></v-slider>
+                                <v-slider :min="minHeight" :max="maxHeight" v-model="sliderBottomHeight" thumb-label thumb-size="24" step="0.1"></v-slider> -->
                                 <v-checkbox v-model="liveZTracking" :label="$t('plugins.gcodeViewer.liveZTracking')"></v-checkbox>
                             </v-card>
                             <v-card>
