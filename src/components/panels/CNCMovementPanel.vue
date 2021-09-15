@@ -132,7 +132,7 @@
 				<v-col cols="6" order="2" offset="0"  sm="6" offset-sm="0" md="1" order-md="4" offset-md="0">
 					<v-row dense>
 						<v-col>
-							<code-btn color="primary" tile block :code="`G10 L20 P${currentWorkspace} ${axis.letter}0`" class="move-btn">Set {{ axis.letter }}</code-btn>
+							<code-btn color="primary" tile block :code="`G10 L20 P${currentWorkspace} ${axis.letter}0\nM500`" class="move-btn">Set {{ axis.letter }}</code-btn>
 						</v-col>
 					</v-row>
 				</v-col>
@@ -236,7 +236,7 @@ export default {
 			this.visibleAxes.forEach(axis => (code += ` ${axis.letter}0`));
 			console.log(code);
 			await this.sendCode(code);
-			await this.sendCode(`G10 L20 P${this.currentWorkspace}`);
+			await this.sendCode(`M500`);
 		},
 		async gotoWorkspaceZero() {
 			var gotoZeroPath = combine(this.systemDir, 'workzero.g');
