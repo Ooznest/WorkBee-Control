@@ -825,6 +825,27 @@ export default {
 			},
 			noTools: 'No Tools'
 		},
+		touchProbePanel: {
+			caption: 'Touch Probe Control',
+			endmillDiameter: 'Endmill Diameter (mm)',
+			probeAxisCaption: 'Probe Individual Axis',
+			probeXTitle: 'Probe X Axis',
+			probeXCaption: 'X',
+			probeYTitle: 'Probe Y Axis',
+			probeYCaption: 'Y',
+			probeZTitle: 'Probe Z Axis',
+			probeZCaption: 'Z',
+			probeCornerTitle: 'Probe Corner',
+			probeCornerCaption: 'Probe Corner',
+			probeLocation: 'Probe Location',
+			probeLocationFrontLeft: 'Front Left Corner',
+			probeLocationFrontRight: 'Front Right Corner',
+			probeLocationBackLeft: 'Back Left Corner',
+			probeLocationBackRight: 'Back Right Corner',
+			probeStatus: 'Probe Status:',
+			probeTriggered: 'Triggered',
+			probeNotTriggered: 'Not Triggered'
+		},
 		webcam: {
 			caption: 'Webcam Surveillance',
 			alt: '(webcam image)'

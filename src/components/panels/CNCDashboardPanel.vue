@@ -5,6 +5,10 @@
                 <cnc-movement-panel class="mb-5"></cnc-movement-panel>
             </v-col>
 
+            <v-col v-if="settings.touchProbe.touchProbeEnable" cols="12" class="pt-0 pb-0 mt3">
+                <touch-probe-panel class="mb-5"></touch-probe-panel>
+            </v-col>
+
             <v-col cols="12" class="pt-0 pb-0 mt3">
                 <v-divider v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp" class="mb-5"></v-divider>
             </v-col>
@@ -44,5 +48,10 @@
 </template>
 
 <script>
-    export default {};
-</script>
+"use strict";
+import { mapState } from "vuex";
+export default {
+  computed: {
+    ...mapState("machine", ["settings"]),
+  }
+};</script>
