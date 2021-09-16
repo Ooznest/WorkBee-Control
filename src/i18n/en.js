@@ -720,7 +720,7 @@ export default {
 			spindleRPM: 'Spindle RPM Presets'
 		},
 		settingsMachine: {
-			caption: 'Machine-Specific',
+			caption: 'Interface Movement Settings',
 			babystepAmount: 'Babystep amount ({0})',
 			moveFeedrate: 'Feedrate for move buttons ({0})'
 		},
@@ -761,6 +761,10 @@ export default {
 			flipX: 'Flip X',
 			flipY: 'Flip Y',
 			flipBoth: 'Flip both'
+		},
+		settingsWorkingArea: {
+			caption: 'Machine Working Area',
+			axisLabel: '{0}-Axis (mm)'
 		},
 		spindleSpeed:{
 			caption: 'Spindles',

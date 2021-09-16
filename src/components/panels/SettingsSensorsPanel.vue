@@ -11,7 +11,6 @@
 <template>
 	<v-card outlined>
 		<v-card-title class="pb-0">
-			<v-icon small class="mr-1">mdi-access-point</v-icon>
 			{{ $t('panel.status.sensors') }}
 		</v-card-title>
 

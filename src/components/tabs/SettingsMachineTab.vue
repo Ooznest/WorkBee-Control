@@ -9,6 +9,9 @@
 					<settings-machine-panel></settings-machine-panel>
 				</v-col>
 				<v-col cols="12" sm="6" md="12">
+					<settings-working-area></settings-working-area>
+				</v-col>
+				<v-col cols="12" sm="6" md="12">
 					<settings-communication-panel></settings-communication-panel>
 				</v-col>
 			</v-row>

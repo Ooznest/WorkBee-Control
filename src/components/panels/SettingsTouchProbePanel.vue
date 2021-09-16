@@ -291,20 +291,19 @@ export default {
 
       if (this.probeEnable == false) {
 
-        code = 'M558 K0 P0'
+        code = '; Probe configuration executed by config.g\n\nM558 K0 P0'
 
       }
       else{
 
-        code = `M558 K0 P5 C"${this.settings.touchProbe.touchProbeTriggerType}${this.settings.touchProbe.touchProbeEndstopDriveNumber}" H5 F${this.settings.touchProbe.touchProbeFeedrate} T${this.settings.touchProbe.touchProbeFeedrate}`
+        code = `; Probe configuration executed by config.g\n\nM558 K0 P5 C"${this.settings.touchProbe.touchProbeTriggerType}${this.settings.touchProbe.touchProbeEndstopDriveNumber}" H5 F${this.settings.touchProbe.touchProbeFeedrate} T${this.settings.touchProbe.touchProbeFeedrate}`
 
       }
 
       const content = new Blob([code]);
 
       try {
-				await this.upload({ filename: 'sys/config-probe.g', content });
-        this.$emit('editComplete', 'config-probe.g');
+				await this.upload({ filename: 'sys/config-probe.g', content, showProgress: false, showSuccess: false   });
         await this.sendCode(`M98 P"config-probe.g"`)
 			} catch (e) {
 				// TODO Optionally ask user to save file somewhere else
