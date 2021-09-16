@@ -106,12 +106,12 @@
           </v-col>
         </v-row>
       </v-card-text>
-      <confirm-dialog
+      <touch-probe-confirm-dialog
       :shown.sync="showTouchProbeConfirm"
-      :question="$t('dialog.confirmTouchProbe.title')"
+      :title="$t('dialog.confirmTouchProbe.title')"
       :prompt="dialogPrompt"
       @confirmed="runProbeCode"
-    ></confirm-dialog>
+    ></touch-probe-confirm-dialog>
     </v-card>
 </template>
 
@@ -291,17 +291,14 @@ export default {
     zProbeClick() {
       this.setCornerDirection();
       this.probeSequence = "z";
-      this.probeCode = `M400\nG91\nM563 P999 S"XYZ-Probe"
-      \nT999\nM585 Z${
+      this.probeCode = `M400\nG91\nM585 Z${
         this.settings.touchProbe.touchProbeZDimension -
         this.settings.touchProbe.touchProbeZOffset +
         10
-      } E${this.settings.touchProbe.touchProbeEndstopDriveNumber} L${
-        this.settings.touchProbe.touchProbeTriggerType
-      } F${this.settings.touchProbe.touchProbeFeedrate} S1\nT-1\nG10 L20 Z${
+      } F${this.settings.touchProbe.touchProbeFeedrate} P0 S1\nG10 L20 Z${
         this.settings.touchProbe.touchProbeZOffset
       }\nG1 Z5 F${this.settings.touchProbe.touchProbeFeedrate}\nM500\nG90
-      \nM563 P999 D-1 H-1\nM291 P"${this.$t(
+      \nM291 P"${this.$t(
         "dialog.touchProbeSuccess.prompt"
       )}" R"${this.$t("dialog.touchProbeSuccess.title")}" S1`;
       this.dialogPrompt = this.$t("dialog.confirmTouchProbe.promptZ");
@@ -378,14 +375,14 @@ export default {
       this.showTouchProbeConfirm = true;
     },
     async runProbeCode() {
-      const content = this.probeCode;
+      const content = new Blob([this.probeCode]);
       try {
-        await this.upload({ filename: "sys/probe.g", content });
-        this.$emit("editComplete", "probe.g");
-        await this.sendCode(`M98 P"probe.g"`);
-      } catch (e) {
-        // TODO Optionally ask user to save file somewhere else
-      }
+				await this.upload({ filename: 'sys/probe.g', content });
+        this.$emit('editComplete', 'probe.g');
+        await this.sendCode(`M98 P"probe.g"`)
+			} catch (e) {
+				// TODO Optionally ask user to save file somewhere else
+			}
     },
     setCornerDirection() {
       if (

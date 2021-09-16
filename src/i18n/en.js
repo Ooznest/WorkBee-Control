@@ -156,9 +156,20 @@ export default {
 			title: 'Reset board?',
 			prompt: 'Would you like to restart your board to apply the updated configuration?'
 		},
+		confirmTouchProbe: {
+			title: 'Run Touch Probe Sequence',
+			prompt: 'Insure the endmill is above the Start Here hole with the Touch Probe clip attached.',
+			promptZ: 'Insure the endmill is anywhere above the thinnest section of the Touch Probe, with the Touch Probe clip attached.',
+			checkWorking: 'Touch the probe plate against the endmill to check it is functioning correctly.'
+
+		},
 		confirmTouchProbeReset: {
 			title: 'Revert to defaults',
 			prompt: 'Are you sure you want to revert touch probe settings to the default values?'
+		},
+		touchProbeSuccess: {
+			title: 'Success',
+			prompt: 'Probe complete. Please remove probe.'
 		},
 		connect: {
 			title: 'Connect to Machine',
