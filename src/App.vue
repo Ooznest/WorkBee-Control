@@ -89,9 +89,9 @@ textarea {
 				</v-list-group>
 			</v-list>
 
-			<v-footer class="navFooter py-4" absolute="true">
+			<v-footer class="navFooter py-2" absolute>
 				<v-layout grow justify-center>
-					<v-img contain aspect-ratio="5" :src="require('./assets/Ooznest-Logo-Black-Background.png')"></v-img>
+					<v-img contain aspect-ratio="10" :src="require('./assets/Ooznest-Logo-Black-Background.png')"></v-img>
 				</v-layout>
 			</v-footer>
 

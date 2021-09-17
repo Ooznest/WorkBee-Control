@@ -291,14 +291,14 @@ export default {
     zProbeClick() {
       this.setCornerDirection();
       this.probeSequence = "z";
-      this.probeCode = `M400\nG91\nM585 Z${
+      this.probeCode = `M400\nG91\nM563 P49 S"XYZ-Probe"\nT49\nM585 Z-${
         this.settings.touchProbe.touchProbeZDimension -
         this.settings.touchProbe.touchProbeZOffset +
         10
-      } F${this.settings.touchProbe.touchProbeFeedrate} P0 S1\nG10 L20 Z${
+      } F${this.settings.touchProbe.touchProbeFeedrate} P0 S1\nT-1\nG10 L20 Z${
         this.settings.touchProbe.touchProbeZOffset
       }\nG1 Z5 F${this.settings.touchProbe.touchProbeFeedrate}\nM500\nG90
-      \nM291 P"${this.$t(
+      \nM563 P49 D-1 H-1\nM291 P"${this.$t(
         "dialog.touchProbeSuccess.prompt"
       )}" R"${this.$t("dialog.touchProbeSuccess.title")}" S1`;
       this.dialogPrompt = this.$t("dialog.confirmTouchProbe.promptZ");

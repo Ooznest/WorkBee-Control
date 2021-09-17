@@ -1,7 +1,16 @@
 <template>
   <v-card outlined>
-    <v-card-title class="pb-0">
-      {{ $t("panel.settingsWorkingArea.caption") }}
+    <v-card-title>
+      <span>{{ $t("panel.settingsWorkingArea.caption") }}</span>
+      <v-spacer></v-spacer>
+      <v-icon small class="mr-1">mdi-backup-restore</v-icon>
+      <a
+        v-show="!uiFrozen"
+        href="#"
+        @click.prevent="showResetConfirmation = true"
+      >
+        {{ $t("panel.settingsWorkingArea.resetWorkingArea") }}
+      </a>
     </v-card-title>
     <v-card-text>
       <v-row align-content="center" no-gutters>
@@ -23,6 +32,11 @@
         </v-col>
       </v-row>
     </v-card-text>
+    <reset-working-area-dialog
+      :shown.sync="showResetConfirmation"
+      :title="$t('dialog.workingAreaReset.title')"
+      :prompt="$t('dialog.workingAreaReset.prompt')"
+    ></reset-working-area-dialog>
   </v-card>
 </template>
 
@@ -30,13 +44,14 @@
 <script>
 "use strict";
 
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   computed: {
     ...mapState("machine/model", {
       move: (state) => state.move,
     }),
+    ...mapGetters(["uiFrozen"]),
 
     visibleAxes() {
       return this.move.axes.filter((axis) => axis.visible);
@@ -52,7 +67,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      showResetConfirmation: false,
+    };
   },
   methods: {
     ...mapActions("machine", ["sendCode"]),
@@ -69,7 +86,12 @@ export default {
       const content = new Blob([code]);
 
       try {
-        await this.upload({ filename: "sys/config-axes-limits.g", content, showProgress: false, showSuccess: false  });
+        await this.upload({
+          filename: "sys/config-axes-limits.g",
+          content,
+          showProgress: false,
+          showSuccess: false,
+        });
         await this.sendCode(`M98 P"config-axes-limits.g"`);
       } catch (e) {
         // TODO Optionally ask user to save file somewhere else

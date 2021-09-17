@@ -10,7 +10,7 @@
             </v-col>
 
             <v-col cols="12" class="pt-0 pb-0 mt3">
-                <v-divider v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp" class="mb-5"></v-divider>
+                <v-divider v-show="$vuetify.breakpoint.mdAndUp" class="mb-5"></v-divider>
             </v-col>
             
             <v-col cols="12" class="pt-0 pb-1 mt3">

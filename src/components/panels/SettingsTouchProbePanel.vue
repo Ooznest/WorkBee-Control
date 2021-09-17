@@ -138,8 +138,6 @@
 "use strict";
 
 import { mapState, mapMutations, mapGetters, mapActions } from "vuex";
-import i18n from '../../i18n'
-
 
 export default {
   computed: {
@@ -147,15 +145,6 @@ export default {
     ...mapState("machine/model", ["electronics"]),
     ...mapState(["isLocal"]),
     ...mapGetters(["uiFrozen"]),
-    headers() {
-			return [
-				{
-					text: i18n.t('list.baseFileList.lastModified'),
-					value: 'lastModified',
-					unit: 'date'
-				},
-			];
-		},
     probeEnable: {
       get() {
         return this.settings.touchProbe.touchProbeEnable;

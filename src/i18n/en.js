@@ -164,8 +164,8 @@ export default {
 
 		},
 		confirmTouchProbeReset: {
-			title: 'Revert to defaults',
-			prompt: 'Are you sure you want to revert touch probe settings to the default values?'
+			title: 'Reset to defaults',
+			prompt: 'Are you sure you want to reset touch probe settings to the default values?'
 		},
 		touchProbeSuccess: {
 			title: 'Success',
@@ -302,6 +302,12 @@ export default {
 			resetTitle: 'Reset firmware?',
 			resetPrompt: 'You have just installed expansion board updates. Do you want to reboot the main controller to restore the previous configuration?'
 		},
+		workingAreaReset: {
+			title: 'Reset Working Area',
+			prompt: 'Select the WorkBee model you would like to reset to.',
+			workbeeModel: 'WorkBee Model'
+		},
+
 		inputRequired: 'Please enter a value',
 		numberRequired: 'Please enter a valid number'
 	},
@@ -740,7 +746,7 @@ export default {
 			touchProbeXOffsetCaption: 'X-Axis Offset (mm)',
 			touchProbeYOffsetCaption: 'Y-Axis Offset (mm)',
 			touchProbeZOffsetCaption: 'Z-Axis Offset (mm)',
-			touchProbeRevert: 'Revert to Defaults',
+			touchProbeRevert: 'Reset to Defaults',
 			touchProbeTriggerCaption: 'Touch Probe Trigger Level',
 			touchProbeActiveHigh: 'Active High',
 			touchProbeActiveLow: 'Active Low',
@@ -764,7 +770,8 @@ export default {
 		},
 		settingsWorkingArea: {
 			caption: 'Machine Working Area',
-			axisLabel: '{0}-Axis (mm)'
+			axisLabel: '{0}-Axis (mm)',
+			resetWorkingArea: 'Reset Working Area'
 		},
 		spindleSpeed:{
 			caption: 'Spindles',
