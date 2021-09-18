@@ -37,6 +37,7 @@ import SettingsSensorsPanel from './SettingsSensorsPanel.vue'
 import SettingsTouchProbePanel from './SettingsTouchProbePanel.vue'
 import TouchProbePanel from './TouchProbePanel.vue'
 import SettingsWorkingArea from './SettingsWorkingArea.vue'
+import SettingsCalibration from './SettingsCalibration.vue'
 
 Vue.component('atx-panel', ATXPanel)
 Vue.component('extrude-panel', ExtrudePanel)
@@ -73,4 +74,5 @@ Vue.component('settings-sensors-panel', SettingsSensorsPanel)
 Vue.component('settings-touch-probe-panel', SettingsTouchProbePanel)
 Vue.component('touch-probe-panel', TouchProbePanel)
 Vue.component('settings-working-area', SettingsWorkingArea)
+Vue.component('settings-calibration', SettingsCalibration)
 

@@ -156,6 +156,10 @@ export default {
 			title: 'Reset board?',
 			prompt: 'Would you like to restart your board to apply the updated configuration?'
 		},
+		confirmCalibrationReset: {
+			title: 'Reset to defaults',
+			prompt: 'Are you sure you want to reset steps/mm calibration settings to the default values?'
+		},
 		confirmTouchProbe: {
 			title: 'Run Touch Probe Sequence',
 			prompt: 'Insure the endmill is above the Start Here hole with the Touch Probe clip attached.',
@@ -522,6 +526,9 @@ export default {
 		}
 	},
 	notification: {
+		calibration:{
+			message: 'Steps/mm calibration updated',
+		},
 		compress: {
 			title: 'Compressing files...',
 			message: 'Please stand by while your files are being compressed...',
@@ -795,6 +802,13 @@ export default {
 			caption: 'Machine Working Area',
 			axisLabel: '{0}-Axis (mm)',
 			resetWorkingArea: 'Reset Working Area',
+		},
+		settingsCalibration: {
+			caption: 'Machine Steps/mm Calibration',
+			axisLabel: '{0}-Axis (steps/mm)',
+			resetCalibration: 'Reset Steps/mm Calibration',
+			xVernierCaption: 'X-Axis Vernier Calibration',
+			xVernierTitle: 'X-Axis Vernier Calibration'
 		},
 		spindleSpeed:{
 			caption: 'Spindles',
