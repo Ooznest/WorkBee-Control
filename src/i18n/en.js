@@ -582,11 +582,17 @@ export default {
 			errorStillLoaded: 'This filament is still loaded. Please unload it before you proceed'
 		},
 		responseTooLong: 'Response too long, see Console',
+		settingsTouchProbe: {
+			message: 'Touch probe settings updated'
+		},
 		upload: {
 			title: 'Uploading {0} @ {1}, {2}% complete',
 			message: 'Please stand by while the file is being uploaded...',
 			success: 'Upload of {0} successful after {1}',
 			error: 'Failed to upload {0}'
+		},
+		workingArea: {
+			message: 'Working area updated'
 		}
 	},
 	panel: {
@@ -788,7 +794,7 @@ export default {
 		settingsWorkingArea: {
 			caption: 'Machine Working Area',
 			axisLabel: '{0}-Axis (mm)',
-			resetWorkingArea: 'Reset Working Area'
+			resetWorkingArea: 'Reset Working Area',
 		},
 		spindleSpeed:{
 			caption: 'Spindles',

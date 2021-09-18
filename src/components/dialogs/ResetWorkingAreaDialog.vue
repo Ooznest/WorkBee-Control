@@ -184,7 +184,9 @@ export default {
           showProgress: false,
           showSuccess: false,
         });
+        this.$emit('uploadComplete', "sys/config-axes-limits.g");
         await this.sendCode(`M98 P"config-axes-limits.g"`);
+        this.$log('success', this.$t('notification.workingArea.message'))
       } catch (e) {
         // TODO Optionally ask user to save file somewhere else
       }

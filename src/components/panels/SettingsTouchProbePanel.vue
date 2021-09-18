@@ -3,8 +3,8 @@
     <v-card-title>
       <span>{{ $t('panel.settingsTouchProbe.caption') }}</span>
       <v-spacer></v-spacer>
+      <v-icon small class="mr-1">mdi-backup-restore</v-icon>
       <a v-show="!uiFrozen" href="#" @click.prevent="showResetConfirmation = true">
-        <v-icon small class="mr-1">mdi-backup-restore</v-icon>
         {{ $t('panel.settingsTouchProbe.touchProbeRevert') }}
       </a>
     </v-card-title>
@@ -129,7 +129,7 @@
       :shown.sync="showResetConfirmation"
       :title="$t('dialog.confirmTouchProbeReset.title')"
       :prompt="$t('dialog.confirmTouchProbeReset.prompt')"
-      @confirmed="resetTouchProbe()"
+      @confirmed="resetConfirmed()"
     ></confirm-dialog>
   </v-card>
 </template>
@@ -168,6 +168,7 @@ export default {
         if (value == true) {
           this.update({ touchProbe: { touchProbeZOffset: this.settings.touchProbe.touchProbeZDimension } });
         }
+        this.$log('success', this.$t('notification.settingsTouchProbe.message'))
       }
     },
     endstopDriveNumber: {
@@ -215,6 +216,7 @@ export default {
       },
       set(value) {
         this.update({ touchProbe: { touchProbeXDimension: value } });
+        this.$log('success', this.$t('notification.settingsTouchProbe.message'))
       }
     },
     YDimension: {
@@ -223,6 +225,7 @@ export default {
       },
       set(value) {
         this.update({ touchProbe: { touchProbeYDimension: value } });
+        this.$log('success', this.$t('notification.settingsTouchProbe.message'))
       }
     },
     ZDimension: {
@@ -234,6 +237,7 @@ export default {
         if (this.settings.touchProbe.touchProbeType == true) {
           this.update({ touchProbe: { touchProbeZOffset: value } });
         }
+        this.$log('success', this.$t('notification.settingsTouchProbe.message'))
       }
     },
     XOffset: {
@@ -242,6 +246,7 @@ export default {
       },
       set(value) {
         this.update({ touchProbe: { touchProbeXOffset: value } });
+        this.$log('success', this.$t('notification.settingsTouchProbe.message'))
       }
     },
     YOffset: {
@@ -250,6 +255,7 @@ export default {
       },
       set(value) {
         this.update({ touchProbe: { touchProbeYOffset: value } });
+        this.$log('success', this.$t('notification.settingsTouchProbe.message'))
       }
     },
     ZOffset: {
@@ -258,6 +264,7 @@ export default {
       },
       set(value) {
         this.update({ touchProbe: { touchProbeZOffset: value } });
+        this.$log('success', this.$t('notification.settingsTouchProbe.message'))
       }
     }
   },
@@ -273,6 +280,13 @@ export default {
     ...mapMutations("machine", ["setTouchProbeEnable"]),
     ...mapActions('machine', ["sendCode"]),
     ...mapActions('machine', ['upload']),
+
+    resetConfirmed() {
+
+      this.resetTouchProbe()
+      this.$log('success', this.$t('notification.settingsTouchProbe.message'))
+
+    },
 
     async configureProbe() {
 
@@ -293,6 +307,8 @@ export default {
 
       try {
 				await this.upload({ filename: 'sys/config-probe.g', content, showProgress: false, showSuccess: false   });
+        this.$emit('uploadComplete', "sys/config-probe.g");
+        this.$log('success', this.$t('notification.settingsTouchProbe.message'))
         await this.sendCode(`M98 P"config-probe.g"`)
 			} catch (e) {
 				// TODO Optionally ask user to save file somewhere else

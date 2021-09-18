@@ -13,11 +13,11 @@
       </a>
     </v-card-title>
     <v-card-text>
-      <v-row align-content="center" no-gutters>
+      <v-row no-gutters>
         <v-col
           v-for="(axis, index) in visibleAxes"
           :key="index"
-          class="d-flex flex-column align-center mr-5"
+          class="d-flex flex-column mr-5"
           cols="3"
         >
           <v-text-field
@@ -92,7 +92,9 @@ export default {
           showProgress: false,
           showSuccess: false,
         });
+        this.$emit('uploadComplete', "sys/config-axes-limits.g");
         await this.sendCode(`M98 P"config-axes-limits.g"`);
+        this.$log('success', this.$t('notification.workingArea.message'))
       } catch (e) {
         // TODO Optionally ask user to save file somewhere else
       }

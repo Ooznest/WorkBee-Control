@@ -308,8 +308,7 @@ export default {
     async runProbeCode() {
       const content = new Blob([this.probeCode]);
       try {
-				await this.upload({ filename: 'sys/probe.g', content });
-        this.$emit('editComplete', 'probe.g');
+				await this.upload({ filename: 'sys/probe.g', content, showProgress: false, showSuccess: false, });
         await this.sendCode(`M98 P"probe.g"`)
 			} catch (e) {
 				// TODO Optionally ask user to save file somewhere else
