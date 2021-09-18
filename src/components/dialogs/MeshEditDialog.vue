@@ -39,8 +39,8 @@
 
 				<v-card-actions>
 					<v-spacer></v-spacer>
-					<v-btn color="blue darken-1" text @click="hide">{{ $t('generic.cancel') }}</v-btn>
-					<v-btn color="blue darken-1" text type="submit">{{ $t('generic.ok') }}</v-btn>
+					<v-btn color="success" text @click="hide">{{ $t('generic.cancel') }}</v-btn>
+					<v-btn color="success" text type="submit">{{ $t('generic.ok') }}</v-btn>
 				</v-card-actions>
 			</v-form>
 		</v-card>

@@ -167,6 +167,12 @@ export default {
 			title: 'Reset to defaults',
 			prompt: 'Are you sure you want to reset touch probe settings to the default values?'
 		},
+		controlledPowerOffDialog: {
+			message: 'Please Wait, Machine Pausing',
+		},
+		confirmPowerOffDialog: {
+			message: 'The machine can now be switched off.'
+		},
 		touchProbeSuccess: {
 			title: 'Success',
 			prompt: 'Probe complete. Work zero set. Please remove probe.'
@@ -245,6 +251,14 @@ export default {
 		newFile: {
 			title: 'New File',
 			prompt: 'Please enter a new file name:'
+		},
+		powerLossConfirm: {
+			title: 'Resume From Power Loss?',
+			prompt: 'Are you sure you want to resume a job from a power loss?'
+		},
+		powerLossSpindleConfirm: {
+			title: 'Router/Spindle On?',
+			prompt: 'Please confirm the Router/Spindle is turned and at the correct RPM.'
 		},
 		pluginInstallation: {
 			installation: 'Plugin Installation',
@@ -627,7 +641,10 @@ export default {
 			repeatJob: 'Start Again',
 			repeatPrint: 'Print Again',
 			repeatSimulation: 'Simulate Again',
-			autoSleep: 'Enable Auto-Sleep'
+			autoSleep: 'Enable Auto-Sleep',
+			powerLossResume: 'Power Loss Resume',
+			controlledPowerOff: 'Controlled Power Off',
+			captionPowerLoss: 'Power Loss Job Control'
 		},
 		jobData: {
 			caption: 'Collected Data',

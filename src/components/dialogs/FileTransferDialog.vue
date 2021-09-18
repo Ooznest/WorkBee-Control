@@ -57,10 +57,10 @@ td {
 					{{ $t('dialog.fileTransfer.currentSpeed', [$displaySpeed(currentSpeed || 0)]) }}
 				</span>
 				<v-spacer></v-spacer>
-				<v-btn v-show="canCancel" color="blue darken-1" text @click="cancel">
+				<v-btn v-show="canCancel" color="success" text @click="cancel">
 					{{ $t(isUploading ? 'dialog.fileTransfer.cancelUploads' : 'dialog.fileTransfer.cancelDownloads') }}
 				</v-btn>
-				<v-btn v-show="transfersFinished" ref="closeButton" color="blue darken-1" text @click="close">
+				<v-btn v-show="transfersFinished" ref="closeButton" color="success" text @click="close">
 					{{ $t('generic.close') }}
 				</v-btn>
 			</v-card-actions>

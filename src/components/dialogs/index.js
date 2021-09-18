@@ -17,6 +17,9 @@ import ResetHeaterFaultDialog from './ResetHeaterFaultDialog.vue'
 import FileTransferDialog from './FileTransferDialog.vue'
 import TouchProbeConfirmDialog from './TouchProbeConfirmDialog.vue'
 import ResetWorkingAreaDialog from './ResetWorkingAreaDialog.vue'
+import ControlledPowerOffDialog from './ControlledPowerOffDialog.vue'
+import ConfirmedPowerOffDialog from './ConfirmedPowerOffDialog.vue'
+
 
 Vue.component('confirm-dialog', ConfirmDialog)
 Vue.component('connect-dialog', ConnectDialog)
@@ -33,5 +36,7 @@ Vue.component('reset-heater-fault-dialog', ResetHeaterFaultDialog)
 Vue.component('file-transfer-dialog', FileTransferDialog)
 Vue.component('touch-probe-confirm-dialog', TouchProbeConfirmDialog)
 Vue.component('reset-working-area-dialog', ResetWorkingAreaDialog)
+Vue.component('controlled-power-off-dialog', ControlledPowerOffDialog)
+Vue.component('confirmed-power-off-dialog', ConfirmedPowerOffDialog)
 
 
