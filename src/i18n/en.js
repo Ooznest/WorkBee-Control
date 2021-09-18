@@ -169,7 +169,7 @@ export default {
 		},
 		touchProbeSuccess: {
 			title: 'Success',
-			prompt: 'Probe complete. Please remove probe.'
+			prompt: 'Probe complete. Work zero set. Please remove probe.'
 		},
 		connect: {
 			title: 'Connect to Machine',
