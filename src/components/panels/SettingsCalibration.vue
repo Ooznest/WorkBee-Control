@@ -35,16 +35,6 @@
           ></v-text-field>
         </v-col>
       </v-row>
-      <v-row no-gutters class="mt-5">
-        <v-col class="d-flex flex-column mr-4" cols="5">
-          <v-btn
-            :disabled="uiFrozen || state.isPrinting"
-            :title="$t('panel.settingsCalibration.xVernierTitle')"
-            color="success"
-            block
-          >{{ $t("panel.settingsCalibration.xVernierCaption") }}</v-btn>
-        </v-col>
-      </v-row>
     </v-card-text>
     <confirm-dialog
       :shown.sync="showResetConfirmation"

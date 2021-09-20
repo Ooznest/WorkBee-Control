@@ -807,8 +807,6 @@ export default {
 			caption: 'Machine Steps/mm Calibration',
 			axisLabel: '{0}-Axis (steps/mm)',
 			resetCalibration: 'Reset Steps/mm Calibration',
-			xVernierCaption: 'X-Axis Vernier Calibration',
-			xVernierTitle: 'X-Axis Vernier Calibration'
 		},
 		spindleSpeed:{
 			caption: 'Spindles',
