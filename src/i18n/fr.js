@@ -151,6 +151,31 @@ export default {
 			title: 'Redémarrer la Carte?',
 			prompt: 'Voulez-vous redémarrer la carte pour appliquer la mise à jour de la configuration?'
 		},
+		confirmCalibrationReset: {
+			title: 'Réinitialiser les paramètres par défaut',
+			prompt: "Voulez-vous vraiment réinitialiser les paramètres d'étalonnage en pas/mm aux valeurs par défaut?"
+		},
+		confirmTouchProbe: {
+			title: 'Exécuter la séquence de la sonde tactile',
+			prompt: 'Assurez-vous que la fraise est au-dessus du trou Start Here avec le clip de la sonde tactile attaché.',
+			promptZ: "Assurez-vous que la fraise se trouve n'importe où au-dessus de la section la plus fine de la sonde tactile, avec le clip de la sonde tactile attaché.",
+			checkWorking: "Touchez la plaque de sonde contre la fraise pour vérifier qu'elle fonctionne correctement."
+
+		},
+		confirmTouchProbeReset: {
+			title: 'Réinitialiser les paramètres par défaut',
+			prompt: 'Voulez-vous vraiment réinitialiser les paramètres de la sonde tactile aux valeurs par défaut ?'
+		},
+		controlledPowerOffDialog: {
+			message: 'Veuillez patienter, pause de la machine',
+		},
+		confirmPowerOffDialog: {
+			message: 'La machine peut maintenant être éteinte.'
+		},
+		touchProbeSuccess: {
+			title: 'Succès',
+			prompt: 'Sonde terminée. Travail à zéro réglé. Veuillez retirer la sonde.'
+		},
 		connect: {
 			title: 'Connecter à la Machine',
 			prompt: 'Merci d\'entrer le nom d\'hôte et le mot de passe de la machine à laquelle vous voulez vouz connecter:',
@@ -211,6 +236,14 @@ export default {
 			title: 'Nouveau Fichier',
 			prompt: 'Merci d\'entrer un nom de nouveau fichier:'
 		},
+		powerLossConfirm: {
+			title: 'Reprendre de la perte de puissance?',
+			prompt: 'Êtes-vous sûr de vouloir reprendre un travail après une panne de courant?'
+		},
+		powerLossSpindleConfirm: {
+			title: 'Routeur / broche allumé?',
+			prompt: 'Veuillez confirmer que le routeur / la broche est tourné et au bon régime.'
+		},
 		renameFile: {
 			title: 'Renommer un Fichier ou Dossier',
 			prompt: 'Merci d\'entrer un nouveau nom:'
@@ -231,6 +264,11 @@ export default {
 		update: {
 			title: 'Installer Mise à Jour?',
 			prompt: 'Vous avez envoyer au moins une mise à jour logiciel. Voulez-vous les installer maintenant?'
+		},
+		workingAreaReset: {
+			title: 'Réinitialiser la zone de travail',
+			prompt: 'Sélectionnez le modèle WorkBee que vous souhaitez réinitialiser.',
+			workbeeModel: 'modèle WorkBee'
 		},
 		inputRequired: 'Merci d\'entrer une nouvelle valeur',
 		numberRequired: 'Merci d\'entrer un nombre valide'
@@ -426,6 +464,9 @@ export default {
 		}
 	},
 	notification: {
+		calibration:{
+			message: 'Calibrage des pas/mm mis à jour',
+		},
 		compress: {
 			title: 'Compression des fichiers...',
 			message: 'Merci de vous tenir prêt pendant que vos fichiers se font compresser...',
@@ -534,7 +575,10 @@ export default {
 			repeatJob: 'Recommencer',
 			repeatPrint: 'Réimprimer',
 			repeatSimulation: 'Simuler à Nouveau',
-			autoSleep: 'Activer Veille Automatique'
+			autoSleep: 'Activer Veille Automatique',
+			powerLossResume: 'Résumé de perte de puissance',
+			controlledPowerOff: 'Mise hors tension contrôlée',
+			captionPowerLoss: 'Contrôle de perte de puissance'
 		},
 		jobData: {
 			caption: 'Données Collectés',

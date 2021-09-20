@@ -156,6 +156,31 @@ export default {
 			title: 'Board neu starten?',
 			prompt: 'Möchten Sie das Board neu starten um die aktualisierte Konfiguration zu übernehmen?'
 		},
+		confirmCalibrationReset: {
+			title: 'Reset naar standaardinstellingen',
+			prompt: 'Weet u zeker dat u stappen/mm-kalibratie-instellingen wilt terugzetten naar de standaardwaarden?			'
+		},
+		confirmTouchProbe: {
+			title: 'Aanraaksondevolgorde uitvoeren',
+			prompt: 'Zorg ervoor dat de frees zich boven het Start Here-gat bevindt met de Touch Probe-clip eraan bevestigd.',
+			promptZ: 'Zorg ervoor dat de frees zich ergens boven het dunste gedeelte van de Touch Probe bevindt, met de Touch Probe-clip eraan bevestigd.',
+			checkWorking: 'Raak de sondeplaat aan tegen de frees om te controleren of deze correct werkt.'
+
+		},
+		confirmTouchProbeReset: {
+			title: 'Reset naar standaardinstellingen',
+			prompt: 'Weet u zeker dat u de instellingen van het tastsysteem wilt terugzetten naar de standaardwaarden?'
+		},
+		controlledPowerOffDialog: {
+			message: 'Even geduld a.u.b. machine pauzeert',
+		},
+		confirmPowerOffDialog: {
+			message: 'De machine kan nu worden uitgeschakeld.'
+		},
+		touchProbeSuccess: {
+			title: 'Succes',
+			prompt: 'Sonde compleet. Werk nul ingesteld. Verwijder de sonde.'
+		},
 		connect: {
 			title: 'Zu Maschine verbinden',
 			prompt: 'Bitte geben Sie den Hostnamen und das Passwort der Maschine ein, zu der Sie verbinden möchten:',
@@ -231,6 +256,14 @@ export default {
 			title: 'Neue Datei',
 			prompt: 'Bitte geben Sie einen Dateinamen ein:'
 		},
+		powerLossConfirm: {
+			title: 'Hervatten van stroomverlies?',
+			prompt: 'Weet u zeker dat u een taak wilt hervatten na een stroomstoring?'
+		},
+		powerLossSpindleConfirm: {
+			title: 'Router/spil aan?',
+			prompt: 'Controleer of de router/spil is gedraaid en met het juiste toerental.'
+		},
 		pluginInstallation: {
 			installation: 'Plugininstallation',
 			prompt: 'Das folgende Plugin wird installiert:',
@@ -286,6 +319,11 @@ export default {
 			prompt: 'Sie haben gerade mindestens ein Firmwareupdate hochgeladen. Möchten Sie diese jetzt installieren?',
 			resetTitle: 'Firmware zurücksetzen?',
 			resetPrompt: 'Sie haben gerade Updates für Erweiterungsboards installiert. Möchten Sie den Hauptcontroller jetzt neustarten um die vorige Konfiguration wiederherzustellen?'
+		},
+		workingAreaReset: {
+			title: 'Werkgebied resetten',
+			prompt: 'Selecteer het WorkBee-model waarnaar u wilt resetten.',
+			workbeeModel: 'WorkBee-model'
 		},
 		inputRequired: 'Bitte Wert eingeben',
 		numberRequired: 'Bitte gültige Zahl eingeben'
@@ -487,6 +525,9 @@ export default {
 		}
 	},
 	notification: {
+		calibration:{
+			message: 'Stappen/mm-kalibratie bijgewerkt',
+		},
 		compress: {
 			title: 'Komprimiere Dateien...',
 			message: 'Bitte warten während Ihre Dateien komprimiert werden...',
@@ -606,7 +647,10 @@ export default {
 			repeatJob: 'Nochmal starten',
 			repeatPrint: 'Nochmal drucken',
 			repeatSimulation: 'Nochmal simulieren',
-			autoSleep: 'Auto-Schlaf aktivieren'
+			autoSleep: 'Auto-Schlaf aktivieren',
+			powerLossResume: 'Stromausfall fortsetzen',
+			controlledPowerOff: 'Kontrolliertes Ausschalten',
+			captionPowerLoss: 'Job-Kontrolle bei Stromausfall'
 		},
 		jobData: {
 			caption: 'Gesammelte Daten',

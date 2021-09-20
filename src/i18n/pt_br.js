@@ -153,6 +153,31 @@ export default {
 			title: 'Reiniciar placa?',
 			prompt: 'Gostaria de reiniciar a sua placa para aplicar as configurações atualizadas?'
 		},
+		confirmCalibrationReset: {
+			title: 'Redefinir para os padrões',
+			prompt: 'Tem certeza de que deseja redefinir as configurações de calibração de etapas / mm para os valores padrão?'
+		},
+		confirmTouchProbe: {
+			title: 'Execute a sequência do Touch Probe',
+			prompt: 'Certifique-se de que a fresa de topo esteja acima do orifício Comece aqui com o clipe da sonda de toque conectado.',
+			promptZ: 'Certifique-se de que a fresa de topo esteja em qualquer lugar acima da seção mais fina do Touch Probe, com o clipe do Touch Probe anexado.',
+			checkWorking: 'Toque a placa da sonda contra a fresa para verificar se está funcionando corretamente.'
+
+		},
+		confirmTouchProbeReset: {
+			title: 'Redefinir para os padrões',
+			prompt: 'Tem certeza de que deseja redefinir as configurações do sensor de toque para os valores padrão?'
+		},
+		controlledPowerOffDialog: {
+			message: 'Aguarde, máquina em pausa',
+		},
+		confirmPowerOffDialog: {
+			message: 'A máquina pode agora ser desligada.'
+		},
+		touchProbeSuccess: {
+			title: 'Sucesso',
+			prompt: 'Sonda concluída. Trabalho definido como zero. Remova a sonda.'
+		},
 		connect: {
 			title: 'Conectar à Máquina',
 			prompt: 'Insira o nome do host e senha da máquina à qual deseja se conectar:',
@@ -227,6 +252,14 @@ export default {
 			title: 'Novo Arquivo',
 			prompt: 'Insira um nome para o novo arquivo:'
 		},
+		powerLossConfirm: {
+			title: 'Retomar da perda de energia?',
+			prompt: 'Tem certeza de que deseja retomar um trabalho após uma queda de energia?'
+		},
+		powerLossSpindleConfirm: {
+			title: 'Roteador / eixo ligado?',
+			prompt: 'Confirme se o roteador / fuso está girado e no RPM correto.'
+		},
 		renameFile: {
 			title: 'Renomear Arquivo ou Diretório',
 			prompt: 'Insira um novo nome:'
@@ -249,6 +282,11 @@ export default {
 			prompt: 'Você fez upload pelo menos de uma atualização de firmware. Você gostaria de instalá-la agora?',
 			resetTitle: 'Redefinir firmware?',
 			resetPrompt: 'Você acabou de instalar atualizações da placa de expansão. Você deseja reiniciar o controlador principal para restaurar a configuração anterior?'
+		},
+		workingAreaReset: {
+			title: 'Redefinir Área de Trabalho',
+			prompt: 'Selecione o modelo WorkBee que você gostaria de redefinir.',
+			workbeeModel: 'WorkBee Model'
 		},
 		inputRequired: 'Por favor, insira um valor',
 		numberRequired: 'Por favor, insira um número válido'
@@ -444,6 +482,9 @@ export default {
 		}
 	},
 	notification: {
+		calibration:{
+			message: 'Calibração de etapas / mm atualizada',
+		},
 		compress: {
 			title: 'Compactando arquivos ...',
 			message: 'Aguarde enquanto seus arquivos estão sendo compactados ...',
@@ -555,7 +596,10 @@ export default {
 			repeatJob: 'Iniciar Novamente',
 			repeatPrint: 'Imprimir Novamenten',
 			repeatSimulation: 'Simular Novamente',
-			autoSleep: 'Ativar suspensão automática'
+			autoSleep: 'Ativar suspensão automática',
+			powerLossResume: 'Power Loss Resume',
+			controlledPowerOff: 'Desligamento controlado',
+			captionPowerLoss: 'Power Loss Job Control'
 		},
 		jobData: {
 			caption: 'Dados coletados',

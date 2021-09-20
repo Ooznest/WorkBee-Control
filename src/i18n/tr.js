@@ -151,6 +151,31 @@ export default {
 			title: 'Yeniden başlat?',
 			prompt: 'Güncellenmiş yapılandırmayı uygulamak için cihazı yeniden başlatmak ister misiniz?'
 		},
+		confirmCalibrationReset: {
+			title: 'Varsayılanlara dön',
+			prompt: 'Adım/mm kalibrasyon ayarlarını varsayılan değerlere sıfırlamak istediğinizden emin misiniz?'
+		},
+		confirmTouchProbe: {
+			title: 'Dokunma Sonda Sırasını Çalıştır',
+			prompt: 'Parmak frezenin, Touch Probe klipsi takılıyken Buradan Başlayın deliğinin üzerinde olduğundan emin olun.',
+			promptZ: "Parmak frezenin, Touch Probe klipsi takılıyken Touch Probe'un en ince bölümünün üzerinde herhangi bir yerde olduğundan emin olun.",
+			checkWorking: 'Doğru çalışıp çalışmadığını kontrol etmek için prob plakasına parmak frezeye dokunun.'
+
+		},
+		confirmTouchProbeReset: {
+			title: 'Varsayılanlara dön',
+			prompt: 'Dokunma sistemi ayarlarını varsayılan değerlere sıfırlamak istediğinizden emin misiniz?'
+		},
+		controlledPowerOffDialog: {
+			message: 'Lütfen Bekleyin, Makine Duraklatılıyor',
+		},
+		confirmPowerOffDialog: {
+			message: 'Artık makine kapatılabilir.'
+		},
+		touchProbeSuccess: {
+			title: 'Başarı',
+			prompt: 'Sonda tamamlandı. Sıfır set çalışın. Lütfen probu çıkarın.'
+		},
 		connect: {
 			title: 'Cihaza Bağlan',
 			prompt: 'Lütfen bağlanmak istediğiniz makinenin ana bilgisayar adını ve şifresini girin:',
@@ -211,6 +236,14 @@ export default {
 			title: 'Yeni Dosya',
 			prompt: 'Lütfen yeni bir dosya adı girin:'
 		},
+		powerLossConfirm: {
+			title: 'Resume From Power Loss?',
+			prompt: 'Are you sure you want to resume a job from a power loss?'
+		},
+		powerLossSpindleConfirm: {
+			title: 'Yönlendirici/İş Mili Açık mı?',
+			prompt: "Lütfen Yönlendiricinin/İş Mili'nin döndürüldüğünü ve doğru RPM'de olduğunu onaylayın."
+		},
 		renameFile: {
 			title: 'Dosya veya Dizini Yeniden Adlandır',
 			prompt: 'Lütfen yeni bir ad girin:'
@@ -231,6 +264,11 @@ export default {
 		update: {
 			title: 'Güncellemeleri yükle?',
 			prompt: 'En az bir ürün yazılımı güncellemesi yüklediniz. Onları şimdi yüklemek ister misiniz?'
+		},
+		workingAreaReset: {
+			title: 'Çalışma Alanını Sıfırla',
+			prompt: 'Sıfırlamak istediğiniz WorkBee modelini seçin.',
+			workbeeModel: 'WorkBee Modeli'
 		},
 		inputRequired: 'Lütfen bir değer girin',
 		numberRequired: 'Lütfen geçerli bir sayı girin'
@@ -426,6 +464,9 @@ export default {
 		}
 	},
 	notification: {
+		calibration:{
+			message: 'Adım/mm kalibrasyon güncellendi',
+		},
 		compress: {
 			title: 'Dosyalar sıkıştırılıyor...',
 			message: 'Dosyalarınız sıkıştırılırken lütfen bekleyin...',
@@ -534,7 +575,10 @@ export default {
 			repeatJob: 'Tekrar başla',
 			repeatPrint: 'Tekrar Yazdır',
 			repeatSimulation: 'Tekrar Simüle Et',
-			autoSleep: 'Otomatik Uyku modunu etkinleştir'
+			autoSleep: 'Otomatik Uyku modunu etkinleştir',
+			powerLossResume: 'Güç Kaybına Devam Et',
+			controlledPowerOff: 'Kontrollü Güç Kapatma',
+			captionPowerLoss: 'Güç Kaybı İş Kontrolü'
 		},
 		jobData: {
 			caption: 'Toplanan veri',

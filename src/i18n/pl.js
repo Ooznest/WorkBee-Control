@@ -154,6 +154,31 @@ export default {
 			title: 'Zresetować panel?',
 			prompt: 'Czy chcesz zrestartować tablicę aby wgrać zaktualizowaną konfigurację?'
 		},
+		confirmCalibrationReset: {
+			title: 'Przywróć domyślne',
+			prompt: 'Czy na pewno chcesz zresetować ustawienia kalibracji kroków/mm do wartości domyślnych?'
+		},
+		confirmTouchProbe: {
+			title: 'Uruchom sekwencję sondy dotykowej',
+			prompt: 'Upewnić się, że frez palcowy znajduje się nad otworem Start Here z zamocowanym klipsem Touch Probe.',
+			promptZ: 'Upewnij się, że frez palcowy znajduje się w dowolnym miejscu powyżej najcieńszej części sondy dotykowej, z zamocowanym klipsem sondy dotykowej.',
+			checkWorking: 'Przyłóż płytkę sondy do frezu palcowego, aby sprawdzić, czy działa prawidłowo.'
+
+		},
+		confirmTouchProbeReset: {
+			title: 'Przywróć domyślne',
+			prompt: 'Czy na pewno chcesz zresetować ustawienia sondy dotykowej do wartości domyślnych?'
+		},
+		controlledPowerOffDialog: {
+			message: 'Proszę czekać, maszyna wstrzymuje',
+		},
+		confirmPowerOffDialog: {
+			message: 'Maszynę można teraz wyłączyć.'
+		},
+		touchProbeSuccess: {
+			title: 'Powodzenie',
+			prompt: 'Sonda kompletna. Praca ustawiona na zero. Proszę wyjąć sondę.'
+		},
 		connect: {
 			title: 'Połącz z urządzeniem',
 			prompt: 'Proszę podać nazwę oraz hasło urządzenia z która chcesz się połączyć:',
@@ -208,6 +233,14 @@ export default {
 			currentSpeed: 'Aktualna prędkość: {0}',
 			cancelUploads: 'Anuluj wgrywanie',
 			cancelDownloads: 'Anuluj pobieranie'
+		},
+		powerLossConfirm: {
+			title: 'Wznów po utracie zasilania?',
+			prompt: 'Czy na pewno chcesz wznowić pracę po utracie zasilania?'
+		},
+		powerLossSpindleConfirm: {
+			title: 'Router/wrzeciono włączone?',
+			prompt: 'Upewnij się, że router/wrzeciono jest obrócony i ma prawidłową prędkość obrotową.'
 		},
 		meshEdit: {
 			title: 'Ustaw parametry siatki Mesh',
@@ -284,6 +317,11 @@ export default {
 			prompt: 'Wczytałeś co najmniej jedno oprogramowanie sprzętowe. Czy chcesz zainstalować je teraz?',
 			resetTitle: 'Zresetować oprogramowanie sprzętowe?',
 			resetPrompt: 'Właśnie zainstalowałeś aktualizację rozszerzeń. Czy chcesz ponownie uruchomić główny sterownik aby przywrócić wcześniejszą konfigurację?'
+		},
+		workingAreaReset: {
+			title: 'Zresetuj obszar roboczy',
+			prompt: 'Wybierz model WorkBee, do którego chcesz zresetować.',
+			workbeeModel: 'Model WorkBee'
 		},
 		inputRequired: 'Proszę podać wartość',
 		numberRequired: 'Proszę wpisać odpowiednią liczbę'
@@ -484,6 +522,9 @@ export default {
 		}
 	},
 	notification: {
+		calibration:{
+			message: 'Zaktualizowano kalibrację kroków/mms',
+		},
 		compress: {
 			title: 'Kompresja plików...',
 			message: 'Proszę czekać, trwa kompresja plików...',
@@ -603,7 +644,10 @@ export default {
 			repeatJob: 'Rozpocznij ponownie',
 			repeatPrint: 'Drukuj ponownie',
 			repeatSimulation: 'Symuluj ponownie',
-			autoSleep: 'Uaktywnij auto-uśpienie'
+			autoSleep: 'Uaktywnij auto-uśpienie',
+			powerLossResume: 'Wznowienie utraty zasilania',
+			controlledPowerOff: 'Kontrolowane wyłączanie',
+			captionPowerLoss: 'Kontrola zadań związanych z utratą zasilania'
 		},
 		jobData: {
 			caption: 'Zabrano dane',

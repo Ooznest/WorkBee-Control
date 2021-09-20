@@ -158,6 +158,31 @@ export default {
 			title: '重启主板？',
 			prompt: '你是否要重新启动主板，并应用更新后的配置？'
 		},
+		confirmCalibrationReset: {
+			title: '重置为默认值',
+			prompt: '您确定要将步数/毫米校准设置重置为默认值吗'
+		},
+		confirmTouchProbe: {
+			title: '运行触摸探针序列',
+			prompt: '确保立铣刀位于“从这里开始”孔的上方，并且连接了接触式探针夹.',
+			promptZ: '确保立铣刀位于 Touch Probe 最薄部分上方的任何位置，并连接 Touch Probe 夹',
+			checkWorking: '将探针板与立铣刀接触以检查其是否正常工作.'
+
+		},
+		confirmTouchProbeReset: {
+			title: '重置为默认值',
+			prompt: '您确定要将接触式探针设置重置为默认值吗?'
+		},
+		controlledPowerOffDialog: {
+			message: '请稍候，机器暂停',
+		},
+		confirmPowerOffDialog: {
+			message: '现在可以关闭机器.'
+		},
+		touchProbeSuccess: {
+			title: '成功',
+			prompt: '探针完成。工作零集。请取下探针.'
+		},
 		connect: {
 			title: '连接到机器',
 			prompt: '请输入你要连接的机器的主机名和密码：',
@@ -233,6 +258,14 @@ export default {
 			title: '新建文件',
 			prompt: '请输入新建文件的名称：'
 		},
+		powerLossConfirm: {
+			title: '恢复掉电?',
+			prompt: '您确定要从功率损耗中恢复工作吗?'
+		},
+		powerLossSpindleConfirm: {
+			title: '路由器/主轴开启?',
+			prompt: '请确认路由器/主轴已转动且转速正确.'
+		},
 		pluginInstallation: {
 			installation: '插件安装向导',
 			prompt: '将安装以下插件：',
@@ -288,6 +321,11 @@ export default {
 			prompt: '你已上传至少一个固件更新。你想现在安装吗？',
 			resetTitle: '要重置固件吗？',
 			resetPrompt: '你刚刚安装了扩展板更新。是否要重新启动主控制器并恢复以前的配置？'
+		},
+		workingAreaReset: {
+			title: '重置工作区',
+			prompt: '选择您要重置为的 WorkBee 模型.',
+			workbeeModel: 'WorkBee 模型'
 		},
 		inputRequired: '请输入一个值',
 		numberRequired: '请输入有效的数值'
@@ -489,6 +527,9 @@ export default {
 		}
 	},
 	notification: {
+		calibration:{
+			message: '步数/毫米校准更新',
+		},
 		compress: {
 			title: '正在压缩文件……',
 			message: '你的文件已经开始压缩，请等待……',
@@ -608,7 +649,10 @@ export default {
 			repeatJob: '重新开始',
 			repeatPrint: '重新打印',
 			repeatSimulation: '重新模拟',
-			autoSleep: '启用自动休眠'
+			autoSleep: '启用自动休眠',
+			powerLossResume: '功率损耗恢复',
+			controlledPowerOff: '控制电源关闭',
+			captionPowerLoss: '断电作业控制'
 		},
 		jobData: {
 			caption: '采集数据',

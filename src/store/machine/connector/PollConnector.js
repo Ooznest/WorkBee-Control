@@ -776,7 +776,8 @@ export default class PollConnector extends BaseConnector {
 					min,
 					max: response.axisMaxes[index],
 					speed: response.maxFeedrates[index],
-					stepsPerMm: response.stepsPerMm[index]
+					stepsPerMm: response.stepsPerMm[index],
+					workplaceOffsets: response.workplaceOffsets
 				})),
 				extruders: [...Array(this.numExtruders)].map((dummy, index) => ({
 					acceleration: response.accelerations[response.axisMins.length + index],

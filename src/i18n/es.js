@@ -152,6 +152,31 @@ export default {
 			title: '¿Reiniciar Placa?',
 			prompt: '¿Deseas reiniciar la placa para aplicar la nueva configuración?'
 		},
+		confirmCalibrationReset: {
+			title: 'Restablecer los valores predeterminados',
+			prompt: '¿Está seguro de que desea restablecer los ajustes de calibración de pasos / mm a los valores predeterminados?'
+		},
+		confirmTouchProbe: {
+			title: 'Ejecutar secuencia de sonda táctil',
+			prompt: 'Asegúrese de que la fresa esté por encima del orificio de Inicio aquí con el clip de la sonda táctil adjunta.',
+			promptZ: 'Asegúrese de que la fresa esté en cualquier lugar por encima de la sección más delgada de la sonda táctil, con el clip de la sonda táctil adjunto.',
+			checkWorking: 'Toque la placa de la sonda contra la fresa para verificar que esté funcionando correctamente.'
+
+		},
+		confirmTouchProbeReset: {
+			title: 'Restablecer los valores predeterminados',
+			prompt: '¿Está seguro de que desea restablecer la configuración de la sonda táctil a los valores predeterminados?'
+		},
+		controlledPowerOffDialog: {
+			message: 'Espere, máquina en pausa',
+		},
+		confirmPowerOffDialog: {
+			message: 'Ahora se puede apagar la máquina.'
+		},
+		touchProbeSuccess: {
+			title: 'Éxito',
+			prompt: 'Sonda completa. Trabajar a cero. Retire la sonda.'
+		},
 		connect: {
 			title: 'Conexión con la Máquina',
 			prompt: 'Ingrese el nombre y la contraseña de la máquina a la que desea conectarse:',
@@ -212,6 +237,14 @@ export default {
 			title: 'Nuevo Archivo',
 			prompt: 'Por favor, introduzca el nombre del Nuevo Archivo:'
 		},
+		powerLossConfirm: {
+			title: 'Sonda completa. Trabajar a cero. Retire la sonda.?',
+			prompt: '¿Estás segura de que quieres reanudar un trabajo por una pérdida de energía?'
+		},
+		powerLossSpindleConfirm: {
+			title: '¿Enrutador / eje encendido?',
+			prompt: 'Confirme que el enrutador / eje está girado y a las RPM correctas.'
+		},
 		renameFile: {
 			title: 'Renombrar Archivo o Directorio',
 			prompt: 'Por favor, introduzca el nuevo nombre:'
@@ -232,6 +265,11 @@ export default {
 		update: {
 			title: '¿Instalar Actualización/es?',
 			prompt: 'Has subido al menos una actualización de firmware. ¿Desea instalarla/s ahora?'
+		},
+		workingAreaReset: {
+			title: 'Restablecer área de trabajo',
+			prompt: 'Seleccione el modelo de WorkBee al que le gustaría restablecer.',
+			workbeeModel: 'Modelo WorkBee'
 		},
 		inputRequired: 'Por favor, introduzca un valor',
 		numberRequired: 'Por favor, introduzca un número válido'
@@ -428,6 +466,9 @@ export default {
 		}
 	},
 	notification: {
+		calibration:{
+			message: 'Calibración de pasos / mm actualizada',
+		},
 		compress: {
 			title: 'Comprimiendo archivos ...',
 			message: 'Espere mientras se comprimen los archivos...',
@@ -536,7 +577,10 @@ export default {
 			repeatJob: 'Iniciar de nuevo',
 			repeatPrint: 'Imprimir de nuevo',
 			repeatSimulation: 'Simular de nuevo',
-			autoSleep: 'Habilitar suspensión automática'
+			autoSleep: 'Habilitar suspensión automática',
+			powerLossResume: 'Power Loss Resume',
+			controlledPowerOff: 'Apagado controlado',
+			captionPowerLoss: 'Control de trabajos por pérdida de energía'
 		},
 		jobData: {
 			caption: 'Informacion (histórico)',
