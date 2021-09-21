@@ -419,9 +419,9 @@ export default class {
     this.toolCursor = new TransformNode('toolCursorContainer');
     this.toolCursorMesh = MeshBuilder.CreateCylinder('toolCursorMesh', { diameterTop: 0, diameterBottom: 1 }, this.scene);
     this.toolCursorMesh.parent = this.toolCursor;
-    this.toolCursorMesh.position = new Vector3(0, 3, 0);
+    this.toolCursorMesh.position = new Vector3(0, 8, 0);
     this.toolCursorMesh.rotate(Axis.X, Math.PI, Space.LOCAL);
-    this.toolCursorMesh.scaling = new Vector3(3, 3, 3);
+    this.toolCursorMesh.scaling = new Vector3(8, 8, 8);
     this.toolCursorMesh.isVisible = this.toolCursorVisible;
     this.registerClipIgnore(this.toolCursorMesh);
   }
