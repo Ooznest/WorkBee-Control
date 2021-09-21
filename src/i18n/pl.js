@@ -590,6 +590,9 @@ export default {
 			message: 'Prosze czekać, plik jest wysyłany...',
 			success: 'Wysłanie {0} sukces po {1}',
 			error: 'Nieudane wysłanie {0}'
+		},
+		workingArea: {
+			message: 'Zaktualizowano obszar roboczy'
 		}
 	},
 	panel: {
@@ -685,6 +688,11 @@ export default {
 			axesNotHomed: 'Dana oś nie jest zbazowana:|dane ossie nie są zbazowane:',
 			noAxes: 'brak osi'
 		},
+		sensors: {
+			endstopTriggered: 'Wyzwolone',
+			endstopNotTriggered: 'Nie wyzwolone',
+			endstopStatus: 'Stan zatrzymania'
+		},
 		settingsAbout: {
 			caption: 'na temat',
 			developedBy: 'Interfejs Web stworzony przez:',
@@ -749,6 +757,25 @@ export default {
 			notificationErrorsPersistent: 'Nie zamykaj komunikatów o błędach automatycznie',
 			notificationTimeout: 'Domyślny limit czasu powiadomień ({0})'
 		},
+		settingsTouchProbe: {
+			caption: 'Ustawienia sondy dotykowej',
+			touchProbeEnableCaption: 'Włącz sondę dotykową',
+			touchProbeEndstopNumberCaption: 'Numer końca',
+			touchProbeFeedRateCaption: 'Posuw (mm/min)',
+			touchProbeXDimensionCaption: 'Wymiar X (mm)',
+			touchProbeYDimensionCaption: 'Wymiar Y (mm)',
+			touchProbeZDimensionCaption: 'Wymiar Z (mm)',
+			touchProbeXOffsetCaption: 'Przesunięcie osi X (mm)',
+			touchProbeYOffsetCaption: 'Przesunięcie osi Y (mm)',
+			touchProbeZOffsetCaption: 'Przesunięcie osi Z (mm)',
+			touchProbeRevert: 'Przywróć domyślne',
+			touchProbeTriggerCaption: 'Poziom wyzwalania sondy dotykowej',
+			touchProbeActiveHigh: 'Aktywny wysoki',
+			touchProbeActiveLow: 'Aktywny niski',
+			touchProbeType: 'Typ sondy dotykowej',
+			touchProbeXYZ: 'Sonda dotykowa XYZ',
+			touchProbeZ: 'Sonda dotykowa Z',
+		},
 		settingsWebcam: {
 			caption: 'Kamera',
 			webcamURL: 'URL obrazu video (opcjonalnie)',
@@ -763,8 +790,41 @@ export default {
 			flipY: 'Przerzuć oś Y',
 			flipBoth: 'Przerzuć obie osie'
 		},
+		settingsWorkingArea: {
+			caption: 'Obszar roboczy maszyny',
+			axisLabel: '{0}-Axis (mm)',
+			resetWorkingArea: 'Zresetuj obszar roboczy',
+		},
+		settingsCalibration: {
+			caption: 'Maszyna Kroki/mm Kalibrowanie',
+			axisLabel: '{0}-Axis (Kroki/mm)',
+			resetCalibration: 'Resetowanie Kroki/mm Kalibrowanie',
+		},
+		spindleSpeed:{
+			caption: 'Wrzeciona',
+			tool: 'Narzędzie {0}',
+			spindleName: 'Nazwa wrzeciona',
+			spindleActive: 'Aktywny',
+			setRPM: 'Ustawić RPM',
+			noSpindleDefined: 'Brak zdefiniowanych narzędzi wrzeciona. Posługiwać się ',
+			toDefineASpindle: ' aby zdefiniować wrzeciono i ',
+			toAssignTool: ' aby przypisać to wrzeciono do narzędzia.',
+			turnOn: 'Włącz',
+			turnOff: 'Wyłącz'
+		},
 		speedFactor: {
 			caption: 'parametry prędkości'
+		},
+		spindle: {
+			spindle : 'Wrzeciono',
+			active : 'Aktywny',
+			direction : 'Kierunek',
+			currentRPM : 'Obecny RPM',
+			setRPM : 'ustawić RPM',
+			on : 'Włączony',
+			off : 'Wyłączone',
+			forward : 'do przodu',
+			reverse : 'odwrócić'
 		},
 		status: {
 			caption: 'Status',
@@ -813,6 +873,27 @@ export default {
 				noItems: 'Brak dodatkowych czujników'
 			},
 			noTools: 'Brak narzędzi'
+		},
+		touchProbePanel: {
+			caption: 'Sterowanie sondą dotykową',
+			endmillDiameter: 'Średnica Endmill (mm)',
+			probeAxisCaption: 'Sonda indywidualna oś',
+			probeXTitle: 'Oś X sondy',
+			probeXCaption: 'X',
+			probeYTitle: 'Oś Y sondy',
+			probeYCaption: 'Y',
+			probeZTitle: 'Oś Z sondy',
+			probeZCaption: 'Z',
+			probeCornerTitle: 'Narożnik sondy',
+			probeCornerCaption: 'Narożnik sondy',
+			probeLocation: 'Lokalizacja sondy',
+			probeLocationFrontLeft: 'Lewy przedni róg',
+			probeLocationFrontRight: 'Prawy przedni róg',
+			probeLocationBackLeft: 'Tylny lewy róg',
+			probeLocationBackRight: 'Tylny prawy róg',
+			probeStatus: 'Stan sondy:',
+			probeTriggered: 'Wyzwolone',
+			probeNotTriggered: 'Nie wyzwolone'
 		},
 		webcam: {
 			caption: 'Podgląd obrazu z kamery',
@@ -876,6 +957,12 @@ export default {
 		},
 		autoUpdate: {
 			menuCaption: 'Aktualizacja'
+		},
+		CNCGCodeViewer: {
+			background: 'Kolor Tła',
+			bedRenderMode:  'Kolor siatki łóżka',
+			viewerSettings: 'Ustawienia przeglądarki',
+			progressSettings: 'Ustawienia postępu'
 		},
 		gcodeViewer: {
 			caption: 'Podgląd G-kod',

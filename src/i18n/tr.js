@@ -521,6 +521,9 @@ export default {
 			success: '{0} yüklendi, başarılı {1}',
 			successMulti: '{0} dosya başarıyla yüklendi',
 			error: '{0} yüklenemedi'
+		},
+		workingArea: {
+			message: 'Çalışma alanı güncellendi'
 		}
 	},
 	panel: {
@@ -685,6 +688,25 @@ export default {
 			notificationErrorsPersistent: 'Hata mesajlarını otomatik olarak kapatma',
 			notificationTimeout: 'Varsayılan bildirim zaman aşımı ({0})'
 		},
+		settingsTouchProbe: {
+			caption: 'Dokunma Sonda Ayarları',
+			touchProbeEnableCaption: 'Dokunma Sondasını Etkinleştir',
+			touchProbeEndstopNumberCaption: 'Endstop Number',
+			touchProbeFeedRateCaption: 'İlerleme hızı (mm/dak)',
+			touchProbeXDimensionCaption: 'X Boyut (mm)',
+			touchProbeYDimensionCaption: 'Y Boyut (mm)',
+			touchProbeZDimensionCaption: 'Z Boyut (mm)',
+			touchProbeXOffsetCaption: 'X-Ekseni Ofseti (mm)',
+			touchProbeYOffsetCaption: 'Y-Ekseni Ofseti (mm)',
+			touchProbeZOffsetCaption: 'Z-Ekseni Ofseti (mm)',
+			touchProbeRevert: 'Varsayılanlara Sıfırla',
+			touchProbeTriggerCaption: 'Dokunma Sondası Tetikleme Düzeyi',
+			touchProbeActiveHigh: 'Aktif Yüksek',
+			touchProbeActiveLow: 'Aktif Düşük',
+			touchProbeType: 'Dokunma Sondası Tipi',
+			touchProbeXYZ: 'XYZ Dokunma Sondası',
+			touchProbeZ: 'Z Dokunma Sondası',
+		},
 		settingsWebcam: {
 			caption: 'Web kamerası',
 			webcamURL: 'Web kamerası URL (opsiyonel)',
@@ -698,6 +720,16 @@ export default {
 			flipX: 'Çevir X',
 			flipY: 'Çevir Y',
 			flipBoth: 'İkisini de çevir'
+		},
+		settingsWorkingArea: {
+			caption: 'Makine Çalışma Alanı',
+			axisLabel: '{0}-Axis (mm)',
+			resetWorkingArea: 'Çalışma Alanını Sıfırla',
+		},
+		settingsCalibration: {
+			caption: 'Makine Adımları/mm Kalibrasyonu',
+			axisLabel: '{0}-Axis (Adımları/mm)',
+			resetCalibration: 'Sıfırla Adımları/mm Kalibrasyonu',
 		},
 		spindleSpeed:{
 			caption: 'Iğler',
@@ -713,6 +745,17 @@ export default {
 		},
 		speedFactor: {
 			caption: 'Hız Faktörü'
+		},
+		spindle: {
+			spindle : 'İğ',
+			active : 'Etkin',
+			direction : 'Yön',
+			currentRPM : 'Mevcut RPM',
+			setRPM : 'Ayarlamak RPM',
+			on : 'Açık',
+			off : 'Kapalı',
+			forward : 'ileri',
+			reverse : 'ters'
 		},
 		status: {
 			caption: 'Durum',
@@ -758,6 +801,27 @@ export default {
 				noItems: 'Ekstra Isıtıcı Yok'
 			},
 			noTools: 'Takım Yok'
+		},
+		touchProbePanel: {
+			caption: 'Dokunmatik Prob Kontrolü',
+			endmillDiameter: 'Endmill Çapı (mm)',
+			probeAxisCaption: 'Tek Ekseni İncele',
+			probeXTitle: 'Sonda X Ekseni',
+			probeXCaption: 'X',
+			probeYTitle: 'Sonda Y Ekseni',
+			probeYCaption: 'Y',
+			probeZTitle: 'Sonda Z Ekseni',
+			probeZCaption: 'Z',
+			probeCornerTitle: 'Sonda Köşesi',
+			probeCornerCaption: 'Sonda Köşesi',
+			probeLocation: 'Prob Konumu',
+			probeLocationFrontLeft: 'Ön Sol Köşe',
+			probeLocationFrontRight: 'Ön Sağ Köşe',
+			probeLocationBackLeft: 'Arka Sol Köşe',
+			probeLocationBackRight: 'Arka Sağ Köşe',
+			probeStatus: 'Prob Durumu:',
+			probeTriggered: 'Tetiklendi',
+			probeNotTriggered: 'Tetiklenmedi'
 		},
 		webcam: {
 			caption: 'Web Kamerası Gözetimi',

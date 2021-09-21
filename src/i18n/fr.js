@@ -521,6 +521,9 @@ export default {
 			success: 'Envoi de {0} réussi après {1}',
 			successMulti: 'Envoi de {0} fichiers réusssi',
 			error: 'Échec de l\'envoi de {0}'
+		},
+		workingArea: {
+			message: 'Zone de travail mise à jour'
 		}
 	},
 	panel: {
@@ -685,6 +688,25 @@ export default {
 			notificationErrorsPersistent: 'Ne pas fermer les messages d\'erreur automatiquement',
 			notificationTimeout: 'Délais d\'affichage des notifications par défaut ({0})'
 		},
+		settingsTouchProbe: {
+			caption: 'Paramètres de la sonde tactile',
+			touchProbeEnableCaption: 'Activer la sonde tactile',
+			touchProbeEndstopNumberCaption: 'Numéro de fin de course',
+			touchProbeFeedRateCaption: 'Avance (mm/min)',
+			touchProbeXDimensionCaption: 'X Dimension (mm)',
+			touchProbeYDimensionCaption: 'Y Dimension (mm)',
+			touchProbeZDimensionCaption: 'Z Dimension (mm)',
+			touchProbeXOffsetCaption: 'X-Axe Décalage (mm)',
+			touchProbeYOffsetCaption: 'Y-Axe Décalage (mm)',
+			touchProbeZOffsetCaption: 'Z-Axe Décalage (mm)',
+			touchProbeRevert: 'Revenir aux valeurs par défaut',
+			touchProbeTriggerCaption: 'Niveau de déclenchement de la sonde tactile',
+			touchProbeActiveHigh: 'Actif haut',
+			touchProbeActiveLow: 'Actif bas',
+			touchProbeType: 'Type de sonde tactile',
+			touchProbeXYZ: 'Sonde tactile XYZ',
+			touchProbeZ: 'Sonde tactile Z',
+		},
 		settingsWebcam: {
 			caption: 'Webcam',
 			webcamURL: 'Webcam URL (optionnel)',
@@ -698,6 +720,16 @@ export default {
 			flipX: 'Retourner X',
 			flipY: 'Retourner Y',
 			flipBoth: 'Retourner les deux'
+		},
+		settingsWorkingArea: {
+			caption: 'Zone de travail de la machine',
+			axisLabel: '{0}-Axis (mm)',
+			resetWorkingArea: 'Réinitialiser la zone de travail',
+		},
+		settingsCalibration: {
+			caption: 'Machine Pas/mm étalonnage',
+			axisLabel: '{0}-Axis (pas/mm)',
+			resetCalibration: 'Reinitialiser pas/mm étalonnage',
 		},
 		spindleSpeed:{
 			caption: 'Broches',
@@ -713,6 +745,17 @@ export default {
 		},
 		speedFactor: {
 			caption: 'Facteur de Vitesse'
+		},
+		spindle: {
+			spindle : 'Broche',
+			active : 'Actif',
+			direction : 'Direction',
+			currentRPM : 'Courante RPM',
+			setRPM : 'Définir RPM',
+			on : 'Au',
+			off : 'Désactivé',
+			forward : 'avance',
+			reverse : 'inverse'
 		},
 		status: {
 			caption: 'Status',
@@ -758,6 +801,27 @@ export default {
 				noItems: 'Pas de Capteur supplémentaire'
 			},
 			noTools: 'Pas d\'Outils'
+		},
+		touchProbePanel: {
+			caption: 'Contrôle de la sonde tactile',
+			endmillDiameter: 'Diamètre de fraise (mm)',
+			probeAxisCaption: 'Sonde Individuelle Axe',
+			probeXTitle: 'Sonde X Axe',
+			probeXCaption: 'X',
+			probeYTitle: 'Sonde Y Axe',
+			probeYCaption: 'Y',
+			probeZTitle: 'Sonde Z Axe',
+			probeZCaption: 'Z',
+			probeCornerTitle: 'Coin de la sonde',
+			probeCornerCaption: 'Coin de la sonde',
+			probeLocation: 'Localisation de la sonde',
+			probeLocationFrontLeft: 'Coin avant gauche',
+			probeLocationFrontRight: 'Coin avant droit',
+			probeLocationBackLeft: 'Coin arrière gauche',
+			probeLocationBackRight: 'Coin arrière droit',
+			probeStatus: 'État de la sonde:',
+			probeTriggered: 'Déclenché',
+			probeNotTriggered: 'Non déclenché'
 		},
 		webcam: {
 			caption: 'Surveillance Webcam',

@@ -595,6 +595,9 @@ export default {
 			message: '文件已经开始上传，请等待……',
 			success: '已成功上传{0}，总计{1}',
 			error: '上传{0}失败'
+		},
+		workingArea: {
+			message: '工作区已更新'
 		}
 	},
 	panel: {
@@ -760,6 +763,25 @@ export default {
 			notificationErrorsPersistent: '不要自动关闭错误消息',
 			notificationTimeout: '默认通知超时（{0}）'
 		},
+		settingsTouchProbe: {
+			caption: '测头设置',
+			touchProbeEnableCaption: '启用测头',
+			touchProbeEndstopNumberCaption: 'Endstop Number',
+			touchProbeFeedRateCaption: '终点编号(mm/min)',
+			touchProbeXDimensionCaption: 'X 尺寸 (mm)',
+			touchProbeYDimensionCaption: 'Y 尺寸 (mm)',
+			touchProbeZDimensionCaption: 'Z 尺寸 (mm)',
+			touchProbeXOffsetCaption: 'X-轴偏移 (mm)',
+			touchProbeYOffsetCaption: 'Y-轴偏移 (mm)',
+			touchProbeZOffsetCaption: 'Z-轴偏移 (mm)',
+			touchProbeRevert: '恢复为默认值',
+			touchProbeTriggerCaption: '测头触发电平',
+			touchProbeActiveHigh: '活跃高',
+			touchProbeActiveLow: '主动低',
+			touchProbeType: '测头类型',
+			touchProbeXYZ: 'XYZ 测头',
+			touchProbeZ: 'Z 测头',
+		},
 		settingsWebcam: {
 			caption: '网络摄像头',
 			webcamURL: '网络摄像头网址（可选）',
@@ -773,6 +795,16 @@ export default {
 			flipX: '翻转X',
 			flipY: '翻转Y',
 			flipBoth: '翻转两者'
+		},
+		settingsWorkingArea: {
+			caption: '机器工作区',
+			axisLabel: '{0}-Axis (mm)',
+			resetWorkingArea: '重置工作区',
+		},
+		settingsCalibration: {
+			caption: '机器 脚步/mm 校准',
+			axisLabel: '{0}-Axis (脚步/mm)',
+			resetCalibration: '重启 脚步/mm 校准',
 		},
 		spindleSpeed:{
 			caption: '主轴',
@@ -788,6 +820,17 @@ export default {
 		},
 		speedFactor: {
 			caption: '速度系数'
+		},
+		spindle: {
+			spindle : '主轴',
+			active : '活动',
+			direction : '方向',
+			currentRPM : '当前 RPM',
+			setRPM : '设置 RPM',
+			on : '开',
+			off : '关闭',
+			forward : '前进',
+			reverse : '反向'
 		},
 		status: {
 			caption: '状态',
@@ -836,6 +879,27 @@ export default {
 				noItems: '没有附加的传感器'
 			},
 			noTools: '没有工具'
+		},
+		touchProbePanel: {
+			caption: '测头控制',
+			endmillDiameter: '立铣刀直径 (mm)',
+			probeAxisCaption: '探测单轴',
+			probeXTitle: '探头X轴',
+			probeXCaption: 'X',
+			probeYTitle: '探头Y轴',
+			probeYCaption: 'Y',
+			probeZTitle: '测头Z轴',
+			probeZCaption: 'Z',
+			probeCornerTitle: '探针角',
+			probeCornerCaption: '探针角',
+			probeLocation: '探头位置',
+			probeLocationFrontLeft: '左前角',
+			probeLocationFrontRight: '右前角',
+			probeLocationBackLeft: '左后角',
+			probeLocationBackRight: '右后角',
+			probeStatus: '探测状态',
+			probeTriggered: '触发',
+			probeNotTriggered: '未触发'
 		},
 		webcam: {
 			caption: '网络摄像头监控',

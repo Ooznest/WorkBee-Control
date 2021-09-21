@@ -282,11 +282,11 @@
 								<v-card-title>
                                     {{$t('plugins.CNCGCodeViewer.progressSettings')}}
 								</v-card-title>
-                                <v-card-text>{{$t('plugins.gcodeViewer.topClipping')}}</v-card-text>
+                                <!--<v-card-text>{{$t('plugins.gcodeViewer.topClipping')}}</v-card-text>
                                 <v-slider class="mx-2" min="0.1" :max="maxHeight" v-model="sliderHeight" thumb-label thumb-size="24" step="0.1"></v-slider>
                                 <v-card-text>{{$t('plugins.gcodeViewer.bottomClipping')}}</v-card-text>
                                 <v-slider class="mx-2" min="0.1" :max="maxHeight" v-model="sliderBottomHeight" thumb-label thumb-size="24" step="0.1"></v-slider>
-                                <v-checkbox class="" v-model="liveZTracking" :label="$t('plugins.gcodeViewer.liveZTracking')"></v-checkbox>
+                                <v-checkbox class="" v-model="liveZTracking" :label="$t('plugins.gcodeViewer.liveZTracking')"></v-checkbox> -->
                                 <v-card-text>{{$t('plugins.gcodeViewer.progressColor')}}</v-card-text>
                                 <v-card-text class="mb-2 mt-0">
                                     <gcodeviewer-color-picker :editcolor="progressColor" @updatecolor="value => updateProgressColor(value)"></gcodeviewer-color-picker>
@@ -448,7 +448,12 @@ data: function () {
 		this.forceWireMode = viewer.gcodeProcessor.forceWireMode;
 		this.liveTrackingShowSolid = viewer.gcodeProcessor.liveTrackingShowSolid;
 		this.liveZTracking = localStorage.getItem('liveZTracking') === 'true';
-		this.showCursor = localStorage.getItem('showCursor') === 'true';
+		
+		if (localStorage.getItem('showCursor') === null) {
+			this.showCursor = true;
+			} else {
+			this.showCursor = localStorage.getItem('showCursor')
+		}
 
 		if (viewer.lastLoadFailed()) {
 			this.renderQuality = 2;

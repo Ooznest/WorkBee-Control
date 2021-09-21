@@ -542,6 +542,9 @@ export default {
 			message: 'Aguarde enquanto o arquivo está sendo carregado ...',
 			success: 'Upload de {0} bem-sucedido após {1}',
 			error: 'Falha ao carregar {0}'
+		},
+		workingArea: {
+			message: 'Área de trabalho atualizada'
 		}
 	},
 	panel: {
@@ -707,6 +710,25 @@ export default {
 			notificationErrorsPersistent: 'Não fechar mensagens de erro automaticamente',
 			notificationTimeout: 'Tempo de espera pré-determinado para notificações ({0})'
 		},
+		settingsTouchProbe: {
+			caption: 'Configurações do sensor de toque',
+			touchProbeEnableCaption: 'Enable Touch Probe',
+			touchProbeEndstopNumberCaption: 'Endstop Number',
+			touchProbeFeedRateCaption: 'Feedrate (mm/min)',
+			touchProbeXDimensionCaption: 'Dimensão X (mm)',
+			touchProbeYDimensionCaption: 'Dimensão Y (mm)',
+			touchProbeZDimensionCaption: 'Dimensão Z (mm)',
+			touchProbeXOffsetCaption: 'X-Axis Offset (mm)',
+			touchProbeYOffsetCaption: 'Y-Axis Offset (mm)',
+			touchProbeZOffsetCaption: 'Z-Axis Offset (mm)',
+			touchProbeRevert: 'Redefinir para padrões',
+			touchProbeTriggerCaption: 'Touch Probe Trigger Level',
+			touchProbeActiveHigh: 'Active High',
+			touchProbeActiveLow: 'Active Low',
+			touchProbeType: 'Tipo de sonda de toque',
+			touchProbeXYZ: 'XYZ Touch Probe',
+			touchProbeZ: 'Z Touch Probe',
+		},
 		settingsWebcam: {
 			caption: 'Webcam',
 			webcamURL: 'URL da Webcam (opcional)',
@@ -720,6 +742,16 @@ export default {
 			flipX: 'Espelhar em X',
 			flipY: 'Espelhar em Y',
 			flipBoth: 'Espelhar em ambos'
+		},
+		settingsWorkingArea: {
+			caption: 'Área de Trabalho da Máquina',
+			axisLabel: '{0}-Axis (mm)',
+			resetWorkingArea: 'Redefinir área de trabalho',
+		},
+		settingsCalibration: {
+			caption: 'Maszyna Kroki/mm Kalibrowanie',
+			axisLabel: '{0}-Axis (Kroki/mm)',
+			resetCalibration: 'Redefinir Kroki/mm Calibration',
 		},
 		spindleSpeed:{
 			caption: 'Fusos',
@@ -735,6 +767,17 @@ export default {
 		},
 		speedFactor: {
 			caption: 'Fator de velocidade'
+		},
+		spindle: {
+			spindle : 'Fuso',
+			active : 'Ativo',
+			direction : 'Direção',
+			currentRPM : 'Atual RPM',
+			setRPM : 'Definir RPM',
+			on : 'Sobre',
+			off : 'Desligada',
+			forward : 'para a frente',
+			reverse : 'reverso'
 		},
 		status: {
 			caption: 'Status',
@@ -780,6 +823,27 @@ export default {
 				noItems: 'Sem Sensores Extra'
 			},
 			noTools: 'Sem Ferramentas'
+		},
+		touchProbePanel: {
+			caption: 'Contrôle de la sonde tactile',
+			endmillDiameter: 'Diamètre de la fraise (mm)',
+			probeAxisCaption: 'Sonde Axe Individuel',
+			probeXTitle: 'Sonde Axe X',
+			probeXCaption: 'X',
+			probeYTitle: 'Sonde Axe Y',
+			probeYCaption: 'Y',
+			probeZTitle: 'Sonde Axe Z',
+			probeZCaption: 'Z',
+			probeCornerTitle: 'Coin de la sonde',
+			probeCornerCaption: 'Coin de la sonde',
+			probeLocation: 'Emplacement de la sonde',
+			probeLocationFrontLeft: 'Coin avant gauche',
+			probeLocationFrontRight: 'Coin avant droit',
+			probeLocationBackLeft: 'Coin arrière gauche',
+			probeLocationBackRight: 'Coin arrière droit',
+			probeStatus: 'État de la sonde:',
+			probeTriggered: 'Déclenché',
+			probeNotTriggered: 'Non déclenché'
 		},
 		webcam: {
 			caption: 'Vigilância por webcam',

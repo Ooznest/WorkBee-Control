@@ -593,6 +593,9 @@ export default {
 			message: 'Bitte warten während die Datei hochgeladen wird...',
 			success: 'Datei {0} erfolgreich nach {1} hochgeladen',
 			error: 'Konnte {0} nicht hochladen'
+		},
+		workingArea: {
+			message: 'Werkgebied bijgewerkt'
 		}
 	},
 	panel: {
@@ -758,6 +761,25 @@ export default {
 			notificationErrorsPersistent: 'Fehlermeldungen nicht automatisch schließen',
 			notificationTimeout: 'Standardmäßige Benachrichtungsdauer ({0})'
 		},
+		settingsTouchProbe: {
+			caption: 'Berühren Sie Probe Settings',
+			touchProbeEnableCaption: 'Touch Probe aktivieren',
+			touchProbeEndstopNumberCaption: 'Endstoppnummer',
+			touchProbeFeedRateCaption: 'Vorschubgeschwindigkeit (mm/min)',
+			touchProbeXDimensionCaption: 'X Abmessungen (mm)',
+			touchProbeYDimensionCaption: 'Y Abmessungen (mm)',
+			touchProbeZDimensionCaption: 'Z Abmessungen (mm)',
+			touchProbeXOffsetCaption: 'X-Achse Offset (mm)',
+			touchProbeYOffsetCaption: 'Y-Achse Offset (mm)',
+			touchProbeZOffsetCaption: 'Z-Achse Offset (mm)',
+			touchProbeRevert: 'Auf Standardeinstellungen zurücksetzen',
+			touchProbeTriggerCaption: 'Berühren Sie Probe Trigger Level',
+			touchProbeActiveHigh: 'Aktiv hoch',
+			touchProbeActiveLow: 'Aktiv niedrig',
+			touchProbeType: 'Touch Probe Art',
+			touchProbeXYZ: 'XYZ Touch Probe',
+			touchProbeZ: 'Z Touch Probe',
+		},
 		settingsWebcam: {
 			caption: 'Webcam',
 			webcamURL: 'Webcam-URL (optional)',
@@ -771,6 +793,16 @@ export default {
 			flipX: 'X spiegeln',
 			flipY: 'Y spiegeln',
 			flipBoth: 'Beide spiegeln'
+		},
+		settingsWorkingArea: {
+			caption: 'Machinewerkgebied',
+			axisLabel: '{0}-Axis (mm)',
+			resetWorkingArea: 'Werkgebied resetten',
+		},
+		settingsCalibration: {
+			caption: 'Machinestappen/mm-kalibratie',
+			axisLabel: '{0}-Axis (stappen/mm)',
+			resetCalibration: 'resetten stappen/mm kalibratie',
 		},
 		spindleSpeed:{
 			caption: 'Spindeln',
@@ -786,6 +818,17 @@ export default {
 		},
 		speedFactor: {
 			caption: 'Geschwindigkeitsfaktor'
+		},
+		spindle: {
+			spindle : 'Spil',
+			active : 'Actief',
+			direction : 'Richting',
+			currentRPM : 'Huidige RPM',
+			setRPM : 'Stel RPM in',
+			on : 'Aan',
+			off : 'Uit',
+			forward : 'vooruit',
+			reverse : 'omgekeerd'
 		},
 		status: {
 			caption: 'Status',
@@ -834,6 +877,27 @@ export default {
 				noItems: 'Keine zusätzlichen Sensoren'
 			},
 			noTools: 'Keine Werkzeuge'
+		},
+		touchProbePanel: {
+			caption: 'Berühren Sie die Sondensteuerung',
+			endmillDiameter: 'Schaftfräserdurchmesser (mm)',
+			probeAxisCaption: 'Einzelne Achse tasten',
+			probeXTitle: 'Probe X-Achse',
+			probeXCaption: 'X',
+			probeYTitle: 'Sonden-Y-Achse',
+			probeYCaption: 'Y',
+			probeZTitle: 'Sonden-Z-Achse',
+			probeZCaption: 'Z',
+			probeCornerTitle: 'Sondenecke',
+			probeCornerCaption: 'Sondenecke',
+			probeLocation: 'Ort der Sonde',
+			probeLocationFrontLeft: 'Vordere linke Ecke',
+			probeLocationFrontRight: 'Vordere rechte Ecke',
+			probeLocationBackLeft: 'Hintere linke Ecke',
+			probeLocationBackRight: 'Hintere rechte Ecke',
+			probeStatus: 'Sondestatus:',
+			probeTriggered: 'Geactiveerd',
+			probeNotTriggered: 'Niet geactiveerd'
 		},
 		webcam: {
 			caption: 'Webcamüberwachung',

@@ -45,7 +45,7 @@ export default class {
     this.isDelta = false;
     this.scene = scene;
     this.registerClipIgnore = () => {};
-    this.bedLineColor = '#0000FF';
+    this.bedLineColor = '#808080';
 
     /*
     this.planeMaterial = new StandardMaterial('planeMaterial', this.scene);

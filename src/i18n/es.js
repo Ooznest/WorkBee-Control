@@ -517,12 +517,18 @@ export default {
 			errorStillLoaded: 'Este filamento todavía está cargado. Descárguelo antes de continuar'
 		},
 		responseTooLong: 'Respuesta demasiado larga, ver Consola',
+		settingsTouchProbe: {
+			message: 'Se actualizó la configuración de la sonda táctil'
+		},
 		upload: {
 			title: 'Subiendo {0} @ {1}, {2}% completado',
 			message: 'Espere mientras se sube el archivo ...',
 			success: 'Subido con éxito de {0} después de {1}',
 			successMulti: 'Subido {0} archivo/s con éxito',
 			error: 'Fallo al subir {0}'
+		},
+		workingArea: {
+			message: 'Área de trabajo actualizada'
 		}
 	},
 	panel: {
@@ -688,6 +694,25 @@ export default {
 			notificationErrorsPersistent: 'No cerrar mensajes de error de forma automática',
 			notificationTimeout: 'Tiempo de espera predeterminado para notificaciones ({0})'
 		},
+		settingsTouchProbe: {
+			caption: 'Configuración de la sonda táctil',
+			touchProbeEnableCaption: 'Activar sonda táctil',
+			touchProbeEndstopNumberCaption: 'Número de final de carrera',
+			touchProbeFeedRateCaption: 'Velocidad de avance (mm / min)',
+			touchProbeXDimensionCaption: 'Dimensión X (mm)',
+			touchProbeYDimensionCaption: 'Dimensión Y (mm)',
+			touchProbeZDimensionCaption: 'Dimensión Z (mm)',
+			touchProbeXOffsetCaption: 'Desplazamiento del eje X (mm)',
+			touchProbeYOffsetCaption: 'Desplazamiento del eje Y (mm)',
+			touchProbeZOffsetCaption: 'Desplazamiento del eje Z (mm)',
+			touchProbeRevert: 'Restablecer valores predeterminados',
+			touchProbeTriggerCaption: 'Nivel de activación de la sonda táctil',
+			touchProbeActiveHigh: 'Activo alto',
+			touchProbeActiveLow: 'Activo bajo',
+			touchProbeType: 'Tipo de sonda táctil',
+			touchProbeXYZ: 'Sonda táctil XYZ',
+			touchProbeZ: 'Z Touch Probe',
+		},
 		settingsWebcam: {
 			caption: 'Webcam',
 			webcamURL: 'Webcam URL (opcional)',
@@ -701,6 +726,16 @@ export default {
 			flipX: 'Voltear X',
 			flipY: 'Voltear Y',
 			flipBoth: 'Voltear ambos'
+		},
+		settingsWorkingArea: {
+			caption: 'Área de trabajo de la máquina',
+			axisLabel: '{0}-Axis (mm)',
+			resetWorkingArea: 'Restablecer el área de trabajo',
+		},
+		settingsCalibration: {
+			caption: 'Máquina Pasos/mm Calibración',
+			axisLabel: '{0}-Axis (pasos/mm)',
+			resetCalibration: 'Restablecer Pasos/mm Calibración',
 		},
 		spindleSpeed:{
 			caption: 'Husillos',
@@ -716,6 +751,17 @@ export default {
 		},
 		speedFactor: {
 			caption: 'Factor Velocidad'
+		},
+		spindle: {
+			spindle : 'Husillo',
+			active : 'Activo',
+			direction : 'Dirección',
+			currentRPM : 'RPM real',
+			setRPM : 'Establecer RPM',
+			on : 'sobre',
+			off : 'apagada',
+			forward : 'adelante',
+			reverse : 'reverso'
 		},
 		status: {
 			caption: 'Estado',
@@ -761,6 +807,27 @@ export default {
 				noItems: 'No hay más Sensors'
 			},
 			noTools: 'Sin Herramientas'
+		},
+		touchProbePanel: {
+			caption: 'Control de sonda táctil',
+			endmillDiameter: 'Diámetro de la fresa (mm)',
+			probeAxisCaption: 'Sonda de eje individual',
+			probeXTitle: 'Sonda Eje X',
+			probeXCaption: 'X',
+			probeYTitle: 'Sonda Eje Y',
+			probeYCaption: 'Y',
+			probeZTitle: 'Sonda Eje Z',
+			probeZCaption: 'Z',
+			probeCornerTitle: 'Esquina de la sonda',
+			probeCornerCaption: 'Esquina de la sonda',
+			probeLocation: 'Ubicación de la sonda',
+			probeLocationFrontLeft: 'Esquina delantera izquierda',
+			probeLocationFrontRight: 'Esquina delantera derecha',
+			probeLocationBackLeft: 'Esquina trasera izquierda',
+			probeLocationBackRight: 'Esquina trasera derecha',
+			probeStatus: 'Estado de la sonda:',
+			probeTriggered: 'Activado',
+			probeNotTriggered: 'No disparado'
 		},
 		webcam: {
 			caption: 'Vigilancia por webcam',

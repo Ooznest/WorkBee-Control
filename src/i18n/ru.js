@@ -521,6 +521,9 @@
 			success: 'Загрузка of {0} успешна {1}',
 			successMulti: 'Успешно загружено {0} файлов',
 			error: 'Ошибка загрузки {0}'
+		},
+		workingArea: {
+			message: 'Рабочая область обновлена'
 		}
 	},
 	panel: {
@@ -685,6 +688,25 @@
 			notificationErrorsPersistent: 'Не закрывать сообщения об ошибках автоматически',
 			notificationTimeout: 'Тайм-аут уведомления ({0})'
 		},
+		settingsTouchProbe: {
+			caption: 'Настройки сенсорного зонда',
+			touchProbeEnableCaption: 'Включить сенсорный зонд',
+			touchProbeEndstopNumberCaption: 'Конечный номер',
+			touchProbeFeedRateCaption: 'Скорость подачи (mm/min)',
+			touchProbeXDimensionCaption: 'X измерение (mm)',
+			touchProbeYDimensionCaption: 'Y измерение (mm)',
+			touchProbeZDimensionCaption: 'Z измерение (mm)',
+			touchProbeXOffsetCaption: 'X-Ось офсет (mm)',
+			touchProbeYOffsetCaption: 'Y-Ось офсет (mm)',
+			touchProbeZOffsetCaption: 'Z-Ось офсет (mm)',
+			touchProbeRevert: 'Возврат к значениям по умолчанию',
+			touchProbeTriggerCaption: 'Уровень срабатывания сенсорного датчика',
+			touchProbeActiveHigh: 'Активный высокий',
+			touchProbeActiveLow: 'Активный Низкий',
+			touchProbeType: 'Тип сенсорного датчика',
+			touchProbeXYZ: 'XYZ Сенсорный зонд',
+			touchProbeZ: 'Z Сенсорный зонд',
+		},
 		settingsWebcam: {
 			caption: 'Камера',
 			webcamURL: 'URL камеры (опционально)',
@@ -698,6 +720,16 @@
 			flipX: 'Переворот по X',
 			flipY: 'Переворот по Y',
 			flipBoth: 'Перевернуть по обоим'
+		},
+		settingsWorkingArea: {
+			caption: 'Рабочая зона станка',
+			axisLabel: '{0}-Axis (mm)',
+			resetWorkingArea: 'Сбросить рабочую область',
+		},
+		settingsCalibration: {
+			caption: 'Машина Шаги/mm калибровка',
+			axisLabel: '{0}-Axis (Шаги/mm)',
+			resetCalibration: 'Сброс настроек Шаги/mm калибровка',
 		},
 		spindleSpeed:{
 			caption: 'Шпиндели',
@@ -713,6 +745,17 @@
 		},
 		speedFactor: {
 			caption: 'Контроль скорости'
+		},
+		spindle: {
+			spindle : 'Шпиндель',
+			active : 'Активный',
+			direction : 'Направление',
+			currentRPM : 'Текущий RPM',
+			setRPM : 'установленный RPM',
+			on : 'Вкл',
+			off : 'Выкл',
+			forward : 'вперед',
+			reverse : 'обратный'
 		},
 		status: {
 			caption: 'Статус',
@@ -756,6 +799,27 @@
 				value: 'Значение',
 				showInChart: 'Показывать график',
 				noItems: 'Нет Сенсор нагревателей'
+			},
+		touchProbePanel: {
+			caption: 'Зонд Z Ось',
+			endmillDiameter: 'EДиаметр мельницы (mm)',
+			probeAxisCaption: 'Зонд Индивидуальная Ось',
+			probeXTitle: 'Зонд X Ось',
+			probeXCaption: 'X',
+			probeYTitle: 'Зонд Y Ось',
+			probeYCaption: 'Y',
+			probeZTitle: 'Зонд Z Ось',
+			probeZCaption: 'Z',
+			probeCornerTitle: 'Угол зонда',
+			probeCornerCaption: 'Угол зонда',
+			probeLocation: 'Расположение зонда',
+			probeLocationFrontLeft: 'Передний левый угол',
+			probeLocationFrontRight: 'Передний правый угол',
+			probeLocationBackLeft: 'Задний левый угол',
+			probeLocationBackRight: 'Задний правый угол',
+			probeStatus: 'Статус зонда:',
+			probeTriggered: 'Триггер',
+			probeNotTriggered: 'Не сработал'
 			},
 			noTools: 'Нет устройств'
 		},
