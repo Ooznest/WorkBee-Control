@@ -426,8 +426,8 @@ data: function () {
 				let axes = this.move.axes[axesIdx];
 				if ('XYZ'.includes(axes.letter)) {
 					var letter = axes.letter.toLowerCase();
-					viewer.bed.buildVolume[letter].min = axes.min;
-					viewer.bed.buildVolume[letter].max = axes.max;
+					viewer.bed.buildVolume[letter].min = -axes.workplaceOffsets[this.move.workplaceNumber];
+					viewer.bed.buildVolume[letter].max = axes.max-axes.workplaceOffsets[this.move.workplaceNumber];
 				}
 			}
 			viewer.bed.commitBedSize();
@@ -685,6 +685,17 @@ data: function () {
 				if (this.liveZTracking) {
 					viewer.setZClipPlane(viewer.toolCursor.absolutePosition.y, 0);
 				}
+				if (this.move.axes) {
+				for (var axesIdx in this.move.axes) {
+				let axes = this.move.axes[axesIdx];
+				if ('XYZ'.includes(axes.letter)) {
+					var letter = axes.letter.toLowerCase();
+					viewer.bed.buildVolume[letter].min = -axes.workplaceOffsets[this.move.workplaceNumber];
+					viewer.bed.buildVolume[letter].max = axes.max-axes.workplaceOffsets[this.move.workplaceNumber];
+				}
+			}
+			viewer.bed.commitBedSize();
+		}
 			},
 			deep: true,
 		},
