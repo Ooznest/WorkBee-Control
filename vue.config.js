@@ -24,12 +24,12 @@ module.exports = {
 				minRatio: Infinity
 			}),
 			new ZipPlugin({
-				filename: 'DuetWebControl-SD.zip',
+				filename: 'WorkBeeControl-SD.zip',
 				include: [/\.gz$/, /\.woff$/, /\.woff2$/],
 				exclude: [/DummyPlugin/, 'robots.txt']
 			}),
 			new ZipPlugin({
-				filename: 'DuetWebControl-SBC.zip',
+				filename: 'WorkBeeControl-SBC.zip',
 				exclude: [/\.gz$/, /\.zip$/, /DummyPlugin/]
 			})
 		] : []
