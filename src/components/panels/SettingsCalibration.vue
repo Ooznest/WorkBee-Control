@@ -38,8 +38,8 @@
     </v-card-text>
     <confirm-dialog
       :shown.sync="showResetConfirmation"
-      :title="$t('dialog.confirmTouchProbeReset.title')"
-      :prompt="$t('dialog.confirmTouchProbeReset.prompt')"
+      :title="$t('dialog.confirmCalibrationReset.title')"
+      :prompt="$t('dialog.confirmCalibrationReset.prompt')"
       @confirmed="resetConfirmed()"
     ></confirm-dialog>
   </v-card>
