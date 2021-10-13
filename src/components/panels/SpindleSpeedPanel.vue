@@ -16,8 +16,8 @@
                     <tr v-for="(tool, index) in visibleTools" :key="index" :class="{'spindle-active' : getSpindle(tool).current > 0 }">
 						<template v-if="checkSpindle(tool)">
 						<td>
-							<v-icon v-if="isToolSelected(tool.number)" small class="mr-1">mdi-check-circle-outline</v-icon>
-							<v-icon v-if="!isToolSelected(tool.number)" small class="mr-1">mdi-close-circle-outline</v-icon>
+							<v-icon v-if="isToolSelected(tool.number)" large class="mr-1">mdi-check-circle-outline</v-icon>
+							<v-icon v-if="!isToolSelected(tool.number)" large color="red" class="mr-1">mdi-close-circle-outline</v-icon>
 						</td>
                         <td>
 							<a href="javascript:void(0)" @click="toolClick(tool)">
