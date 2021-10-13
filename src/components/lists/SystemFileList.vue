@@ -158,7 +158,7 @@ export default {
 		fileEdited(filename) {
 			const fullName = Path.combine(this.directory, filename);
 			const configFile = Path.combine(this.systemDirectory, Path.configFile);
-			if (!isPrinting(this.status) && (fullName === Path.configFile || fullName === configFile || fullName === Path.boardFile)) {
+			if (!isPrinting(this.status) && (fullName === Path.configFile || fullName === configFile || fullName === Path.boardFile || filename.includes("config-"))) {
 				// Ask for firmware reset when config.g or 0:/sys/board.txt (RRF on LPC) has been edited
 				this.showResetPrompt = true;
 			}
@@ -218,7 +218,7 @@ export default {
 			const configFile = Path.combine(this.systemDirectory, Path.configFile);
 			for (let i = 0; i < files.length; i++) {
 				const fullName = Path.combine(this.directory, files[i].name);
-				if (!isPrinting(this.status) && (fullName === Path.configFile || fullName === configFile || fullName === Path.boardsFile)) {
+				if (!isPrinting(this.status) && (fullName === Path.configFile || fullName === configFile || fullName === Path.boardsFile || files[i].name.includes("config-"))) {
 					// Ask for firmware reset when config.g or 0:/sys/board.txt (RRF on LPC) has been replaced
 					this.showResetPrompt = true;
 					break;
