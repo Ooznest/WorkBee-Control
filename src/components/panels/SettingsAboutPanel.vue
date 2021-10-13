@@ -1,7 +1,7 @@
 <template>
 	<v-card outlined>
 		<v-card-title>
-			<span>WorkBee Control 3.3.0 - V1.0</span>
+			<span>WorkBee Control 3.3.0 - V1.2</span>
 			<v-spacer></v-spacer>
 			<a href="https://github.com/Duet3D/DuetWebControl" target="_blank">
 				<v-icon small>mdi-star</v-icon> GitHub

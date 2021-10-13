@@ -22,8 +22,12 @@
 				<template v-if="firstInterface.firmwareVersion && firstInterface.type === 'wifi'">
 					{{ $t('panel.settingsElectronics.dwsFirmware', [$display(firstInterface.firmwareVersion)]) }} <br>
 				</template>
+				<template v-if="global.systemSettingsVersion">
+					{{ `System Settings Version: ${global.systemSettingsVersion}` }} <br>
+				</template>
 				<br>
 				{{ $t('panel.settingsElectronics.updateNote') }}
+				<br>
 			</template>
 			<template v-else>
 				(not connected)
@@ -43,7 +47,8 @@ export default {
 		...mapState('machine/model', {
 			dsfVersion: state => state.state.dsfVersion,
 			mainboard: state => (state.boards.length > 0) ? state.boards[0] : {},
-			firstInterface: state => (state.network.interfaces.length > 0) ? state.network.interfaces[0] : {}
+			firstInterface: state => (state.network.interfaces.length > 0) ? state.network.interfaces[0] : {},
+			global: state => state.global
 		})
 	},
 	methods: {

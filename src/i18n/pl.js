@@ -726,6 +726,7 @@ export default {
 			board: 'Tablica: {0}',
 			firmware: 'Oprogramowanie sprzętowe: {0} ({1})',
 			dwsFirmware: 'Wersja serwera Duet WiFi: {0}',
+			sysVersion: 'Wersja ustawień systemowych: {0}',
 			updateNote: 'Notatka: Możesz zainstalować aktualizację na stronie systemu.'
 		},
 		settingsEndstops: {

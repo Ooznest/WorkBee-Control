@@ -657,6 +657,7 @@ export default {
 			board: 'Kart: {0}',
 			firmware: 'Firmware: {0} ({1})',
 			dwsFirmware: 'Duet WiFi Server Sürümü: {0}',
+			sysVersion: 'Sistem Ayarları Sürümü: {0}',
 			updateNote: 'Not: Güncellemeleri Sistem sayfasına yükleyebilirsiniz.'
 		},
 		settingsEndstops: {

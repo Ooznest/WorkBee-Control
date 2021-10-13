@@ -657,6 +657,7 @@ export default {
 			board: 'Circuit: {0}',
 			firmware: 'Firmware: {0} ({1})',
 			dwsFirmware: 'Duet WiFi Server Version: {0}',
+			sysVersion: 'Version des paramètres système: {0}',
 			updateNote: 'Remarque: Vous pouvez installer les mises à jour sur la page Système.'
 		},
 		settingsEndstops: {

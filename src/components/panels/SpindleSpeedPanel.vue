@@ -7,6 +7,7 @@
         <v-card-text>
             <v-simple-table>
                 <thead>
+					<th>Selected</th>
                     <th>{{ $t('panel.spindleSpeed.spindleName') }}</th>
                     <th>{{ $t('panel.spindleSpeed.spindleActive') }}</th>
 					<th>{{ $t('panel.spindleSpeed.setRPM') }}</th>
@@ -14,6 +15,10 @@
                 <tbody>
                     <tr v-for="(tool, index) in visibleTools" :key="index" :class="{'spindle-active' : getSpindle(tool).current > 0 }">
 						<template v-if="checkSpindle(tool)">
+						<td>
+							<v-icon v-if="isToolSelected(tool.number)" small class="mr-1">mdi-check-circle-outline</v-icon>
+							<v-icon v-if="!isToolSelected(tool.number)" small class="mr-1">mdi-close-circle-outline</v-icon>
+						</td>
                         <td>
 							<a href="javascript:void(0)" @click="toolClick(tool)">
 								{{ tool.name || $t('panel.spindleSpeed.tool', [tool.number]) }}
@@ -162,6 +167,13 @@ export default {
 				}
 			}
 			return spindleDefined;
+		},
+		isToolSelected(tool){
+			if (tool == this.currentTool){
+				return true
+			}else{
+				return false
+			}
 		}
 	},
 };

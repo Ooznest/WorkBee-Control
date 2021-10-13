@@ -732,6 +732,7 @@ export default {
 			board: '主板：{0}',
 			firmware: '固件：{0} ({1})',
 			dwsFirmware: 'Duet WiFi Server版本：{0}',
+			sysVersion: '系统设置版本: {0}',
 			updateNote: '注意：你可以在“系统”页面上安装更新。'
 		},
 		settingsEndstops: {

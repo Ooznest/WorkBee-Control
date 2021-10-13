@@ -663,6 +663,7 @@ export default {
 			board: 'Placa: {0}',
 			firmware: 'Firmware: {0} ({1})',
 			dwsFirmware: 'Duet Versión Servidor WIFI: {0}',
+			sysVersion: 'Versión de configuración del sistema: {0}',
 			updateNote: 'Nota: puede instalar actualizaciones desde la página: Sistema.'
 		},
 		settingsEndstops: {
