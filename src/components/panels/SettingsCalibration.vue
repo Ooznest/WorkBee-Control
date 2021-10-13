@@ -3,6 +3,7 @@
     <v-card-title>
       <span>{{ $t("panel.settingsCalibration.caption") }}</span>
       <v-spacer></v-spacer>
+      <span>
       <v-icon small class="mr-1">mdi-backup-restore</v-icon>
       <a
         v-show="!uiFrozen"
@@ -11,6 +12,7 @@
       >
         {{ $t("panel.settingsCalibration.resetCalibration") }}
       </a>
+      </span>
     </v-card-title>
     <v-card-text>
       <v-row no-gutters>

@@ -3,10 +3,11 @@
     <v-card-title>
       <span>{{ $t('panel.settingsTouchProbe.caption') }}</span>
       <v-spacer></v-spacer>
-      <v-icon small class="mr-1">mdi-backup-restore</v-icon>
+       <span><v-icon small class="mr-1">mdi-backup-restore</v-icon>
       <a v-show="!uiFrozen" href="#" @click.prevent="showResetConfirmation = true">
         {{ $t('panel.settingsTouchProbe.touchProbeRevert') }}
       </a>
+      </span>
     </v-card-title>
 
     <v-container fluid grid-list-lg class="px-3">
