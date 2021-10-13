@@ -382,7 +382,8 @@ export default {
 		noJob: 'No se está ejecutando ningun trabajo',
 		layer: 'Capa {0} de {1}',
 		filament: 'Filamento usado: {0}',
-		filamentRemaining: '{0} restante'
+		filamentRemaining: '{0} restante',
+		timeRemaining: 'Tiempo restante estimado: {0}'
 	},
 	list: {
 		baseFileList: {

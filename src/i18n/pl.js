@@ -435,7 +435,8 @@ export default {
 		noJob: 'Brak aktywnego zadania',
 		layer: 'Warstwa {0} z 1}',
 		filament: 'Zużycie filamentu: {0}',
-		filamentRemaining: '{0} pozostało'
+		filamentRemaining: '{0} pozostało',
+		timeRemaining: 'Szacowany pozostały czas: {0}'
 	},
 	list: {
 		baseFileList: {

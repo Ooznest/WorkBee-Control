@@ -4,6 +4,7 @@
 			<span>{{ printStatus }}</span>
 			<v-spacer></v-spacer>
 			<span>{{ printDetails }}</span>
+			<span v-if="isPrinting">{{ $t('jobProgress.timeRemaining',[$displayTime(this.job.timesLeft.file)]) }}</span>
 		</v-col>
 
 		<v-col cols="12">
@@ -29,6 +30,9 @@ export default {
 			status: state => state.state.status
 		}),
 		...mapGetters('machine/model', ['jobProgress']),
+		isPrinting() {
+			return isPrinting(this.status);
+		},
 		printStatus() {
 			if (isPrinting(this.status)) {
 				if (this.printFile) {

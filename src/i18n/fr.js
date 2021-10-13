@@ -380,7 +380,8 @@ export default {
 		noJob: 'Aucun Travail en Cours.',
 		layer: 'Couche {0} sur {1}',
 		filament: 'Utilisation de Filament: {0}',
-		filamentRemaining: '{0} restant'
+		filamentRemaining: '{0} restant',
+		timeRemaining: 'Temps restant estimé: {0}'
 	},
 	list: {
 		baseFileList: {

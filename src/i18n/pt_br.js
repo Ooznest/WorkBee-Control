@@ -398,7 +398,8 @@ export default {
 		noJob: 'Nenhum trabalho em execução.',
 		layer: 'Camada {0} de {1}',
 		filament: 'Uso de filamento: {0}',
-		filamentRemaining: '{0} restantes'
+		filamentRemaining: '{0} restantes',
+		timeRemaining: 'Tempo estimado restante: {0}'
 	},
 	list: {
 		baseFileList: {

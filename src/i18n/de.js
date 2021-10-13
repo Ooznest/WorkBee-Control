@@ -437,7 +437,8 @@ export default {
 		noJob: 'Kein Auftrag wird ausgeführt.',
 		layer: 'Schicht {0} von {1}',
 		filament: 'Filamentverbrauch: {0}',
-		filamentRemaining: '{0} verbleibend'
+		filamentRemaining: '{0} verbleibend',
+		timeRemaining: 'Geschatte resterende tijd: {0}'
 	},
 	list: {
 		baseFileList: {

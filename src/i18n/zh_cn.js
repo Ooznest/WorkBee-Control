@@ -439,7 +439,8 @@ export default {
 		noJob: '没有任务在运行。',
 		layer: '第{0}层，共{1}层',
 		filament: '细丝用量{0}',
-		filamentRemaining: '剩余{0}'
+		filamentRemaining: '剩余{0}',
+		timeRemaining: '估计剩余时间: {0}'
 	},
 	list: {
 		baseFileList: {

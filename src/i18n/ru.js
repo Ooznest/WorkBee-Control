@@ -380,7 +380,8 @@
 		noJob: 'Нет запущенного задания.',
 		layer: 'Слой {0} из {1}',
 		filament: 'Использовано филамента: {0}',
-		filamentRemaining: '{0} осталось'
+		filamentRemaining: '{0} осталось',
+		timeRemaining: 'Оставшееся время: {0}'
 	},
 	list: {
 		baseFileList: {

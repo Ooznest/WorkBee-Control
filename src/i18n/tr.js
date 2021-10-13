@@ -380,7 +380,8 @@ export default {
 		noJob: 'İş yok.',
 		layer: 'Katman {0} / {1}',
 		filament: 'Filament Kullanımı: {0}',
-		filamentRemaining: '{0} kalan'
+		filamentRemaining: '{0} kalan',
+		timeRemaining: 'Tahmini Kalan Süre: {0}'
 	},
 	list: {
 		baseFileList: {
