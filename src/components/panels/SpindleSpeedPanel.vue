@@ -16,8 +16,10 @@
                     <tr v-for="(tool, index) in visibleTools" :key="index" :class="{'spindle-active' : getSpindle(tool).current > 0 }">
 						<template v-if="checkSpindle(tool)">
 						<td>
+							<v-btn small depressed class="pl-1" fab @click="toolClick(tool)">
 							<v-icon v-if="isToolSelected(tool.number)" large class="mr-1">mdi-check-circle-outline</v-icon>
 							<v-icon v-if="!isToolSelected(tool.number)" large color="red" class="mr-1">mdi-close-circle-outline</v-icon>
+							</v-btn>
 						</td>
                         <td>
 							<a href="javascript:void(0)" @click="toolClick(tool)">
@@ -27,11 +29,11 @@
 							<span class="font-weight-regular caption">T{{ tool.number }}</span>
 						</td>
                         <td>
-								<v-btn v-if="getSpindle(tool).current <= 0"  :value="1"  block @click="spindleOn(getSpindle(tool), tool.spindle)">{{ $t('panel.spindleSpeed.turnOn') }}</v-btn>
+								<v-btn :disabled="!isToolSelected(tool.number)" v-if="getSpindle(tool).current <= 0"  :value="1"  block @click="spindleOn(getSpindle(tool), tool.spindle)">{{ $t('panel.spindleSpeed.turnOn') }}</v-btn>
 								<v-btn v-else :value="0" color="primary" block @click="spindleOff(tool.spindle)">{{ $t('panel.spindleSpeed.turnOff') }}</v-btn>
 						</td>
 						<td>
-							<v-combobox :items="rpmInRange(getSpindle(tool))" :value="getSpindle(tool).active" @input="setActiveRPM($event, tool.spindle)">
+							<v-combobox :disabled="!isToolSelected(tool.number)" :items="rpmInRange(getSpindle(tool))" :value="getSpindle(tool).active" @input="setActiveRPM($event, tool.spindle)">
 							</v-combobox>
 							</td>
 						</template>
