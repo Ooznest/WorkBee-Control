@@ -23,4 +23,4 @@ registerRoute(CNCGCodeViewer, {
 	},
 });
 
-registerPluginContextMenuItem(() => i18n.t('plugins.CNCgcodeViewer.view3D'), '/CNCGCodeViewer', 'mdi-rotate-3d', 'view-3d-model', ContextMenuType.JobFileList);
+registerPluginContextMenuItem(() => i18n.t('G-Code Viewer Load File'), '/CNCGCodeViewer', 'mdi-rotate-3d', 'view-3d-model', ContextMenuType.JobFileList);
